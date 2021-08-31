@@ -50,7 +50,12 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, templates/Pages/home.php)...
      */
-    $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    // $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+    $builder->connect('/', ['controller' => 'Pages', 'action' => 'index']);
+    $builder->connect('/register', ['controller' => 'Users', 'action' => 'register']);
+    $builder->connect('/forgot-password', ['controller' => 'Users', 'action' => 'forgotPassword']);
+    $builder->connect('/sign-in', ['controller' => 'Users', 'action' => 'signIn']);
+    $builder->connect('/sign-out', ['controller' => 'Users', 'action' => 'signOut']);
 
     /*
      * ...and connect the rest of 'Pages' controller's URLs.
@@ -80,10 +85,10 @@ $routes->scope('/', function (RouteBuilder $builder) {
  * ```
  * $routes->scope('/api', function (RouteBuilder $builder) {
  *     // No $builder->applyMiddleware() here.
- *     
+ *
  *     // Parse specified extensions from URLs
  *     // $builder->setExtensions(['json', 'xml']);
- *     
+ *
  *     // Connect API actions here.
  * });
  * ```
