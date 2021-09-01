@@ -1,0 +1,582 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ================= VARIABLE ================ */
+:root {
+  --primary-color: hsl(9, 94%, 61%);
+  --primary-color-alt: hsl(28, 72%, 83%);
+  --second-color: #3e537c;
+  --second-color-alt: hsla(220, 33%, 36%, 65%);
+  --third-color: hsl(220, 36%, 28%);
+  --white-color: #fbfbfb;
+  --white-color-alt: hsl(12, 14%, 93%);
+  --dark-color: hsl(300, 100%, 0%);
+}
+
+/* ================= BASE ==================== */
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: 0 2rem;
+}
+
+/* -- BODY -- */
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  background-color: var(--white-color);
+}
+
+.link {
+    text-decoration: underline;
+}
+
+/* ================= HEADER ================ */
+header {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 1rem 2rem;
+  padding: 10px;
+  box-shadow: 10px 3px 5px grey;
+  z-index: 9999;
+}
+
+.nav-items {
+  display: flex;
+}
+.nav-item {
+  margin: 0 2rem;
+}
+
+#book-appointment-button {
+    background-color: #303179;
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+}
+
+#login-signup-button {
+    background-color: #ED7966;
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+}
+
+.nav-link {
+    color: 303179;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+    position: relative;
+}
+.nav-link::before {
+  content: "";
+  background: linear-gradient(var(--primary-color), var(--primary-color-alt));
+  width: 100%;
+  height: 0.05rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 150ms;
+}
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.menu-toggle {
+  display: none;
+}
+
+nav ul {
+    position: sticky;
+    top: 0;
+}
+
+
+/* ================= MAIN ================ */
+
+/* -------- BANNER SECTION -------------- */
+.section-1 {
+    background-image: url("../Assets/Home/banner_background.png");
+    background-repeat:repeat-y;
+    background-attachment: fixed;
+    background-size: contain;
+    height: 95vh;
+    background-color: #FAE5DF;
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+#banner_people {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 38px;
+}
+
+#slogan {
+  font-size: 1.5rem;
+  font-weight: 1000;
+  color: #303179;
+  text-align: center;
+  /* transform: translateY(50%); */
+  transform: translate(0%, 80%);
+}
+
+
+/* -------- INFORMATION SECTION ------------- */
+.section-2 {
+  margin: 2rem 0;
+}
+
+#information_heading {
+    margin-top: 5%;
+    font-size: 2rem;
+    font-weight: 1000;
+    color: #303179;
+    text-align: center;
+}
+
+#click_here_heading {
+    margin: 5% 0 5% 0;
+    font-size: 1.5rem;
+    font-weight: 1000;
+    color: #303179;
+    text-align: center;
+}
+
+#cards_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #FAE5DF;
+    min-height: 30vh;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2%;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 10px 3px 5px grey;
+}
+
+.card_heading {
+    color: #303179;
+    padding: 20px;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.card_image {
+    width: 100%;
+    bottom: 0;
+    transform: translateY(5%);
+    position: relative;
+    text-align: left;
+    background-color: white;
+}
+
+
+.card_description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+
+.card:hover .card_image img {
+    opacity: 30%;
+    transition: opacity 0.2s;
+}
+
+.card:hover .card_description {
+    visibility: visible;
+    color: #303179;
+    font-weight: 700;
+    opacity: 1;
+}
+
+
+/* -------- TESTIMONIALS SECTION ----------- */
+.section-3 {
+    background-image: url("../Assets/Home/testimonials_background.png");
+    margin: 8rem 0;
+    padding-top: 1.5rem;
+    height: 150vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+#testimonials_heading {
+    margin-top: 1em;
+    font-size: 2.5em;
+    font-weight:bolder;
+    color: #303179;
+    text-align: center;
+}
+
+#testimonials_button {
+    background-color: #303179;
+    color: white;
+    padding: 5px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.testimonial_container {
+    align-content: center;
+    transform: translateX(20%);
+}
+
+.testimonial_quote {
+    width: 45%;
+    /* float: left; */
+    /* text-align: right; */
+    transform: translateY(30%);
+    font-size: 1.2rem;
+    margin-right: 2%;
+    font-weight: 500;
+    color: #303179;
+}
+
+.testimonial_author {
+    margin-top: 4%;
+    font-weight: 1000;
+    color: #303179;
+}
+
+.testimonial_picture {
+    height: 200px;
+    width: 200px;
+}
+
+
+#testimonial_1 {
+    text-align: right;
+    float:left;
+}
+
+#testimonial_2 {
+    text-align: left;
+    width: 60%;
+    margin-top: 4%;
+}
+
+#testimonial_picture_2 {
+    float: left;
+    margin-top: 5%;
+    margin-right: 2%;
+}
+
+
+
+/* -------- REGISTER SECTION ----------- */
+
+
+/* =============== FOOTER =============== */
+.top-footer {
+  background-color: var(--second-color);
+  display: flex;
+  flex-direction: column;
+}
+.footer-title {
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  background-image: -webkit-linear-gradient(
+    120deg,
+    var(--primary-color-alt),
+    var(--primary-color)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer-items h3 {
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 1.1rem;
+  padding: 0.1rem 0;
+  color: var(--white-color-alt);
+}
+.footer-items h3:hover {
+  text-decoration: underline;
+}
+.footer-items h3:last-child {
+  padding-bottom: 2rem;
+}
+
+.end-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--third-color);
+}
+.copyright {
+  color: var(--white-color-alt);
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+.copyright b {
+  font-weight: inherit;
+  font-size: 0.9rem;
+}
+.designer {
+  color: hsla(0, 0%, 98%, 0.541);
+  padding-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+.designer:hover {
+  text-decoration: underline;
+}
+
+/* =============== MEDIA QUERIES ======= */
+
+/* For screen size greater than 768px */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  /* ================= HEADER ================ */
+  header {
+    padding: 0.5rem 1rem;
+  }
+  .navbar {
+    background-color: white;
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 500ms;
+  }
+  .show-navbar {
+    display: flex;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 300ms;
+  }
+  .nav-items {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .bx-menu {
+    display: block !important;
+  }
+  .show-bx {
+    display: block !important;
+  }
+  .hide-bx {
+    display: none !important;
+  }
+}
+
+/* For screen size less than 768px */
+@media (min-width: 769px) {
+  header {
+    padding: 1rem 5rem;
+    display: flex;
+  }
+  /* ================= MAIN ================ */
+
+  /* -------- BANNER SECTION -------------- */
+  .section-1 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+#slogan {
+      align-items: center;
+    max-width: 100%;
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+  }
+
+  /* -------- INFORMATION SECTION ------------- */
+  .section-2 {
+    margin: 2rem 5rem;
+  }
+  .offer {
+    margin: 5rem 0;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-rows: auto auto;
+  }
+  .offer-1 {
+    grid-template-areas: "offer-1-img offer-desc-1";
+  }
+  .offer-1 img {
+    background-color: var(--dark-color);
+    padding: 2rem 0;
+  }
+  .offer-2 {
+    grid-template-areas: "offer-desc-2 offer-2-img";
+  }
+  .offer-1-img {
+    grid-area: offer-1-img;
+  }
+  .offer-2-img {
+    grid-area: offer-2-img;
+  }
+  .offer-desc-1 {
+    grid-area: offer-desc-1;
+  }
+  .offer-desc-2 {
+    grid-area: offer-desc-2;
+  }
+  .offer-description .offer-title {
+    font-size: 1.9rem;
+    padding: 1.5rem 0 0.5rem 0;
+  }
+  .offer-description .offer-hook {
+    max-width: 30rem;
+  }
+  .offer-description {
+    background-color: var(--white-color-alt);
+    padding: 2rem 1rem;
+  }
+  .offer-description .offer-title {
+    padding: 0.5rem 0 1rem 0;
+  }
+  .offer-description .cart-btn {
+    margin: 2rem 0 0.5rem 0;
+  }
+  /* -------- PRODUCT SECTION ----------- */
+  .section-3 {
+    gap: 5rem;
+  }
+  .product::before {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 300ms;
+  }
+  .product:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 300ms;
+  }
+  .product_add_cart {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  .product:hover .product_add_cart {
+    transform: translate(-50%, -50%) scaleY(1);
+    transform-origin: top;
+  }
+  /* -------- SPONSOR SECTION ----------- */
+  .section-4 {
+    margin: 5rem 0;
+  }
+  /* ========= SUBSCRIBE SECTION ========== */
+  .section-5 {
+    padding: 1rem 0;
+  }
+  .section-5 .subscribe-container {
+    display: flex;
+    align-items: center;
+  }
+  input[type="text"] {
+    padding: 0 1rem;
+    width: 15rem;
+  }
+  input[type="submit"] {
+    width: 10rem;
+  }
+  /* =============== FOOTER =============== */
+  .top-footer {
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 8rem;
+    padding-top: 2rem;
+  }
+  .footer-title {
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+  .footer-items h3 {
+    font-size: 0.9rem;
+  }
+
+  .end-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--third-color);
+  }
+  .copyright {
+    color: hsla(0, 0%, 98%, 0.747);
+    padding: 1rem 0;
+    font-size: 0.8rem;
+  }
+  .copyright b {
+    font-size: 0.7rem;
+  }
+  .designer {
+    color: hsla(0, 0%, 98%, 0.322);
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
