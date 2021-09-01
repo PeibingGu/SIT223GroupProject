@@ -438,96 +438,17 @@ nav ul {
     letter-spacing: 0.5rem;
   }
 
-  /* -------- INFORMATION SECTION ------------- */
-  .section-2 {
-    margin: 2rem 5rem;
-  }
-  .offer {
-    margin: 5rem 0;
-    align-items: center;
-    justify-content: space-between;
-    grid-template-rows: auto auto;
-  }
-  .offer-1 {
-    grid-template-areas: "offer-1-img offer-desc-1";
-  }
-  .offer-1 img {
-    background-color: var(--dark-color);
-    padding: 2rem 0;
-  }
-  .offer-2 {
-    grid-template-areas: "offer-desc-2 offer-2-img";
-  }
-  .offer-1-img {
-    grid-area: offer-1-img;
-  }
-  .offer-2-img {
-    grid-area: offer-2-img;
-  }
-  .offer-desc-1 {
-    grid-area: offer-desc-1;
-  }
-  .offer-desc-2 {
-    grid-area: offer-desc-2;
-  }
-  .offer-description .offer-title {
-    font-size: 1.9rem;
-    padding: 1.5rem 0 0.5rem 0;
-  }
-  .offer-description .offer-hook {
-    max-width: 30rem;
-  }
-  .offer-description {
-    background-color: var(--white-color-alt);
-    padding: 2rem 1rem;
-  }
-  .offer-description .offer-title {
-    padding: 0.5rem 0 1rem 0;
-  }
-  .offer-description .cart-btn {
-    margin: 2rem 0 0.5rem 0;
-  }
+
   /* -------- PRODUCT SECTION ----------- */
   .section-3 {
     gap: 5rem;
   }
-  .product::before {
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 300ms;
-  }
-  .product:hover::before {
-    transform: scaleY(1);
-    transform-origin: top;
-    transition: transform 300ms;
-  }
-  .product_add_cart {
-    transform: scaleY(0);
-    transform-origin: bottom;
-  }
-  .product:hover .product_add_cart {
-    transform: translate(-50%, -50%) scaleY(1);
-    transform-origin: top;
-  }
+
   /* -------- SPONSOR SECTION ----------- */
   .section-4 {
     margin: 5rem 0;
   }
-  /* ========= SUBSCRIBE SECTION ========== */
-  .section-5 {
-    padding: 1rem 0;
-  }
-  .section-5 .subscribe-container {
-    display: flex;
-    align-items: center;
-  }
-  input[type="text"] {
-    padding: 0 1rem;
-    width: 15rem;
-  }
-  input[type="submit"] {
-    width: 10rem;
-  }
+
   /* =============== FOOTER =============== */
   .top-footer {
     flex-direction: row;
@@ -550,18 +471,7 @@ nav ul {
     justify-content: center;
     background-color: var(--third-color);
   }
-  .copyright {
-    color: hsla(0, 0%, 98%, 0.747);
-    padding: 1rem 0;
-    font-size: 0.8rem;
-  }
-  .copyright b {
-    font-size: 0.7rem;
-  }
-  .designer {
-    color: hsla(0, 0%, 98%, 0.322);
-    font-size: 0.8rem;
-  }
+
 }
 
 
