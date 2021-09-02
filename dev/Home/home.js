@@ -20,8 +20,7 @@ function myFunction() {
 
 
 
-
-
+// ========================= Add automatic smooth scrolling to anchor function =========================
 
 $(document).ready(function(){
   // Add smooth scrolling to all links
@@ -40,12 +39,10 @@ $(document).ready(function(){
       $('html, body').animate({
         scrollTop: $(hash).offset().top
       }, 800, function(){
-   
+
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
       });
     } // End if
   });
 });
-
-

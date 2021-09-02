@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400");
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 *,
 *::before,
@@ -11,13 +11,7 @@
 /* ================= VARIABLE ================ */
 :root {
   --primary-color: hsl(9, 94%, 61%);
-  --primary-color-alt: hsl(28, 72%, 83%);
-  --second-color: #3e537c;
-  --second-color-alt: hsla(220, 33%, 36%, 65%);
-  --third-color: hsl(220, 36%, 28%);
-  --white-color: #fbfbfb;
-  --white-color-alt: hsl(12, 14%, 93%);
-  --dark-color: hsl(300, 100%, 0%);
+  --primary-color-alt: hsl(14, 81%, 55%);
 }
 
 /* ================= BASE ==================== */
@@ -53,7 +47,7 @@ header {
   display: flex;
   align-items: center;
   background-color: white;
-  padding: 1rem 2rem;
+  padding: 1rem 5rem;
   padding: 10px;
   box-shadow: 10px 3px 5px grey;
   z-index: 9999;
@@ -136,12 +130,17 @@ nav ul {
 }
 
 #slogan {
-  font-size: 1.5rem;
   font-weight: 1000;
   color: #303179;
   text-align: center;
   /* transform: translateY(50%); */
   transform: translate(0%, 80%);
+  text-shadow: 3px 3px 4px gray;
+  align-items: center;
+  max-width: 100%;
+  font-size: 4rem;
+  letter-spacing: 0.5rem;
+
 }
 
 
@@ -229,17 +228,19 @@ nav ul {
 /* -------- TESTIMONIALS SECTION ----------- */
 .section-3 {
     background-image: url("../Assets/Home/testimonials_background.png");
-    margin: 8rem 0;
+    margin-top: 8rem;
+    margin-bottom: 0;
     padding-top: 1.5rem;
     height: 150vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 110vh;
     display: block;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
+    gap: 5rem;
 }
 
 #testimonials_heading {
@@ -306,66 +307,94 @@ nav ul {
 
 
 
-/* -------- REGISTER SECTION ----------- */
-
-
-/* =============== FOOTER =============== */
-.top-footer {
-  background-color: var(--second-color);
+/* -------- REGISTRATION SECTION ----------- */
+.section-4 {
+  background-image: url("../Assets/Home/registration_section_plane.png");
+  height: 100vh;
+  background-position: right 200px;;
+  background-repeat: no-repeat;
+  background-size: 800px;
+  background-color: #FFF4F3;
+  padding-top: 1.5rem;
+  /* height: 160vh; */
+  display: block;
   display: flex;
-  flex-direction: column;
-}
-.footer-title {
-  font-weight: 500;
-  font-size: 1.2rem;
-  padding: 1rem 0;
-  background-image: -webkit-linear-gradient(
-    120deg,
-    var(--primary-color-alt),
-    var(--primary-color)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.footer-items h3 {
-  cursor: pointer;
-  font-weight: 300;
-  font-size: 1.1rem;
-  padding: 0.1rem 0;
-  color: var(--white-color-alt);
-}
-.footer-items h3:hover {
-  text-decoration: underline;
-}
-.footer-items h3:last-child {
-  padding-bottom: 2rem;
-}
-
-.end-footer {
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  flex-direction: column;
+  margin: 0rem 0;
+}
+
+#registrations_heading {
+    margin-top: 1em;
+    font-size: 2.5em;
+    font-weight:800;
+    color: #303179;
+    text-align: center;
+}
+
+#registration_description {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+  font-size: 1.5em;
+  color: #303179;
+  text-align: center;
+}
+
+.registration_button {
+  min-height: 14vh;
+  max-height: 14vh;
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  background-color: var(--third-color);
+  margin: 2%;
+  border: 10px solid #ED7966;
+  border-radius: 80px 0 80px 0;
 }
-.copyright {
-  color: var(--white-color-alt);
-  padding: 1rem 0;
-  font-size: 0.9rem;
+
+.registration_button_number_container {
+  background-color: #303179;
+  min-height: 14vh;
+  width: 160px;
+  /* display: flex; */
+  margin: 0;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 10px solid #ED7966;
+  border-radius: 85px 0 85px 0;
+  transform: translateX(-10%);
+  overflow: hidden;
+  box-shadow: 2px 5px 15px 2px grey;
 }
-.copyright b {
-  font-weight: inherit;
-  font-size: 0.9rem;
+
+.registration_button_number {
+  font-size: 3.5em;
+  color: white;
+  text-align: center;
+  height: 100%;
+  transform: translateY(25%);
 }
-.designer {
-  color: hsla(0, 0%, 98%, 0.541);
-  padding-bottom: 0.5rem;
-  font-size: 0.9rem;
+
+.registration_button_description {
+  width: 55%;
+  font-size: 2.8em;
+  color: #303179;
+  font-weight: 700;
+  text-align: left;
 }
-.designer:hover {
-  text-decoration: underline;
+
+.registration_button_icon {
+  width: 70px;
+  display: inline-block;
 }
+
+
+/* -------- FOOTER ----------- */
+
+
 
 /* =============== MEDIA QUERIES ======= */
 
@@ -402,82 +431,16 @@ nav ul {
     flex-direction: column;
   }
   .nav-item {
-    margin: 0.5rem 0;
+    margin:
+     0.5rem 0;
   }
-  .menu-toggle {
+
+  .icon {
+    float: right;
     display: block;
   }
-  .bx-menu {
-    display: block !important;
-  }
-  .show-bx {
-    display: block !important;
-  }
-  .hide-bx {
-    display: none !important;
-  }
-}
-
-/* For screen size less than 768px */
-@media (min-width: 769px) {
-  header {
-    padding: 1rem 5rem;
-    display: flex;
-  }
-  /* ================= MAIN ================ */
-
-  /* -------- BANNER SECTION -------------- */
-  .section-1 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-#slogan {
-      align-items: center;
-    max-width: 100%;
-    font-size: 4rem;
-    letter-spacing: 0.5rem;
-  }
-
-
-  /* -------- PRODUCT SECTION ----------- */
-  .section-3 {
-    gap: 5rem;
-  }
-
-  /* -------- SPONSOR SECTION ----------- */
-  .section-4 {
-    margin: 5rem 0;
-  }
-
-  /* =============== FOOTER =============== */
-  .top-footer {
-    flex-direction: row;
-    justify-content: space-around;
-    padding-bottom: 8rem;
-    padding-top: 2rem;
-  }
-  .footer-title {
-    font-size: 1rem;
-    padding: 1rem 0;
-  }
-  .footer-items h3 {
-    font-size: 0.9rem;
-  }
-
-  .end-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--third-color);
-  }
 
 }
-
-
-
-
-
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
