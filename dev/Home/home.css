@@ -19,7 +19,6 @@
 li {
   list-style: none;
 }
-
 a {
   text-decoration: none;
 }
@@ -63,15 +62,15 @@ header {
 
 #book-appointment-button {
     background-color: #303179;
-    color: white;
+    color: orange;
     font-size: 1.1rem;
     letter-spacing: 0.05rem;
 }
 
 #login-signup-button {
-    background-color: white;
+    background-color: #ED7966;
     color: white;
-    font-size: 20rem;
+    font-size: 1.1rem;
     letter-spacing: 0.05rem;
 }
 
