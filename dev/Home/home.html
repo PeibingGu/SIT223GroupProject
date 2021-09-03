@@ -12,6 +12,8 @@
     <!-- Add image icon to the title -->
     <link rel="shortcut icon" type="image/x-icon" href="../Assets/Icons/globe.png">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <!-- Set the title -->
     <title id="page_title">uTute | Home</title>
     <!-- Link External JavaScript -->
@@ -22,24 +24,32 @@
 
     <!-- Header -->
     <header id="navbar">
-        <div>
+        <div class="primary_header">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#">Book Appointment</a></li>             
+            </ul>           
+        </div>        
+        <div class="secondary_header">
             <a href="home.html">
                 <img src="../Assets/Icons/logo.png" alt="Logo">
             </a>
+        <div class="toggle_collapse">
+            <div class="toggle_icons text-black">
+                <span class="bars_color"><i class="fas fa-bars fa-3x"></i></span>
+            </div>
         </div>
-        <nav class="navbar">
-            <ul class="nav-items">
-                <li class="nav-item"></li><a href="#information_section" class="nav-link">What is uTute</a></li>
-                <li class="nav-item"><a href="#testimonials_section" class="nav-link">Testimonials</a></li>
-                <li class="nav-item"><a href="#registration_section" class="nav-link">Become a Tutor</a></li>
-
-                <li class="nav-item"><a href="#" class="nav-link" id="book-appointment-button">Book Appointment</a></li>
-                <li class="nav-item"><a href="#" class="nav-link" id="login-signup-button">Login/Sign Up</a></li>
-
-                <!-- <button class="nav-button">Book Appointment</button>
-                <button class="nav-button">Login/Sign up</button> -->
+        <nav>    
+            <ul>
+                <li><a href="#information_section">What is uTute</a></li>
+                <li><a href="#testimonials_section">Testimonials</a></li>
+                <li><a href="#registration_section">Become a Tutor</a></li>
             </ul>
+            <div class="login_contain">
+            <a href="#" id="login-signup-button">Login/Sign Up</a> 
+            </div>
         </nav>
+    </div>
     </header>
 
 

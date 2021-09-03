@@ -33,7 +33,7 @@ img {
 
 /* -- BODY -- */
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: Barlow;
   font-size: 1rem;
   background-color: var(--white-color);
 }
@@ -44,66 +44,130 @@ body {
 
 /* ================= HEADER ================ */
 header {
-  display: flex;
-  align-items: center;
-  background-color: white;
+  width:  100%;
+  height:  auto;
   padding: 1rem 5rem;
   padding: 10px;
+  background-color: white;
   box-shadow: 10px 3px 5px grey;
   z-index: 9999;
 }
 
-.nav-items {
-  display: flex;
-}
-.nav-item {
-  margin: 0 2rem;
+
+.primary_header, .secondary_header {
+    width: 100%;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: left;
 }
 
-#book-appointment-button {
+.primary_header {
+    padding-left: 3.5em;
+}
+
+.secondary_header {    
+    align-items: center;
+    padding-top:  1em;
+
+}
+
+header ul {
+    list-style: none;
+    width: 100%;
+    display:  flex;
+    justify-content: left;
+}
+
+header ul li {
+    margin-right: 1em;
+}
+
+ul li a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.primary_header a {
     background-color: #303179;
-    color: orange;
-    font-size: 1.1rem;
-    letter-spacing: 0.05rem;
-}
-
-#login-signup-button {
-    background-color: #ED7966;
     color: white;
-    font-size: 1.1rem;
-    letter-spacing: 0.05rem;
+    font-size: 1.1em;
+    text-align: center;
+    letter-spacing: .06em;
+    font-weight: 900;
+    padding: .3em .5em .4em .5em;
+    border-radius: 10px;
+    margin-right: .5em;
 }
 
-.nav-link {
-    color: 303179;
-    font-size: 1.1rem;
-    letter-spacing: 0.05rem;
-    position: relative;
-}
-.nav-link::before {
-  content: "";
-  background: linear-gradient(var(--primary-color), var(--primary-color-alt));
-  width: 100%;
-  height: 0.05rem;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 150ms;
-}
-.nav-link:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-.menu-toggle {
-  display: none;
+.secondary_header nav {
+    width:  100%;
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+    height:  0rem;
+    min-height: 5vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 nav ul {
     position: sticky;
     top: 0;
+    min-width: 609px;
 }
+.secondary_header ul {
+    width: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+} 
+
+.secondary_header li {
+    margin-top: .5em;
+    float:  left;
+    min-width: 160px;
+
+}
+
+.secondary_header a {
+    margin-left: 2em;
+    color: #303179;
+    font-size: 1.4em;
+    letter-spacing: 0.01em;
+    font-weight: 700;
+    min-width: 170px;
+
+}
+
+
+a#login-signup-button {
+    background-color: #ED7966;
+    color: white;
+    border-radius: 10px;
+    padding: .4em .4em .4em .6em;
+    font-size: 1.21em;
+    font-weight: 700;
+    letter-spacing: .1em;
+    float:  right;
+    margin-top: -.2em;
+    margin-right: 3em;
+}
+
+.secondary_header a:hover {
+    color: #ED7966;
+}
+
+
+.bars_color{
+    color:  #303179;
+  }
+
+  .toggle_collapse {
+    display: none;
+  }
+
+
 
 
 /* ================= MAIN ================ */
@@ -140,6 +204,7 @@ nav ul {
   max-width: 100%;
   font-size: 4rem;
   letter-spacing: 0.5rem;
+  margin-top: 1.5em;
 
 }
 
@@ -399,7 +464,7 @@ nav ul {
 /* =============== MEDIA QUERIES ======= */
 
 /* For screen size greater than 768px */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .container {
     padding: 0 1rem;
   }
@@ -407,38 +472,71 @@ nav ul {
   header {
     padding: 0.5rem 1rem;
   }
-  .navbar {
-    background-color: white;
-    position: absolute;
-    top: 3.5rem;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
+
+  .primary_header {
+    display: none;
+  }
+
+  .secondary_header img {
+    margin-top: -1em;
+  }
+
+  .secondary_header{
+    justify-content: space-between;
+  }
+
+  .secondary_header nav {
+    flex-direction: column !important;
+    display: block !important;
     justify-content: center;
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 500ms;
+    width: 245px;
+    margin-top: 3em;
+    padding-top: 1em;
+    background-color: #FFBFBF;
+    border-radius: 10px;
+    padding-bottom: 1em;
+    align-items: flex-end;
   }
-  .show-navbar {
-    display: flex;
-    transform: scaleY(1);
-    transform-origin: top;
-    transition: transform 300ms;
+
+  .secondary_header nav ul {
+    margin-right: 1em;
+    min-width: 245px;
+    flex-direction: column !important;
+    display: block;
   }
-  .nav-items {
-    display: flex;
-    flex-direction: column;
+
+    nav ul li {
+    padding-bottom: 1.2em;
+    padding-top: .8em;
   }
-  .nav-item {
-    margin:
-     0.5rem 0;
+
+  .login_contain {
+    min-width: 245px;
   }
+
+
+  nav a#login-signup-button {
+    margin-top: .5rem; 
+    margin-right: 1.7em;
+  }
+
 
   .icon {
     float: right;
     display: block;
   }
+
+  .toggle_collapse{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    padding:  3em 3em;
+
+    }
+
 
 }
 
