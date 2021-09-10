@@ -517,15 +517,8 @@ nav .toggle_collapse .toggle_icon{
     background-color: #FFF4F3;
   }
 
-
-  img {
-    /*padding-bottom: 1.4em;*/
-    padding-right: 10px;
-  }
-
-
   header {
-   padding-bottom:  2em;
+   padding-bottom: 5em;
    height: 11vh;
   }
 
@@ -534,7 +527,7 @@ nav .toggle_collapse .toggle_icon{
   }
 
   .secondary_header { 
-    padding-top: 2em;
+    padding-top: 0;
   }
 
   .toggle_icon {
