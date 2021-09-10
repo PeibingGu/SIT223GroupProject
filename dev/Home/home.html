@@ -16,40 +16,44 @@
 
     <!-- Set the title -->
     <title id="page_title">uTute | Home</title>
-    <!-- Link External JavaScript -->
-    <script src="home.js"></script>
+    
+
 </head>
 
 <body>
+    <div class="container">
 
     <!-- Header -->
     <header id="navbar">
-        <div class="primary_header">
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="#">Book Appointment</a></li>             
-            </ul>           
-        </div>        
-        <div class="secondary_header">
-            <a href="home.html">
-                <img src="../Assets/Icons/logo.png" alt="Logo">
-            </a>
-        <div class="toggle_collapse">
-            <div class="toggle_icons text-black">
-                <span class="bars_color"><i class="fas fa-bars fa-3x"></i></span>
+
+            <div class="primary_header">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#">Book Appointment</a></li>             
+                </ul>           
+            </div>        
+            <div class="secondary_header" id="secondary_header">
+                <a href="home.html">
+                    <img src="../Assets/Icons/logo.png" alt="Logo">
+                </a>
+                
+                <nav>                    
+                    <div class="nav_items"> 
+                        <div class="toggle_collapse">
+                            <div class="toggle_icon">
+                                <span class="bars_color"><i class="fas fa-bars fa-3x"></i></span>
+                            </div>
+                            <ul id="collapse_menu">
+                                <li><a href="#information_section">What is uTute</a></li>
+                                <li><a href="#testimonials_section">Testimonials</a></li>
+                                <li><a href="#registration_section">Become a Tutor</a></li>
+                                <li><a href="#" id="login-signup-button">Login/Sign Up</a></li>              
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </div>
-        <nav>    
-            <ul>
-                <li><a href="#information_section">What is uTute</a></li>
-                <li><a href="#testimonials_section">Testimonials</a></li>
-                <li><a href="#registration_section">Become a Tutor</a></li>
-            </ul>
-            <div class="login_contain">
-            <a href="#" id="login-signup-button">Login/Sign Up</a> 
-            </div>
-        </nav>
-    </div>
+
     </header>
 
 
@@ -125,48 +129,39 @@
 
         <!-- TESTIMONIALS SECTION -->
         <section id="testimonials_section" class="section-3">
-
-            <h1 id="testimonials_heading">98% of our users find the platform to be life changing!</h1>
-
-            <div>
+            <div class="testimonials_heading">
+                <h1 id="testimonials_heading">98% of our users find the platform to be life changing!</h1>
                 <button id="testimonials_button">More stories here!</button>
             </div>
-
-
             <div class="testimonial_container">
-
-
-                <div id="testimonial_1" class="testimonial_quote">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore
-                    et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.”
-                    <div class="testimonial_author">
-                        Loren, 30, student
-                    </div>
-                </div>
-                <div>
+                <div class="testimonial_1">
                     <img id="testimonial_picture_1" class="testimonial_picture" src="../Assets/Home/testimonial_1.png"
                         alt="Testimonial 1">
+                    <div class="testimonial_quote">
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.”
+                        <div class="testimonial_author">
+                            Loren, 30, student
+                        </div>
+                    </div>
+                    
                 </div>
-
-
-                <div>
+                <div class="testimonial_2">
                     <img id="testimonial_picture_2" class="testimonial_picture" src="../Assets/Home/testimonial_2.png"
                         alt="Testimonial 2">
-                </div>
-                <div id="testimonial_2" class="testimonial_quote">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore
-                    et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.”
-                    <div class="testimonial_author">
+                    <div class="testimonial_quote">
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.”
+                        <div class="testimonial_author">
                         Michael, 25, tutor
+                        </div>
                     </div>
                 </div>
-
             </div>
-
         </section>
 
 
@@ -208,9 +203,10 @@
     <footer>
 
     </footer>
+</div>
 </body>
 
 <!-- Link External JavaScript -->
-<script src="home.js"></script>
+    <script src="home.js" defer></script>
 
 </html>
