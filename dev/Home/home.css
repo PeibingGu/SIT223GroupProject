@@ -313,7 +313,7 @@ nav .toggle_collapse .toggle_icon{
     height: 150vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 150vh;
+    background-size: 100% 100%;
     display: block;
     display: flex;
     flex-wrap: wrap;
@@ -353,7 +353,7 @@ nav .toggle_collapse .toggle_icon{
     border-radius: 5px;
     margin-top: -1.5em;
     width: 220px;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 .testimonial_container {
@@ -456,6 +456,7 @@ nav .toggle_collapse .toggle_icon{
   margin: 2%;
   border: 10px solid #ED7966;
   border-radius: 80px 0 80px 0;
+  background-color: white;
 }
 
 .registration_button_number_container {
@@ -512,11 +513,13 @@ nav .toggle_collapse .toggle_icon{
   }
   .section-3 {
     padding-top: 12vh;
+    background-image: none;
+    background-color: #FFF4F3;
   }
 
 
   img {
-    padding-bottom: 1.4em;
+    /*padding-bottom: 1.4em;*/
     padding-right: 10px;
   }
 
@@ -604,6 +607,7 @@ nav .nav_items #collapse_menu{
 
   #testimonials_heading {
     margin-top: 0em;
+    font-size: 2.5em;
   }
 
   .testimonial_container {
@@ -627,7 +631,7 @@ nav .nav_items #collapse_menu{
         margin-left: -3em;
     }
 
-    .testimonial_1 #testimonial_picture_1 {
+   .testimonial_1 #testimonial_picture_1 {
         position: absolute;
         right: 48%;
     }
@@ -639,13 +643,16 @@ nav .nav_items #collapse_menu{
 
   .testimonial_2 {
     margin-top: 5em;
-    margin-left: -2em;
+    margin-left: -3em;
+/*    padding-bottom: 5em;*/
   }
 
   .testimonial_2 #testimonial_picture_2 {
     position: absolute;
-    right: 40%;
+    right: 42%;
   }
+
+
 
   #registrations_heading {
     padding-left: 2em;
