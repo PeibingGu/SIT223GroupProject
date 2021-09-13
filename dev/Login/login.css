@@ -236,7 +236,7 @@ nav .toggle_collapse .toggle_icon{
 .single_line_input {
     background-color: #ED7966;
     width: 100%;
-    height: 10%;
+    height: 60px;
     border-radius: 40px;
     color: white;
     font-size: 1.5em;
