@@ -1,0 +1,113 @@
+<head>
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="verify_OTP.css">
+
+    <!-- Link the Ajax framework -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Set responsiveness to screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add image icon to the title -->
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/Icons/globe.png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- Set the title -->
+    <title id="page_title">uTute | Verify OTP</title>
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header id="navbar">
+
+            <div class="primary_header">
+                <ul>
+                    <li><a href="login.html">Home</a></li>
+                    <li><a href="#">Book Appointment</a></li>
+                </ul>
+            </div>
+            <div class="secondary_header" id="secondary_header">
+                <a href="../Home/home.html">
+                    <img src="../Assets/Icons/logo.png" alt="Logo">
+                </a>
+
+                <nav>
+                    <div class="nav_items">
+                        <div class="toggle_collapse">
+                            <div class="toggle_icon">
+                                <span class="bars_color"><i class="fas fa-bars fa-3x"></i></span>
+                            </div>
+                            <ul id="collapse_menu">
+                                <li><a href="../Login/login.html" id="login_button">Login</a></li>
+                                <li><a href="#register_menu_button" id="register-button">Register</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+
+
+        <!-- Main -->
+        <main>
+
+            <!-- REGISTER SECTION -->
+            <section id="verify_otp_section" class="section-1">
+
+
+                <div id="verify_otp_container">
+                    <img id="uTute_logo" src="../Assets/Icons/logo.png" alt="Logo">
+
+                    <form action="../Register_Form/register_form.html">
+
+                        <p id="verifying_otp_text">Verifying OTP</p>
+
+                        <p id="description_text">Please enter the 4 digit OTP code <br> we have sent to
+                            example@uni.edu.au</p>
+
+                        <!-- OTP input boxes -->
+                        <div id="otp_input_container">
+                            <input id="codeBox1" type="number" maxlength="1" onkeyup="onKeyUpEvent(1, event)"
+                                onfocus="onFocusEvent(1)" />
+                            <input id="codeBox2" type="number" maxlength="1" onkeyup="onKeyUpEvent(2, event)"
+                                onfocus="onFocusEvent(2)" />
+                            <input id="codeBox3" type="number" maxlength="1" onkeyup="onKeyUpEvent(3, event)"
+                                onfocus="onFocusEvent(3)" />
+                            <input id="codeBox4" type="number" maxlength="1" onkeyup="onKeyUpEvent(4, event)"
+                                onfocus="onFocusEvent(4)" />
+                        </div>
+
+                        <div id="verify_button_container">
+                            <button id="verify_button" type="submit">Verify</button>
+                        </div>
+                    </form>
+
+                    <div id="bottom_text_container">
+                        <a href="" id="resend_otp_text">Resend OTP</a>
+                        <p id="wrong_email_text">You entered the wrong email? <a href="" id="change_email_text">Change
+                                email</a></p>
+                    </div>
+
+
+                </div>
+            </section>
+
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+<!-- Link External JavaScript -->
+<script src="verify_OTP.js" defer></script>
+
+</html>
