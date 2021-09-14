@@ -1,0 +1,441 @@
+<head>
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="tutor_search.css">
+
+    <!-- Link the Ajax framework -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Set responsiveness to screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add image icon to the title -->
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/Icons/globe.png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- Set the title -->
+    <title id="page_title">uTute | Find a Tutor</title>
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header id="navbar">
+
+            <div class="primary_header">
+                <ul>
+                    <li><a href="login.html">Home</a></li>
+                    <li><a href="#">Book Appointment</a></li>
+                </ul>
+            </div>
+            <div class="secondary_header" id="secondary_header">
+                <a href="../Home/home.html">
+                    <img src="../Assets/Icons/logo.png" alt="Logo">
+                </a>
+
+                <nav>
+                    <div class="nav_items">
+                        <div class="toggle_collapse">
+                            <div class="toggle_icon">
+                                <span class="bars_color"><i class="fas fa-bars fa-3x"></i></span>
+                            </div>
+                            <ul id="collapse_menu">
+                                <li><a href="" id="browse_tutor_button">Browse Tutor</a></li>
+                                <li id="search_button"><a href=""> <img id="search_icon"
+                                            src="..//Assets/Icons/search_icon.png" alt="Search Icon">Search</a></li>
+                                <li><a href="#be_a_tutor_menu_button" id="be-a-tutor-button">Be a Tutor</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+
+
+        <!-- Main -->
+        <main>
+
+            <!-- MAIN SECTION -->
+            <section id="section_1" class="section-1">
+
+                <!-- HEADING CONTAINER -->
+                <div id="heading_container">
+                    <h1>TUTORS</h1>
+                </div>
+
+                <!-- INFORMATION CONTAINER -->
+                <div id="information_container">
+                    <img id="information_icon" src="../Assets/Icons/information_icon.png" alt="">
+                    <p id="information_text">Not sure? Money back if study session not conducted properly</p>
+                </div>
+
+                <!-- SELECTIONS CONTAINER -->
+                <div id="selections_container">
+
+                    <!-- FILTER BUTTON -->
+                    <button id="filter_button">
+                        <img id="filter_button_img" src="../Assets/Tutor_Search/filter_button_img.png" />
+                    </button>
+
+                    <!-- MOST POPULAR DROPDOWN BUTTON -->
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <img id="most_popular_dropdown_button_img"
+                                src="../Assets/Tutor_Search/most_popular_dropdown_button_img.png" alt=""></button>
+                        <div class="dropdown-content">
+                            <a href="#">Design</a>
+                            <a href="#">Engineering</a>
+                            <a href="#">Life Sciences</a>
+                            <a href="#">Literature</a>
+                            <a href="#">Mathematics</a>
+                            <a href="#">Pyschology</a>
+                            <a href="#">Programming</a>
+                        </div>
+                    </div>
+
+                    <!-- RESULTS COUNT CONTAINER -->
+                    <div id="results_count_container">
+                        <p id="results_count">10,000 <span>results</span></p>
+                    </div>
+
+                </div>
+
+
+
+                <!-- MAIN BODY CONTAINER -->
+                <div id="main_body_container">
+
+                    <!-- SIDE PANEL CONTAINER -->
+                    <div id="side_panel_container">
+                        <hr>
+
+
+
+                        <!-- STUDY AREA CONTAINER-->
+                        <div id="study_area_container">
+
+                            <p class="side_panel_heading">Study Area</p>
+
+                            <!-- EXPAND -->
+                            <div>
+                                <div class="panel-wrapper">
+                                    <a href="#show_study_areas" class="show btn" id="show_study_areas">Show More
+                                        ˅</a>
+                                    <a href="#hide_study_areas" class="hide btn" id="hide_study_areas">Show Less
+                                        ˄</a>
+                                    <div class="panel">
+                                        <label class="checkbox_container">Arts & Humanities
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Building & Planning
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Business & Management
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Computing and IT
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Design
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Education, Childhood & Youth
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Environment & Development
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Health & Social Care
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Languages
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Law
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Mathematics & Statistics
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Medical Sciences
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Nursing & Healthcare Practice
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Psychology & Counselling
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Science
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Social Sciences
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Technology
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                    </div><!-- end panel -->
+                                    <div class="fade"></div>
+                                </div><!-- end panel-wrapper -->
+                            </div>
+                        </div>
+
+
+                        <br>
+                        <hr>
+
+                        <!-- UNIT CODE/UNIT NAME CONTAINER-->
+                        <div id="unit_code_unit_name_container">
+
+                            <label for="unit_code_unit_name_input">
+                                <p class="side_panel_heading">Unit Code/Unit Name</p>
+                            </label>
+                            <input id="unit_code_unit_name_input" class="single_line_input" name="unit_code_unit_name"
+                                type="text" placeholder="Enter keyword" tabindex="1">
+                        </div>
+
+                        <br>
+                        <hr>
+
+
+                        <!-- UNIVERSITIES CONTAINER-->
+                        <div id="university_container">
+
+                            <p class="side_panel_heading">University</p>
+
+                            <!-- EXPAND -->
+                            <div>
+                                <div class="panel-wrapper">
+                                    <a href="#show_universities" class="show btn" id="show_universities">Show More ˅</a>
+                                    <a href="#hide_universities" class="hide btn" id="hide_universities">Show Less ˄</a>
+                                    <div class="panel">
+                                        <label class="checkbox_container">Australian Catholic University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Australian National University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Avondale University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Bond University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Carnegie Mellon University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Central Queensland University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Charles Darwin University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Charles Sturt University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Curtin University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Deakin University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Edith Cowan University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Federation University Australia
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Flinders University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Griffith University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">James Cook University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">La Trobe University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Macquarie University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Monash University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Murdoch University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Queensland University of Technology
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">RMIT University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Southern Cross University
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Swinburne University of Technology
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Tabor College
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">Torrens University Australia
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of Adelaide
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of Canberra
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of Divinity
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of Melbourne
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of New England
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of New South Wales
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of Newcastle
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of Notre Dame Australia
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of Queensland
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of South Australia
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of Southern Queensland
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="checkbox_container">University of the Sunshine Coast
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                    </div><!-- end panel -->
+                                    <div class="fade"></div>
+                                </div><!-- end panel-wrapper -->
+                            </div>
+                        </div>
+
+
+                        <br>
+                        <hr>
+
+                        <!-- AVAILABILITY CONTAINER-->
+                        <div id="availability_container">
+                            <label for="availability_input">
+                                <p class="side_panel_heading">Availability</p>
+                            </label>
+                            <input id="availability_input" class="single_line_input" name="unit_code_unit_name"
+                                type="text" placeholder="Enter keyword" tabindex="1">
+                        </div>
+
+
+                        <br>
+                        <hr>
+
+                        <!-- RATINGS CONTAINER-->
+                        <div id="ratings_container">
+                            <p class="side_panel_heading">Ratings</p>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                    <!-- SEARCH RESULTS CONTAINER -->
+                    <div id="search_results_container"> Search Results Container </div>
+
+
+                </div>
+
+            </section>
+
+
+
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+<!-- Link External JavaScript -->
+<script src="tutor_search.js" defer></script>
+
+</html>
