@@ -1,0 +1,71 @@
+body {
+  font-size: 0.8rem;
+}
+.h3, h3 {
+  font-size: 1.25rem;
+}
+.h4, h4 {
+  font-size: 1.1rem;
+}
+.h5, h5 {
+  font-size: 1rem;
+}
+.btn {
+  font-size: 0.8rem;
+  padding: .35rem .7rem;
+  line-height: 1.2rem;
+}
+.dropdown-menu {
+  font-size: 0.8rem;
+}
+.btn-group-sm .btn,
+.btn-sm {
+  padding: .25rem .5rem;
+}
+
+
+.password-validation,
+.password-confirm-validation {
+    position: absolute;
+    overflow-x: visible;
+    left: 100%;
+    top: 0;
+    z-index: 1;
+    width: 300px;
+    font-size: 0.75rem;
+    text-align: left;
+}
+
+.password-validation ul,
+.password-validation ul li,
+.password-confirm-validation ul,
+.password-confirm-validation ul li {
+  list-style: none;
+}
+.password-validation ul,
+.password-confirm-validation ul {
+  border-radius: 3px;
+  background-color: #faf5f5;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: 1px solid;
+  border-color: #dc3545;
+}
+li.circle {
+  color: #106e44;
+}
+li.circle:before {
+  content: "\2713";
+}
+li.cross {
+  color: #9c4a33;
+}
+li.cross:before {
+  content: "\00D7";
+}
+.logo-text {
+  font-size: 2rem;
+}
+.strike {
+  text-decoration: line-through;
+}

@@ -42,5 +42,6 @@ class UsersController extends AppController
 
     public function signOut()
     {
+
     }
 }
