@@ -1,5 +1,8 @@
 <head>
 
+    <!--Include the Vue framework-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <!-- Link to CSS stylesheet -->
     <link rel="stylesheet" type="text/css" href="tutor_search.css">
 
@@ -47,8 +50,24 @@
                             <ul id="collapse_menu">
                                 <li><a href="" id="browse_tutor_button">Browse Tutor</a></li>
                                 <li id="search_button"><a href=""> <img id="search_icon"
-                                            src="..//Assets/Icons/search_icon.png" alt="Search Icon">Search</a></li>
-                                <li><a href="#be_a_tutor_menu_button" id="be-a-tutor-button">Be a Tutor</a></li>
+                                            src="..//Assets/Icons/search_icon.png" alt="Search Icon"></a></li>
+
+                                <li id="balance_button"><a href=""> <img id="balance_icon"
+                                            src="..//Assets/Icons/dolar_sign_icon.png" alt="Dolar Sign Icon"></a>
+                                </li>
+                                <li id="appointments_button"><a href=""> <img id="appointments_icon"
+                                            src="..//Assets/Icons/schedule_list_icon.png" alt="Schedule List Icon"></a>
+                                </li>
+                                <li id="chat_button"><a href=""> <img id="message_icon"
+                                            src="..//Assets/Icons/message_icon.png" alt="Message Icon"></a>
+                                </li>
+                                <li id="user_profile_button"><a href="">
+                                        <div id="user_initials_container">
+                                            {{user_initials}}
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><a href="#be_a_tutor_menu_button" id="be_a_tutor_button">Be a Tutor</a></li>
                             </ul>
                         </div>
                     </div>
@@ -409,20 +428,213 @@
                         <!-- RATINGS CONTAINER-->
                         <div id="ratings_container">
                             <p class="side_panel_heading">Ratings</p>
+
+                            <!-- EXPAND -->
+                            <div>
+                                <div class="panel-wrapper">
+                                    <a href="#show_ratings" class="show btn" id="show_ratings">Show More
+                                        ˅</a>
+                                    <a href="#hide_ratings" class="hide btn" id="hide_ratings">Show Less
+                                        ˄</a>
+                                    <div class="panel">
+
+                                        <label class="checkbox_container ratings_checkbox_container"><img
+                                                class="stars_icon" src="../Assets/Icons/4_point_5_stars.png" alt="">
+                                            <p>4.5
+                                                & up</p>
+                                            <input type="checkbox">
+                                            <span class="checkmark ratings_checkbox"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container"><img
+                                                class="stars_icon" src="../Assets/Icons/4_stars.png" alt="">
+                                            <p>4
+                                                & up</p>
+                                            <input type="checkbox">
+                                            <span class="checkmark ratings_checkbox"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container"><img
+                                                class="stars_icon" src="../Assets/Icons/3_point_5_stars.png" alt="">
+                                            <p>3.5
+                                                & up</p>
+                                            <input type="checkbox">
+                                            <span class="checkmark ratings_checkbox"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container"><img
+                                                class="stars_icon" src="../Assets/Icons/3_stars.png" alt="">
+                                            <p>3
+                                                & up</p>
+                                            <input type="checkbox">
+                                            <span class="checkmark ratings_checkbox"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container"><img
+                                                class="stars_icon" src="../Assets/Icons/2_point_5_stars.png" alt="">
+                                            <p>2.5
+                                                & up</p>
+                                            <input type="checkbox">
+                                            <span class="checkmark ratings_checkbox"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container"><img
+                                                class="stars_icon" src="../Assets/Icons/2_stars.png" alt="">
+                                            <p>2
+                                                & up</p>
+                                            <input type="checkbox">
+                                            <span class="checkmark ratings_checkbox"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container"><img
+                                                class="stars_icon" src="../Assets/Icons/1_point_5_stars.png" alt="">
+                                            <p>1.5
+                                                & up</p>
+                                            <input type="checkbox">
+                                            <span class="checkmark ratings_checkbox"></span>
+                                        </label>
+                                    </div><!-- end panel -->
+                                    <div class="fade"></div>
+                                </div><!-- end panel-wrapper -->
+
+                            </div>
                         </div>
 
+                        <br>
+                        <hr>
 
 
+                        <!-- QUALIFICATIONS CONTAINER-->
+                        <div id="qualifications_container">
+                            <p class="side_panel_heading">Qualifications</p>
+
+                            <!-- EXPAND -->
+                            <div>
+                                <div class="panel-wrapper">
+                                    <a href="#show_qualifications" class="show btn" id="show_qualifications">Show More
+                                        ˅</a>
+                                    <a href="#hide_qualifications" class="hide btn" id="hide_qualifications">Show Less
+                                        ˄</a>
+                                    <div class="panel">
+
+                                        <label class="checkbox_container ratings_checkbox_container">
+                                            Doctorate
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container">
+                                            MBA
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container">
+                                            Masters
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container">
+                                            Graduate Diploma
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container">
+                                            Graduate Certificate
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container">
+                                            Bachelors
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container">
+                                            Diploma
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                        <label class="checkbox_container ratings_checkbox_container">
+                                            Certificate
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                    </div><!-- end panel -->
+                                    <div class="fade"></div>
+                                </div><!-- end panel-wrapper -->
+
+                            </div>
+                        </div>
+
+                        <br>
+                        <hr>
+
+                        <!-- PRICE PER HOUR CONTAINER-->
+                        <div id="price_per_hour_container">
+
+                            <p class="side_panel_heading">Price Per Hour</p>
+                            <p id="price_per_hour_description">Select the Maximum Price Per Hour</p>
+
+                            <input type="range" value="24" min="15" max="80"
+                                oninput="this.nextElementSibling.value = this.value"> $
+                            <output id="price_per_hour_output">24</output>
+
+                        </div>
 
                     </div>
 
 
 
                     <!-- SEARCH RESULTS CONTAINER -->
-                    <div id="search_results_container"> Search Results Container </div>
+                    <div id="search_results_container">
+
+                        <br>
+
+                        <!-- <div class="tutor_container">
+                            <img class="tutor_image" src="../Assets/Tutor_Search/tutor_1.png" alt="">
+
+                            <div class="tutor_title_container">
+                                <span class="tutor_name">Lalala Lalala Lala</span>
+                                <span class="tutor_degree_type"> Bsc, Msc</span>
+                            </div>
+
+                            <div class="tutor_degrees_container">
+                                <p class="tutor_degrees">
+                                    <span>Bachelor of Computer Science, Master of AI</span>
+                                    <span>Deakin University, </span>
+                                    <span>2022</span>
+                                </p>
+                            </div>
+
+                            <div class="tutor_ratings_container">
+                                <span class="tutor_rating_value">4.7</span>
+                                <img class="tutor_rating_icon" src="../Assets/Icons/4_point_5_stars.png" alt="">
+                                <span id="tutor_number_of_ratings">(2,789)</span>
+                            </div>
+
+                            <div class="tutor_price_per_hour_container">
+                                A$<span class="tutor_price_per_hour">16.99</span>/hour
+                            </div>
+                        </div> -->
 
 
-                </div>
+
+
+                        <tutor-component id="tutor_component" v-for="tutor in tutors" v-bind:image_src="tutor.image_src"
+                            v-bind:name="tutor.name" v-bind:degree_type="tutor.degree_type" v-bind:degree="tutor.degree"
+                            v-bind:university="tutor.university" v-bind:year_of_graduation="tutor.year_of_graduation"
+                            v-bind:rating_value="tutor.rating_value" v-bind:rating_icon_src="tutor.rating_icon_src"
+                            v-bind:number_of_ratings="tutor.number_of_ratings"
+                            v-bind:total_price_per_hour="tutor.total_price_per_hour" v-bind:title="tutor.name">
+                        </tutor-component>
+
+                    </div>
 
             </section>
 
