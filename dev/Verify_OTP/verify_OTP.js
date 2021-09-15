@@ -1,4 +1,4 @@
-// ======================== FND THE OTP CODE BOX ELEMENT ==============================
+// ======================== FIND THE OTP CODE BOX ELEMENT ==============================
 
 // Find the OTP code box
 function getCodeBoxElement(index) {
