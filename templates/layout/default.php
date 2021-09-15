@@ -20,90 +20,44 @@
     <!-- Set the title -->
     <title id="page_title">uTute | Home</title>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'bootstrap.min', 'home']) ?>
+    <?= $this->Html->css([
+                          // 'normalize.min',
+                          // 'milligram.min',
+                          'bootstrap.min',
+                          'home']) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body>
-  <header id="navbar">
 
-      <div class="primary_header">
-          <ul>
-              <li><a href="home.html">Home</a></li>
-              <li><a href="#">Book Appointment</a></li>
-          </ul>
-      </div>
-      <div class="secondary_header" id="secondary_header">
-          <a href="home.html">
-              <img src="/img/Assets/Icons/logo.png" alt="Logo">
-          </a>
+      <?=$this->element('navbar')?>
 
-          <nav>
-              <div class="nav_items">
-                  <div class="toggle_collapse">
-                      <div class="toggle_icon">
-                          <span class="bars_color"><i class="fas fa-bars fa-3x"></i></span>
-                      </div>
-                      <ul id="collapse_menu">
-                          <li><a href="#information_section">What is uTute</a></li>
-                          <li><a href="#testimonials_section">Testimonials</a></li>
-                          <li><a href="#registration_section">Become a Tutor</a></li>
-                          <li><a href="../Login/login.html" id="login-signup-button">Login/Sign Up</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </nav>
-      </div>
 
   </header>
     <main class="main">
-        <div class="container-fluid">
+        <div class="container-fluid no-x-padding no-x-margin">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
         </div>
     </main>
     <footer>
-
+      <?=$this->element("footer")?>
     </footer>
 
 
+    <?= $this->Html->script([
+                             // 'vendor/jquery-slim.min',
+                             // 'vendor/popper.min',
+                             // 'bootstrap.min',
+                             // 'vendor/holder.min'
+                             ]) ?>
+
     <!-- Link External JavaScript -->
     <script src="/js/home.js" defer></script>
-    <?= $this->Html->script(['vendor/jquery-slim.min',
-                             'vendor/popper.min',
-                             'bootstrap.min',
-                             'vendor/holder.min'
-                             ]) ?>
 </body>
 </html>
-<script>
-const $dropdown = $(".dropdown");
-const $dropdownToggle = $(".dropdown-toggle");
-const $dropdownMenu = $(".dropdown-menu");
-const showClass = "show";
 
-$(window).on("load resize", function() {
-if (this.matchMedia("(min-width: 768px)").matches) {
-$dropdown.hover(
-  function() {
-    const $this = $(this);
-    $this.addClass(showClass);
-    $this.find($dropdownToggle).attr("aria-expanded", "true");
-    $this.find($dropdownMenu).addClass(showClass);
-  },
-  function() {
-    const $this = $(this);
-    $this.removeClass(showClass);
-    $this.find($dropdownToggle).attr("aria-expanded", "false");
-    $this.find($dropdownMenu).removeClass(showClass);
-  }
-);
-} else {
-$dropdown.off("mouseenter mouseleave");
-}
-});
-</script>
   </body>
 </html>

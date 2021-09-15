@@ -2,11 +2,9 @@
 
             <!-- BANNER SECTION -->
             <section class="section-1">
-                <div>
                     <h1 id="slogan">TUTORING, <br> DONE DIFFERENTLY</h1>
-                </div>
                 <div id="banner_people">
-                    <img src="/img/Assets/Home/banner_people.png" alt="People">
+                    &nbsp;
                 </div>
             </section>
 
