@@ -1,0 +1,537 @@
+<head>
+
+    <!--Include the Vue framework-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="sign_up_as_a_tutor.css">
+
+    <!-- Link the Ajax framework -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Set responsiveness to screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add image icon to the title -->
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/Icons/globe.png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- Set the title -->
+    <title id="page_title">uTute | Sign up as a Tutor</title>
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header id="navbar">
+
+            <div class="primary_header">
+                <ul>
+                    <li><a href="login.html">Home</a></li>
+                    <li><a href="#">Book Appointment</a></li>
+                </ul>
+            </div>
+            <div class="secondary_header" id="secondary_header">
+                <a href="../Home/home.html">
+                    <img src="../Assets/Icons/logo.png" alt="Logo">
+                </a>
+
+                <nav>
+                    <div class="nav_items">
+                        <div class="toggle_collapse">
+                            <div class="toggle_icon">
+                                <span class="bars_color"><i class="fas fa-bars fa-3x"></i></span>
+                            </div>
+                            <ul id="collapse_menu">
+                                <li><a href="" id="browse_tutor_button">Browse Tutor</a></li>
+                                <li id="search_button"><a href="../Tutor_Search/tutor_search.html"> <img
+                                            id="search_icon" src="..//Assets/Icons/search_icon.png"
+                                            alt="Search Icon"></a></li>
+
+                                <li id="balance_button"><a href=""> <img id="balance_icon"
+                                            src="..//Assets/Icons/dolar_sign_icon.png" alt="Dolar Sign Icon"></a>
+                                </li>
+                                <li id="appointments_button"><a href=""> <img id="appointments_icon"
+                                            src="..//Assets/Icons/schedule_list_icon.png" alt="Schedule List Icon"></a>
+                                </li>
+                                <li id="chat_button"><a href=""> <img id="message_icon"
+                                            src="..//Assets/Icons/message_icon.png" alt="Message Icon"></a>
+                                </li>
+                                <li id="user_profile_button"><a href="">
+                                        <div id="user_initials_container">
+                                            {{user_initials}}
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><a href="#be_a_tutor_menu_button" id="be_a_tutor_button">Be a Tutor</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+
+
+
+        <!-- Main -->
+        <main>
+
+            <!-- REGISTER FORM SECTION -->
+            <section id="register_form_section" class="section-1">
+
+
+                <div id="register_form_container">
+
+                    <div id="banner_container">
+
+                        <!-- "SIGN UP A TUTOR" HEADING -->
+                        <div id="sign_up_as_tutor_heading_container">
+                            <p id="sign_up_as_tutor_heading">Sign up as tutor</p>
+                            <p id="sign_up_as_tutor_description">Be a tutor, we'd love to work with you.</p>
+                        </div>
+
+                        <!-- BANNER RIBBON -->
+                        <img id="banner_ribbon_image" src="../Assets/Sign_Up_As_A_Tutor/banner_ribbon_image.png" alt="">
+                    </div>
+
+                    <!-- FORM -->
+                    <form action="">
+
+
+                        <!-- 1ST QUESTION -->
+                        <div id="level_of_qualification_container">
+
+                            <!-- QUESTION PROMPT -->
+                            <div class="question_prompt_container">
+                                <img class="question_number_image" src="../Assets/Sign_Up_As_A_Tutor/number_1_image.png"
+                                    alt="">
+                                <div class="question_text">First, what is your educational qualification?</div>
+                            </div>
+
+                            <!-- QUESTION BODY -->
+                            <div class="question_body_container">
+
+                                <!-- Degree Level (Input) -->
+                                <div id="degree_level_input_container">
+
+                                    <label class="input_label" for="degree_level_dropdown">Degree Level</label>
+
+                                    <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                                    <div class="custom-select" id="degree_level_dropdown" style="width:200px;">
+                                        <select>
+                                            <option value="0">High School</option>
+                                            <option value="1">Certificate</option>
+                                            <option value="2">Diploma</option>
+                                            <option value="3">Bachelor</option>
+                                            <option value="4">Graduate Certificate</option>
+                                            <option value="5">Graduate Diploma</option>
+                                            <option value="6">Master</option>
+                                            <option value="7">Doctorate</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <!-- Year of Graduation (Input) -->
+                                <div id="year_of_graduation_container">
+                                    <label class="input_label" for="year_of_graduation">Year of Graduation</label>
+                                    <br>
+                                    <input class="single_line_input" id="year_of_graduation" type="text"
+                                        placeholder="MM/YYYY">
+                                </div>
+
+                                <!-- University (Input) -->
+                                <div id="university_container">
+                                    <label class="input_label" for="university_input">University</label>
+                                    <br>
+                                    <input class="single_line_input" id="university_input" type="text"
+                                        placeholder="Enter university">
+                                </div>
+
+                                <!-- GPA (Input) -->
+                                <div id="gpa_container">
+                                    <label class="input_label" for="gpa_input">GPA</label>
+                                    <br>
+                                    <input class="single_line_input" id="gpa_input" type="text" placeholder="Enter GPA">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- 2ND QUESTION -->
+                        <div id="level_of_qualification_container">
+
+                            <!-- QUESTION PROMPT -->
+                            <div class="question_prompt_container">
+                                <img class="question_number_image" src="../Assets/Sign_Up_As_A_Tutor/number_2_image.png"
+                                    alt="">
+                                <div class="question_text">Second, what units would be you be interested in teaching?
+                                </div>
+                            </div>
+
+                            <!-- QUESTION BODY -->
+                            <div class="question_body_container">
+
+                                <!-- Degree Level (Input) -->
+                                <div id="degree_level_input_container">
+
+                                    <label class="input_label" for="degree_level_dropdown">Degree Level</label>
+
+                                    <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                                    <div class="custom-select" id="degree_level_dropdown" style="width:200px;">
+                                        <select>
+                                            <option value="0">High School</option>
+                                            <option value="1">Certificate</option>
+                                            <option value="2">Diploma</option>
+                                            <option value="3">Bachelor</option>
+                                            <option value="4">Graduate Certificate</option>
+                                            <option value="5">Graduate Diploma</option>
+                                            <option value="6">Master</option>
+                                            <option value="7">Doctorate</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <!-- Year of Graduation (Input) -->
+                                <div id="year_of_graduation_container">
+                                    <label class="input_label" for="year_of_graduation">Year of Graduation</label>
+                                    <br>
+                                    <input class="single_line_input" id="year_of_graduation" type="text"
+                                        placeholder="MM/YYYY">
+                                </div>
+
+                                <!-- University (Input) -->
+                                <div id="university_container">
+                                    <label class="input_label" for="university_input">University</label>
+                                    <br>
+                                    <input class="single_line_input" id="university_input" type="text"
+                                        placeholder="Enter university">
+                                </div>
+
+                                <!-- GPA (Input) -->
+                                <div id="gpa_container">
+                                    <label class="input_label" for="gpa_input">GPA</label>
+                                    <br>
+                                    <input class="single_line_input" id="gpa_input" type="text" placeholder="Enter GPA">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- 3RD QUESTION -->
+                        <div id="level_of_qualification_container">
+
+                            <!-- QUESTION PROMPT -->
+                            <div class="question_prompt_container">
+                                <img class="question_number_image" src="../Assets/Sign_Up_As_A_Tutor/number_3_image.png"
+                                    alt="">
+                                <div class="question_text">Second, what units would be you be interested in teaching?
+                                </div>
+                            </div>
+
+                            <!-- QUESTION BODY -->
+                            <div class="question_body_container">
+
+                                <!-- Degree Level (Input) -->
+                                <div id="degree_level_input_container">
+
+                                    <label class="input_label" for="degree_level_dropdown">Degree Level</label>
+
+                                    <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                                    <div class="custom-select" id="degree_level_dropdown" style="width:200px;">
+                                        <select>
+                                            <option value="0">High School</option>
+                                            <option value="1">Certificate</option>
+                                            <option value="2">Diploma</option>
+                                            <option value="3">Bachelor</option>
+                                            <option value="4">Graduate Certificate</option>
+                                            <option value="5">Graduate Diploma</option>
+                                            <option value="6">Master</option>
+                                            <option value="7">Doctorate</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <!-- Year of Graduation (Input) -->
+                                <div id="year_of_graduation_container">
+                                    <label class="input_label" for="year_of_graduation">Year of Graduation</label>
+                                    <br>
+                                    <input class="single_line_input" id="year_of_graduation" type="text"
+                                        placeholder="MM/YYYY">
+                                </div>
+
+                                <!-- University (Input) -->
+                                <div id="university_container">
+                                    <label class="input_label" for="university_input">University</label>
+                                    <br>
+                                    <input class="single_line_input" id="university_input" type="text"
+                                        placeholder="Enter university">
+                                </div>
+
+                                <!-- GPA (Input) -->
+                                <div id="gpa_container">
+                                    <label class="input_label" for="gpa_input">GPA</label>
+                                    <br>
+                                    <input class="single_line_input" id="gpa_input" type="text" placeholder="Enter GPA">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- 4TH QUESTION -->
+                        <div id="level_of_qualification_container">
+
+                            <!-- QUESTION PROMPT -->
+                            <div class="question_prompt_container">
+                                <img class="question_number_image" src="../Assets/Sign_Up_As_A_Tutor/number_4_image.png"
+                                    alt="">
+                                <div class="question_text">Second, what units would be you be interested in teaching?
+                                </div>
+                            </div>
+
+                            <!-- QUESTION BODY -->
+                            <div class="question_body_container">
+
+                                <!-- Degree Level (Input) -->
+                                <div id="degree_level_input_container">
+
+                                    <label class="input_label" for="degree_level_dropdown">Degree Level</label>
+
+                                    <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                                    <div class="custom-select" id="degree_level_dropdown" style="width:200px;">
+                                        <select>
+                                            <option value="0">High School</option>
+                                            <option value="1">Certificate</option>
+                                            <option value="2">Diploma</option>
+                                            <option value="3">Bachelor</option>
+                                            <option value="4">Graduate Certificate</option>
+                                            <option value="5">Graduate Diploma</option>
+                                            <option value="6">Master</option>
+                                            <option value="7">Doctorate</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <!-- Year of Graduation (Input) -->
+                                <div id="year_of_graduation_container">
+                                    <label class="input_label" for="year_of_graduation">Year of Graduation</label>
+                                    <br>
+                                    <input class="single_line_input" id="year_of_graduation" type="text"
+                                        placeholder="MM/YYYY">
+                                </div>
+
+                                <!-- University (Input) -->
+                                <div id="university_container">
+                                    <label class="input_label" for="university_input">University</label>
+                                    <br>
+                                    <input class="single_line_input" id="university_input" type="text"
+                                        placeholder="Enter university">
+                                </div>
+
+                                <!-- GPA (Input) -->
+                                <div id="gpa_container">
+                                    <label class="input_label" for="gpa_input">GPA</label>
+                                    <br>
+                                    <input class="single_line_input" id="gpa_input" type="text" placeholder="Enter GPA">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- 5TH QUESTION -->
+                        <div id="level_of_qualification_container">
+
+                            <!-- QUESTION PROMPT -->
+                            <div class="question_prompt_container">
+                                <img class="question_number_image" src="../Assets/Sign_Up_As_A_Tutor/number_5_image.png"
+                                    alt="">
+                                <div class="question_text">Second, what units would be you be interested in teaching?
+                                </div>
+                            </div>
+
+                            <!-- QUESTION BODY -->
+                            <div class="question_body_container">
+
+                                <!-- Degree Level (Input) -->
+                                <div id="degree_level_input_container">
+
+                                    <label class="input_label" for="degree_level_dropdown">Degree Level</label>
+
+                                    <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                                    <div class="custom-select" id="degree_level_dropdown" style="width:200px;">
+                                        <select>
+                                            <option value="0">High School</option>
+                                            <option value="1">Certificate</option>
+                                            <option value="2">Diploma</option>
+                                            <option value="3">Bachelor</option>
+                                            <option value="4">Graduate Certificate</option>
+                                            <option value="5">Graduate Diploma</option>
+                                            <option value="6">Master</option>
+                                            <option value="7">Doctorate</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <!-- Year of Graduation (Input) -->
+                                <div id="year_of_graduation_container">
+                                    <label class="input_label" for="year_of_graduation">Year of Graduation</label>
+                                    <br>
+                                    <input class="single_line_input" id="year_of_graduation" type="text"
+                                        placeholder="MM/YYYY">
+                                </div>
+
+                                <!-- University (Input) -->
+                                <div id="university_container">
+                                    <label class="input_label" for="university_input">University</label>
+                                    <br>
+                                    <input class="single_line_input" id="university_input" type="text"
+                                        placeholder="Enter university">
+                                </div>
+
+                                <!-- GPA (Input) -->
+                                <div id="gpa_container">
+                                    <label class="input_label" for="gpa_input">GPA</label>
+                                    <br>
+                                    <input class="single_line_input" id="gpa_input" type="text" placeholder="Enter GPA">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- 6TH QUESTION -->
+                        <div id="level_of_qualification_container">
+
+                            <!-- QUESTION PROMPT -->
+                            <div class="question_prompt_container">
+                                <img class="question_number_image" src="../Assets/Sign_Up_As_A_Tutor/number_6_image.png"
+                                    alt="">
+                                <div class="question_text">Second, what units would be you be interested in teaching?
+                                </div>
+                            </div>
+
+                            <!-- QUESTION BODY -->
+                            <div class="question_body_container">
+
+                                <!-- Degree Level (Input) -->
+                                <div id="degree_level_input_container">
+
+                                    <label class="input_label" for="degree_level_dropdown">Degree Level</label>
+
+                                    <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
+                                    <div class="custom-select" id="degree_level_dropdown" style="width:200px;">
+                                        <select>
+                                            <option value="0">High School</option>
+                                            <option value="1">Certificate</option>
+                                            <option value="2">Diploma</option>
+                                            <option value="3">Bachelor</option>
+                                            <option value="4">Graduate Certificate</option>
+                                            <option value="5">Graduate Diploma</option>
+                                            <option value="6">Master</option>
+                                            <option value="7">Doctorate</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <!-- Year of Graduation (Input) -->
+                                <div id="year_of_graduation_container">
+                                    <label class="input_label" for="year_of_graduation">Year of Graduation</label>
+                                    <br>
+                                    <input class="single_line_input" id="year_of_graduation" type="text"
+                                        placeholder="MM/YYYY">
+                                </div>
+
+                                <!-- University (Input) -->
+                                <div id="university_container">
+                                    <label class="input_label" for="university_input">University</label>
+                                    <br>
+                                    <input class="single_line_input" id="university_input" type="text"
+                                        placeholder="Enter university">
+                                </div>
+
+                                <!-- GPA (Input) -->
+                                <div id="gpa_container">
+                                    <label class="input_label" for="gpa_input">GPA</label>
+                                    <br>
+                                    <input class="single_line_input" id="gpa_input" type="text" placeholder="Enter GPA">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Phone Number (Input) -->
+                        <div class="input_container">
+                            <div class="input_heading">
+                                <label for="email_input">Phone Number</label>
+                            </div>
+
+                            <input class="single_line_input" v-model="emailInput" placeholder="Enter number">
+                        </div>
+
+                        <!-- Password (Input) -->
+                        <div class="input_container">
+                            <div class="input_heading">
+                                <label for="email_input">Password</label>
+                            </div>
+
+                            <input class="single_line_input" type="password" v-model="emailInput"
+                                placeholder="***********">
+                        </div>
+
+                        <p id="password_information_text">Password should contain a mix of upper and lowercase letters,
+                            numbers, <br> and at least one
+                            non-alphanumeric character (.!*)</p>
+
+                        <!-- Confirm Password Number (Input) -->
+                        <div class="input_container">
+                            <div class="input_heading">
+                                <label for="email_input">Confirm Password</label>
+                            </div>
+
+                            <input class="single_line_input" type="password" v-model="emailInput"
+                                placeholder="***********">
+                        </div>
+
+                        <div id="register_button_container">
+                            <button id="register_button" type="submit">Register</button>
+                        </div>
+                    </form>
+
+                </div>
+            </section>
+
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+<!-- Link External JavaScript -->
+<script src="sign_up_as_a_tutor.js" defer></script>
+
+</html>
