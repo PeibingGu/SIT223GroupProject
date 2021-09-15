@@ -31,7 +31,6 @@ li {
 li a{
   text-decoration: none;
   cursor: pointer;
-  
 }
 
 
@@ -152,13 +151,70 @@ nav .nav_items #collapse_menu {
     min-width: 170px;
 }
 
-
-
 #search_icon {
-  width: 20px;
+  width: 100px;
+  padding-top: 0;
+  margin-left: 10%;
+  right: 5%;
 }
 
-a#be-a-tutor-button {
+#balance_icon {
+  width: 20px;
+  padding-top: 0;
+  margin-left: 10%;
+}
+
+#appointments_icon {
+  width: 35px;
+  padding-top: 0;
+  margin-left: 10%;
+}
+
+#message_icon {
+  width: 45px;
+  padding-top: 0;
+  margin-left: 10%;
+}
+
+a#balance_button {
+    position: absolute;
+    right:  5%;
+    bottom: 21%;
+}
+
+a#appointments_button {
+    position: absolute;
+    right:  5%;
+    bottom: 21%;
+}
+
+a#chat_button {
+    position: absolute;
+    right:  5%;
+    bottom: 21%;
+}
+
+a#user_profile_button {
+    position: absolute;
+    right:  5%;
+    bottom: 21%;
+}
+
+#user_initials_container {
+  width: 50px;
+  height: 50px;
+  background-color: #C4C4C4;
+  color: black;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding-top: 0;
+  margin-left: 10%;
+}
+
+a#be_a_tutor_button {
     background-color: #ED7966;
     color: white;
     font-weight: 1000;
@@ -190,7 +246,7 @@ nav .toggle_collapse .toggle_icon{
     width: auto;
     cursor: pointer;
     margin-left: 5em;
-    padding-bottom:  5em;
+    padding-bottom: 5em;
 }
 
 .toggle_icon {
@@ -201,7 +257,7 @@ nav .toggle_collapse .toggle_icon{
 /* ================= MAIN ================ */
 
 .section-1 {
-  transform: translateY(17%);
+  transform: translateY(13%);
   background-position: right 200px;;
   background-repeat: no-repeat;
   background-size: 800px;
@@ -220,6 +276,7 @@ nav .toggle_collapse .toggle_icon{
 #heading_container {
   /* display: flex; */
   width: 90%;
+  margin-top: 2%;
   margin-bottom: 2%;
   color: #303179;
   font-size: 2em;
@@ -261,6 +318,7 @@ nav .toggle_collapse .toggle_icon{
     justify-content: start;
     align-content: center;
     padding: 0.3em 0 0.3em 0;
+    margin-top: 10px;
 }
 
 #filter_button {
@@ -341,8 +399,8 @@ nav .toggle_collapse .toggle_icon{
 /* -------- MAIN BODY CONTAINER ----------- */
 #main_body_container {
     width: 90%;
-    height: 1000px;
-    transform: translateY(22%);
+    height: 100%;
+    transform: translateY(255px);
     color: #303179;
     font-size: 2em;
     display: flex;
@@ -393,7 +451,7 @@ nav .toggle_collapse .toggle_icon{
 .show:target {display: none;}
 .show:target ~ .hide {display: block;}
 .show:target ~ .panel {
-   max-height: 2000px; 
+   max-height: 3000px; 
 }
 .show:target ~ .fade {
   margin-top: 0;
@@ -405,7 +463,7 @@ nav .toggle_collapse .toggle_icon{
   width: 100%;
 
   /* How much space is shown when collapsed*/
-  max-height: 80px;
+  max-height: 100px;
   overflow: hidden;
   transition: max-height .5s ease;
   font-size: 0.5em;
@@ -413,7 +471,7 @@ nav .toggle_collapse .toggle_icon{
 
 .fade {
   /* How much space is shown when expanded */
-  height: 40px;
+  height: 10px;
 
   /* How far up the button is */
   margin-top: -40px;
@@ -509,7 +567,13 @@ nav .toggle_collapse .toggle_icon{
 
 
 /* -------- STUDY AREA CONTAINER ----------- */
+
 /* -------- UNIT CODE/UNIT NAME CONTAINER ----------- */
+#unit_code_unit_name_container {
+  padding-top: 0em;
+}
+
+
 /* -------- UNIVERSITY CONTAINER ----------- */
 /* -------- AVAILABILITY CONTAINER ----------- */
 #availability_input {
@@ -521,16 +585,44 @@ nav .toggle_collapse .toggle_icon{
 }
 
 
-
-
-
-/* -------- UNIT CODE/UNIT NAME CONTAINER ----------- */
-#unit_code_unit_name_container {
-  padding-top: 0em;
+/* -------- RATINGS CONTAINER ----------- */
+.stars_icon {
+  display: inline-block;
+  max-width:100px;
+  max-height:60px;
+  width: auto;
+  height: auto;
+  padding-top: 0;
 }
 
+.ratings_checkbox_container p{
+  display: inline-block;
+  text-align: right;
+}
 
+.ratings_checkbox {
+  border-radius: 20px;
+}
 
+/* -------- QUALIFICATIONS CONTAINER ----------- */
+
+/* -------- PRICE PER HOUR CONTAINER ----------- */
+#price_per_hour_container {
+  margin-bottom: 50px;
+}
+
+#price_per_hour_description {
+  font-size: 0.5em;
+  margin-top: 20px;
+}
+
+#price_per_hour_input {
+  font-size: 0.1em;
+}
+
+#price_per_hour_output {
+  font-size: 0.8em;
+}
 
 
 /* -------- SEARCH RESULTS CONTAINER ----------- */
@@ -539,22 +631,65 @@ nav .toggle_collapse .toggle_icon{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
+
 }
 
+.tutor_container {
+  display: inline-block;
+  margin-left: 30px;
+  margin-bottom: 60px;
+  width: 300px;
+}
 
+.tutor_image{
+  padding-top: 0;
+}
 
+.tutor_title_container {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 8px;
+}
 
+.tutor_degrees_container {
+  font-size: 16px;
+  margin-top: 8px;
+}
 
+.tutor_ratings_container {
+  font-size: 18px;
+  margin-top: 5px;
+}
 
+.tutor_rating_value {
+  color: #C99B09;
+  font-weight: 600;
+}
 
+.tutor_rating_icon {
+  display: inline-block;
+  max-width:100px;
+  max-height:100px;
+  width: auto;
+  height: auto;
+  padding-top: 0;
+  transform: translateY(3px);
+}
 
+.tutor_number_of_ratings {
+  padding-top: 0;
+}
 
+.tutor_price_per_hour_container{
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 5px;
+}
 
-
-
-
-
-
+.tutor_price_per_hour {
+  font-weight: 600;
+}
 
 
 
@@ -637,7 +772,19 @@ nav .nav_items #collapse_menu{
  }
 
 
- #collapse_menu a#be-a-tutor-button {
+ #collapse_menu a#balance_button {
+        position: relative;
+  }
+
+   #collapse_menu a#appointments_button {
+        position: relative;
+  }
+
+   #collapse_menu a#chat_button {
+        position: relative;
+  }
+
+   #collapse_menu a#be_a_tutor_button {
         position: relative;
   }
 
@@ -646,95 +793,7 @@ nav .nav_items #collapse_menu{
     display: block;
   }
 
-  #slogan {
-  font-weight: 900;
-  font-size: 3.5rem;
-  letter-spacing: 0.3rem;
-  top: 40%;
-  }
 
-  .testimonials_heading{
-    margin-top: 0em;
-    height: 200px;
-    margin-bottom: 2em;
-  }
-
-  #testimonials_button {
-    margin-top: 1em;
-  }
-
-  #testimonials_heading {
-    margin-top: 0em;
-    font-size: 2.5em;
-  }
-
-  .testimonial_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width:  500px;
-    position: relative;
-    margin-top: 0em;
-  }
-
-
-  .testimonial_1, .testimonial_2{  
-    display: block !important;
-    text-align: center;  
-    width: 90%;
-    height: auto;
-  }
-
-    .testimonial_1{
-        margin-left: -3em;
-    }
-
-   .testimonial_1 #testimonial_picture_1 {
-        position: absolute;
-        right: 48%;
-    }
-
-  .testimonial_quote {
-    width:  90%;
-    margin-top: 7em;
-  }
-
-  .testimonial_2 {
-    margin-top: 5em;
-    margin-left: -3em;
-/*    padding-bottom: 5em;*/
-  }
-
-  .testimonial_2 #testimonial_picture_2 {
-    position: absolute;
-    right: 42%;
-  }
-
-
-
-  #registrations_heading {
-    padding-left: 2em;
-    padding-right: 2em;
-    margin-top: 2em;
-    font-weight: 700;
-  }
-
-  .registration_button {
-    width: 450px;
-  }
-
-  .registration_button_description{
-    font-size: 2em;
-    margin-top: 0;
-  }
-
-  .registration_button_number {
-   font-size: 3.5em;
-  }
-
-  .registration_button_icon{
-    display: none;
-  }
 }
 
 
