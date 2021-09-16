@@ -31,7 +31,6 @@ li {
 li a{
   text-decoration: none;
   cursor: pointer;
-  
 }
 
 
@@ -49,7 +48,6 @@ body {
   font-size: 1rem;
   background-color: var(--white-color);
   min-width: 320px;
-
 }
 
 ::placeholder {
@@ -81,7 +79,6 @@ header {
 #navbar {
   width:  100%;   
 }
-
 
 .primary_header, .secondary_header {
     width: 100%;
@@ -128,19 +125,18 @@ nav .nav_items {
 }
 
 
-nav .nav_items #collapse_menu {  
+nav .nav_items #collapse_menu {
     width:  100%;
     display:  flex;
     align-items: center;
     margin-top: 1em;
-    padding-right: 2em;  
+    padding-right: 2em;
     padding-top: 1.2em;
 }
 
 .nav_items li {
-    min-width: 110px;   
+    min-width: 110px;
 }
-
 
 .secondary_header a {
     color: #303179;
@@ -153,26 +149,26 @@ nav .nav_items #collapse_menu {
 #search_icon {
   width: 100px;
   padding-top: 0;
-  margin-left: 10%;
+  margin-left: 15%;
   right: 5%;
 }
 
 #balance_icon {
   width: 20px;
   padding-top: 0;
-  margin-left: 10%;
+  margin-left: 45%;
 }
 
 #appointments_icon {
   width: 35px;
   padding-top: 0;
-  margin-left: 10%;
+  margin-left: 15%;
 }
 
 #message_icon {
   width: 45px;
   padding-top: 0;
-  margin-left: 10%;
+  margin-left: 15%;
 }
 
 a#balance_button {
@@ -228,6 +224,15 @@ a#be_a_tutor_button {
     text-align: center;
 }
 
+a#logout_button {
+  position: absolute;
+  right:  5%;
+  background-color: white;
+  color: #303179;
+  font-size: 20px;
+  text-align: center;
+}
+
 
 .secondary_header a:hover {
     color: #ED7966;
@@ -273,7 +278,6 @@ nav .toggle_collapse .toggle_icon{
 #register_form_container {
   display: block;
   transform: translateY(130px);
-  height: 2500px;
   width: 650px;
   max-width: 90%;
   background-color: #FAE5DF;
@@ -323,9 +327,15 @@ nav .toggle_collapse .toggle_icon{
 
 
 /* -------- FORM ----------- */
+.question_container {
+  width: 100%;
+  vertical-align: middle;
+  margin-top: 50px;
+  display: inline-block;
+}
 
 .question_body_container {
-  margin: 4% 5% 0% 8%;
+  margin: 0 5% 0 8%;
 }
 
 .question_number_image{
@@ -348,6 +358,14 @@ nav .toggle_collapse .toggle_icon{
 .input_label {
   color: #303179;
   font-weight: 500;
+}
+
+.add_more_question_body_container {
+  margin: 0 5% 20px 8%;
+}
+
+.add_more_question_body_container_link {
+  margin: 20px 5% 20px 8%;
 }
 
 
@@ -400,6 +418,8 @@ nav .toggle_collapse .toggle_icon{
 .select-items {
   position: absolute;
   background-color: #ED7966;
+  border-radius: 20px;
+  border: 2px solid #303179;
   top: 100%;
   left: 0;
   right: 0;
@@ -416,7 +436,7 @@ nav .toggle_collapse .toggle_icon{
 }
 
 
-/* -------- SINGLE LINE INPUT ----------- */
+/* -------- INPUT ----------- */
 
 .input_container {
     margin: 0% 5% 0% 5%;
@@ -449,6 +469,25 @@ nav .toggle_collapse .toggle_icon{
     box-shadow: 0 0 10px #ee985f;
 }
 
+.textarea_input {
+  background-color: #ED7966;
+  border-radius: 15px;
+  width: 90%;
+  color: white;
+  font-size: 1em;
+  opacity: 1;
+  padding-left: 2%;
+  padding-top: 2%;
+  border: none;
+  margin-bottom: 1%;
+}
+
+.textarea_input:focus {
+  outline: none;
+  border-color: #719ECE;
+  box-shadow: 0 0 10px #ee985f;
+}
+
 #password_information_text {
   display: flex;
   flex-wrap: wrap;
@@ -467,6 +506,7 @@ nav .toggle_collapse .toggle_icon{
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 #register_button {
@@ -481,37 +521,9 @@ nav .toggle_collapse .toggle_icon{
     border: none;
 }
 
-#bottom_links_container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 6%;
-    font-size: 1.5em;
-    color: #303179;
-    font-weight: 600;
-}
-
-.bottom_text {
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    margin-top: 2%;
-    margin-bottom: 3%;
-    text-align: center;
-}
-
 
 
 /* -------- 1ST QUESTION ----------- */
-
-#level_of_qualification_container {
-  width: 100%;
-  vertical-align: middle;
-  margin-top: 50px;
-  display: inline-block;
-}
 
 #degree_level_input_container {
   display: inline-block;
@@ -538,11 +550,39 @@ nav .toggle_collapse .toggle_icon{
 }
 
 
+/* -------- 2ND QUESTION ----------- */
+
+#question_body_container {
+  width: 100%;
+  vertical-align: middle;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+#unit_code_container {
+  display: inline-block;
+  width: 30%;
+}
+
+#unit_code_input {
+  display: inline-block;
+  width: 80%;
+}
+
+#unit_name_container {
+  display: inline-block;
+}
+
+#unit_name_input {
+  display: inline-block;
+  width: 120%;
+}
 
 
-
-
-
+/* -------- 3RD QUESTION ----------- */
+/* -------- 4TH QUESTION ----------- */
+/* -------- 5TH QUESTION ----------- */
+/* -------- 6TH QUESTION ----------- */
 
 
 
@@ -550,21 +590,8 @@ nav .toggle_collapse .toggle_icon{
 
 /* =============== MEDIA QUERIES ======= */
 
-
-
-/* For screen size greater than 768px */
+/* For screen size smaller than 990px */
 @media only screen and (max-width: 990px) {
-
-  /* ================= HEADER ================ */
-  
-  #information_heading{
-    padding-top: 3.5em;
-  }
-  .section-3 {
-    padding-top: 12vh;
-    background-image: none;
-    background-color: #FFF4F3;
-  }
 
   header {
    padding-bottom: 5em;
@@ -575,7 +602,7 @@ nav .toggle_collapse .toggle_icon{
     display: none;
   }
 
-  .secondary_header { 
+  .secondary_header {
     padding-top: 0;
   }
 
@@ -630,114 +657,21 @@ nav .nav_items #collapse_menu{
     display: block;
   }
 
-  #slogan {
-  font-weight: 900;
-  font-size: 3.5rem;
-  letter-spacing: 0.3rem;
-  top: 40%;
-  }
-
-  .testimonials_heading{
-    margin-top: 0em;
-    height: 200px;
-    margin-bottom: 2em;
-  }
-
-  #testimonials_button {
-    margin-top: 1em;
-  }
-
-  #testimonials_heading {
-    margin-top: 0em;
-    font-size: 2.5em;
-  }
-
-  .testimonial_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width:  500px;
-    position: relative;
-    margin-top: 0em;
-  }
+}
 
 
-  .testimonial_1, .testimonial_2{  
-    display: block !important;
-    text-align: center;  
-    width: 90%;
-    height: auto;
-  }
+/* For screen size smaller than 600px */
+@media only screen and (max-width: 600px) {
 
-    .testimonial_1{
-        margin-left: -3em;
-    }
-
-   .testimonial_1 #testimonial_picture_1 {
-        position: absolute;
-        right: 48%;
-    }
-
-  .testimonial_quote {
-    width:  90%;
-    margin-top: 7em;
-  }
-
-  .testimonial_2 {
-    margin-top: 5em;
-    margin-left: -3em;
-/*    padding-bottom: 5em;*/
-  }
-
-  .testimonial_2 #testimonial_picture_2 {
-    position: absolute;
-    right: 42%;
-  }
-
-
-
-  #registrations_heading {
-    padding-left: 2em;
-    padding-right: 2em;
-    margin-top: 2em;
-    font-weight: 700;
-  }
-
-  .registration_button {
-    width: 450px;
-  }
-
-  .registration_button_description{
-    font-size: 2em;
-    margin-top: 0;
-  }
-
-  .registration_button_number {
-   font-size: 3.5em;
-  }
-
-  .registration_button_icon{
+    #sign_up_as_tutor_description {
     display: none;
   }
 }
 
-
-@media only screen and (max-width: 600px) {
-    #slogan {
-      top:10vw;
-    }
-}
-
+/* For screen size smaller than 450px */
 @media only screen and (max-width: 450px) {
     nav .nav_items #collapse_menu {
     width:  450px !important;
     padding-left: 10%;
     }
-
-    #slogan {
-      font-size: 2em;
-      top: 50vw;
-    }
 }
-
-
