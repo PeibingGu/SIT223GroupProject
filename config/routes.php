@@ -54,8 +54,12 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/', ['controller' => 'Pages', 'action' => 'index']);
     $builder->connect('/register', ['controller' => 'Users', 'action' => 'register']);
     $builder->connect('/forgot-password', ['controller' => 'Users', 'action' => 'forgotPassword']);
-    $builder->connect('/sign-in', ['controller' => 'Users', 'action' => 'signIn']);
-    $builder->connect('/sign-out', ['controller' => 'Users', 'action' => 'signOut']);
+    $builder->connect('/login', ['controller' => 'Users', 'action' => 'login']);
+    $builder->connect('/register', ['controller' => 'Users', 'action' => 'register']);
+    $builder->connect('/register-form/*', ['controller' => 'Users', 'action' => 'registerForm']);
+    $builder->connect('/verify-otp/*', ['controller' => 'Users', 'action' => 'verifyOtp']);
+
+    //$builder->connect('/sign-out', ['controller' => 'Users', 'action' => 'signOut']);
 
     /*
      * ...and connect the rest of 'Pages' controller's URLs.

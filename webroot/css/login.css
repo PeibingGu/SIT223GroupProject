@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ================= VARIABLE ================ */
+:root {
+  --primary-color: hsl(9, 94%, 61%);
+  --primary-color-alt: hsl(14, 81%, 55%);
+}
+
+/* ================= BASE ==================== */
+
+
+ul {
+    width: 100%;
+    list-style: none;
+    display:  flex;
+    justify-content: left;
+}
+
+li {
+    margin-right: 1em;
+}
+
+li a{
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+  padding-top: 1em;
+
+}
+
+.no-x-padding {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.no-x-margin {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/*
+.main {
+  margin-top:108px;
+}
+
+@media only screen and (min-width: 990px) {
+  .main {
+    margin-top: 168px;
+  }
+  .section-1 {
+    max-height:
+  }
+}
+*/
+
+
+/* -- BODY -- */
+body {
+  font-family: Barlow;
+  font-size: 1rem;
+  background-color: var(--white-color);
+  min-width: 320px;
+
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+
+.link {
+    text-decoration: underline;
+}
+
+.container {
+    width:  100%;
+    overflow-x: hidden;
+}
+
+/* ================= HEADER ================ */
+
+
+header {
+  width:  100%;
+  height:  auto;
+  background-color: white;
+  box-shadow: 10px 3px 5px grey;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+}
+
+#navbar {
+  width:  100%;
+}
+
+
+.primary_header, .secondary_header {
+    width: 100%;
+    padding-top:  1em;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.primary_header {
+    padding-left: 2.5rem;
+}
+
+.secondary_header {
+    padding-left:  2rem;
+    padding-bottom: 2rem;
+    height:  12vh;
+}
+
+
+.primary_header a {
+    background-color: #303179;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: .06rem;
+    font-weight: 900;
+    padding: .3em .5em .4em .5em;
+    border-radius: 10px;
+    margin-right: .4rem;
+}
+
+nav {
+    width:  100%;
+    display: flex;
+    justify-content: right;
+}
+
+nav .nav_items {
+    width: 100%;
+    padding-left:  2em;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+nav .nav_items #collapse_menu {
+    width:  100%;
+    display:  flex;
+    align-items: center;
+    margin-top: 1em;
+    padding-right: 2em;
+    padding-top: 1.2em;
+}
+
+.nav_items li {
+    min-width: 130px;
+}
+
+
+.secondary_header a {
+    color: #303179;
+    font-size: 1.4em;
+    letter-spacing: 0.01em;
+    font-weight: 700;
+    min-width: 170px;
+}
+
+a.login-signup-button{
+    background-color: #ED7966;
+    color: #303179!important;
+    font-weight: 1000;
+    border-radius: 10px;
+    padding: .4em 1.1em .4em 1.1em;
+    font-size: 1.21em;
+    font-weight: 800;
+    letter-spacing: .1em;
+    bottom: 21%;
+}
+
+
+.secondary_header a:hover {
+    color: #ED7966;
+}
+
+
+.bars_color{
+    color:  #303179;
+}
+
+
+nav .toggle_collapse .toggle_icon{
+    position:  absolute;
+    top:  3vh;
+    right: 2.5em;
+    width: auto;
+    cursor: pointer;
+    margin-left: 5em;
+    padding-bottom:  5em;
+}
+
+.toggle_icon {
+    visibility: hidden;
+}
+
+
+/* ================= MAIN ================ */
+
+/* -------- LOGIN SECTION ----------- */
+.section-1 {
+  height: 100vh;
+  background-position: right 200px;;
+  background-repeat: no-repeat;
+  background-size: 800px;
+  background-color: #FFFAFA;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+#login_container {
+    transform: translateY(22%);
+    height: 75vh;
+    width: 600px;
+    max-width: 90%;
+    background-color: #FAE5DF;
+    border-radius: 20px;
+    box-shadow: 5px 10px 5px #888888;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#uTute_logo {
+    width: 150px;
+}
+
+.input_container {
+    margin: 8% 5% 0% 5%;
+}
+
+.input_heading {
+    color: #303179;
+    font-weight: 600;
+    font-size: 1.4em;
+    margin: 4% 5% 2% 4%;
+}
+
+.single_line_input {
+    background-color: #ED7966;
+    width: 100%;
+    height: 60px;
+    border-radius: 40px;
+    color: white;
+    font-size: 1.5em;
+    opacity: 1;
+    padding-left: 6%;
+    border: none;
+    margin-bottom: 1%;
+}
+
+.single_line_input:focus {
+    outline: none;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #ee985f;
+}
+
+#sign_in_button_container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+#sign_in_button {
+    font-size: 1.5em;
+    color: white;
+    background-color: #303179;
+    margin-top: 6%;
+    width: 170px;
+    height: 60px;
+    font-weight: 550;
+    border-radius: 30px;
+    border: none;
+}
+
+#bottom_links_container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 6%;
+    font-size: 1.5em;
+    color: #303179;
+    font-weight: 600;
+}
+
+.bottom_text {
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+
+
+
+/* -------- FOOTER ----------- */
+
+/* =============== MEDIA QUERIES ======= */
+
+
+
+/* For screen size greater than 768px */
+@media only screen and (max-width: 990px) {
+
+  /* ================= HEADER ================ */
+
+  #information_heading{
+    padding-top: 3.5em;
+  }
+  .section-3 {
+    padding-top: 12vh;
+    background-image: none;
+    background-color: #FFF4F3;
+  }
+
+  header {
+   padding-bottom: 5em;
+   height: 11vh;
+  }
+
+  .primary_header {
+    display: none;
+  }
+
+  .secondary_header {
+    padding-top: 0;
+  }
+
+  .toggle_icon {
+    visibility: visible;
+  }
+
+  nav {
+    padding-top: 9.5em;
+    margin-top: 9em;
+  }
+
+  nav .nav_items{
+    justify-content: flex-end;
+    margin-right: 5%;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 2em;
+  }
+
+
+nav .nav_items #collapse_menu{
+    display: none;
+    flex-direction: column !important;
+    background-color: rgba(255,191,191,.9);
+    padding-bottom: .5em;
+    box-shadow: -3px 3px 5px grey;
+    width:  250px important;
+    margin-top: 1em;
+    padding-left: 6%;
+  }
+
+
+  .toggle_collapse:hover #collapse_menu {
+    display: block;
+  }
+
+
+ #collapse_menu li  {
+    margin-bottom: 1.5em;
+    margin-left: 2.5em;
+    min-width: 170px;
+ }
+
+
+ #collapse_menu a.login-signup-button {
+        position: relative;
+  }
+
+  .icon {
+    float: right;
+    display: block;
+  }
+
+  #slogan {
+  font-weight: 900;
+  font-size: 3.5rem;
+  letter-spacing: 0.3rem;
+  top: 40%;
+  }
+
+  .testimonials_heading{
+    margin-top: 0em;
+    height: 200px;
+    margin-bottom: 2em;
+  }
+
+  #testimonials_button {
+    margin-top: 1em;
+  }
+
+  #testimonials_heading {
+    margin-top: 0em;
+    font-size: 2.5em;
+  }
+
+  .testimonial_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:  500px;
+    position: relative;
+    margin-top: 0em;
+  }
+
+
+  .testimonial_1, .testimonial_2{
+    display: block !important;
+    text-align: center;
+    width: 90%;
+    height: auto;
+  }
+
+    .testimonial_1{
+        margin-left: -3em;
+    }
+
+   .testimonial_1 #testimonial_picture_1 {
+        position: absolute;
+        right: 48%;
+    }
+
+  .testimonial_quote {
+    width:  90%;
+    margin-top: 7em;
+  }
+
+  .testimonial_2 {
+    margin-top: 5em;
+    margin-left: -3em;
+/*    padding-bottom: 5em;*/
+  }
+
+  .testimonial_2 #testimonial_picture_2 {
+    position: absolute;
+    right: 42%;
+  }
+
+
+
+  #registrations_heading {
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-top: 2em;
+    font-weight: 700;
+  }
+
+  .registration_button {
+    width: 450px;
+  }
+
+  .registration_button_description{
+    font-size: 2em;
+    margin-top: 0;
+  }
+
+  .registration_button_number {
+   font-size: 3.5em;
+  }
+
+  .registration_button_icon{
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+    #slogan {
+      top:10vw;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    nav .nav_items #collapse_menu {
+    width:  450px !important;
+    padding-left: 10%;
+    }
+
+    #slogan {
+      font-size: 2em;
+      top: 50vw;
+    }
+}

@@ -418,4 +418,9 @@ return [
     'Session' => [
         'defaults' => 'php',
     ],
+    'Domain' => [
+      'name' => 'uTute',
+      'url' => 'https://utute.com.au',
+      'company_name' => 'uTute Company',
+    ],
 ];

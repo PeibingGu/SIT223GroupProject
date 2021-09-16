@@ -105,7 +105,9 @@ header {
     height:  12vh;
 }
 
-
+button:hover {
+  cursor: pointer;
+}
 .primary_header a {
     background-color: #303179;
     color: white;
