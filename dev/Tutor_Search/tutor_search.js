@@ -1,6 +1,6 @@
 // ================== Section: Header ===================================
 
-//Vue object: Page Title
+//Vue instance for User Initials
 var app = new Vue({
     el: '#user_initials_container',
     data: {
@@ -28,7 +28,7 @@ Vue.component("tutor-component", {
 
         '<div class="tutor_degrees_container"> ' +
             '<p class="tutor_degrees">' +
-                '<span>{{degree}}</span>' +
+                '<span>{{degree}} </span>' +
                 '<span>{{university}}, </span>' +
                 '<span>{{year_of_graduation}}</span>' +
             '</p>' +
@@ -51,9 +51,7 @@ Vue.component("tutor-component", {
 var tutor_container = new Vue({
 	el: "#search_results_container",
     data: {
-      // Array containing the following properties of each Country:
-        // 1: Country Name (name)
-        // 2: Flag Image image source (image_src)
+      // Array containing the following properties of each Tutor:
       tutors: [
             { name: 'Jane Citizen', image_src: '../Assets/Tutor_Search/tutor_1.png', degree_type: 'Bsc, Msc', degree: 'Bachelor of Computer Science, Master of AI', university: 'Deakin University', year_of_graduation: '2022', rating_value: '4.7', rating_icon_src: '../Assets/Icons/4_point_5_stars.png', number_of_ratings: '2,789', total_price_per_hour: '16.99' },
 

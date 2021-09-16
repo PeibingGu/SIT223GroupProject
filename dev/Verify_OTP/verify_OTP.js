@@ -46,7 +46,7 @@ function onKeyUpEvent(index, event) {
     if (getCodeBoxElement(index).value.length === 1) {
 
         // If OTP code box that the focus is on is not the final one
-        if (index !== 4) {
+        if (index !== 6) {
             // Move the focus to the next OTP code box
             getCodeBoxElement(index + 1).focus();
 

@@ -34,6 +34,7 @@
                 <ul>
                     <li><a href="login.html">Home</a></li>
                     <li><a href="#">Book Appointment</a></li>
+                    <li><a href="../Home/home.html" id="logout_button">Logout</a></li>
                 </ul>
             </div>
             <div class="secondary_header" id="secondary_header">
@@ -49,8 +50,9 @@
                             </div>
                             <ul id="collapse_menu">
                                 <li><a href="" id="browse_tutor_button">Browse Tutor</a></li>
-                                <li id="search_button"><a href=""> <img id="search_icon"
-                                            src="..//Assets/Icons/search_icon.png" alt="Search Icon"></a></li>
+                                <li id="search_button"><a href="../Tutor_Search/tutor_search.html"> <img
+                                            id="search_icon" src="..//Assets/Icons/search_icon.png"
+                                            alt="Search Icon"></a></li>
 
                                 <li id="balance_button"><a href=""> <img id="balance_icon"
                                             src="..//Assets/Icons/dolar_sign_icon.png" alt="Dolar Sign Icon"></a>
@@ -67,7 +69,8 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li><a href="#be_a_tutor_menu_button" id="be_a_tutor_button">Be a Tutor</a></li>
+                                <li><a href="../Sign_Up_As_A_Tutor/sign_up_as_a_tutor.html" id="be_a_tutor_button">Be a
+                                        Tutor</a></li>
                             </ul>
                         </div>
                     </div>
@@ -581,9 +584,9 @@
                             <p class="side_panel_heading">Price Per Hour</p>
                             <p id="price_per_hour_description">Select the Maximum Price Per Hour</p>
 
-                            <input type="range" value="24" min="15" max="80"
+                            <input type="range" value="50" min="15" max="150"
                                 oninput="this.nextElementSibling.value = this.value"> $
-                            <output id="price_per_hour_output">24</output>
+                            <output id="price_per_hour_output">50</output>
 
                         </div>
 
@@ -622,9 +625,6 @@
                                 A$<span class="tutor_price_per_hour">16.99</span>/hour
                             </div>
                         </div> -->
-
-
-
 
                         <tutor-component id="tutor_component" v-for="tutor in tutors" v-bind:image_src="tutor.image_src"
                             v-bind:name="tutor.name" v-bind:degree_type="tutor.degree_type" v-bind:degree="tutor.degree"

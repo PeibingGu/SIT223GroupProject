@@ -48,7 +48,6 @@ body {
   font-size: 1rem;
   background-color: var(--white-color);
   min-width: 320px;
-
 }
 
 ::placeholder {
@@ -67,8 +66,6 @@ body {
 }
 
 /* ================= HEADER ================ */
-
-
 header {
   width:  100%;
   height:  auto;
@@ -82,7 +79,6 @@ header {
 #navbar {
   width:  100%;   
 }
-
 
 .primary_header, .secondary_header {
     width: 100%;
@@ -129,19 +125,18 @@ nav .nav_items {
 }
 
 
-nav .nav_items #collapse_menu {  
+nav .nav_items #collapse_menu {
     width:  100%;
     display:  flex;
     align-items: center;
     margin-top: 1em;
-    padding-right: 2em;  
+    padding-right: 2em;
     padding-top: 1.2em;
 }
 
 .nav_items li {
-    min-width: 110px;   
+    min-width: 110px;
 }
-
 
 .secondary_header a {
     color: #303179;
@@ -154,26 +149,26 @@ nav .nav_items #collapse_menu {
 #search_icon {
   width: 100px;
   padding-top: 0;
-  margin-left: 10%;
+  margin-left: 15%;
   right: 5%;
 }
 
 #balance_icon {
   width: 20px;
   padding-top: 0;
-  margin-left: 10%;
+  margin-left: 45%;
 }
 
 #appointments_icon {
   width: 35px;
   padding-top: 0;
-  margin-left: 10%;
+  margin-left: 15%;
 }
 
 #message_icon {
   width: 45px;
   padding-top: 0;
-  margin-left: 10%;
+  margin-left: 15%;
 }
 
 a#balance_button {
@@ -227,6 +222,15 @@ a#be_a_tutor_button {
     right:  5%;
     bottom: 21%;
     text-align: center;
+}
+
+a#logout_button {
+  position: absolute;
+  right:  5%;
+  background-color: white;
+  color: #303179;
+  font-size: 20px;
+  text-align: center;
 }
 
 
@@ -400,7 +404,7 @@ nav .toggle_collapse .toggle_icon{
 #main_body_container {
     width: 90%;
     height: 100%;
-    transform: translateY(255px);
+    transform: translateY(275px);
     color: #303179;
     font-size: 2em;
     display: flex;
@@ -564,8 +568,6 @@ nav .toggle_collapse .toggle_icon{
 }
 
 
-
-
 /* -------- STUDY AREA CONTAINER ----------- */
 
 /* -------- UNIT CODE/UNIT NAME CONTAINER ----------- */
@@ -692,22 +694,15 @@ nav .toggle_collapse .toggle_icon{
 }
 
 
-
-
-
-
-
 /* -------- FOOTER ----------- */
 
 /* =============== MEDIA QUERIES ======= */
 
-
-
-/* For screen size greater than 768px */
+/* For screen size greater than 990px */
 @media only screen and (max-width: 990px) {
 
   /* ================= HEADER ================ */
-  
+
   #information_heading{
     padding-top: 3.5em;
   }
@@ -759,7 +754,6 @@ nav .nav_items #collapse_menu{
     padding-left: 6%;
   }
 
-
   .toggle_collapse:hover #collapse_menu {
     display: block;
   }
@@ -796,13 +790,14 @@ nav .nav_items #collapse_menu{
 
 }
 
-
+/* For screen size greater than 600px */
 @media only screen and (max-width: 600px) {
     #slogan {
       top:10vw;
     }
 }
 
+/* For screen size greater than 450px */
 @media only screen and (max-width: 450px) {
     nav .nav_items #collapse_menu {
     width:  450px !important;
@@ -814,5 +809,3 @@ nav .nav_items #collapse_menu{
       top: 50vw;
     }
 }
-
-
