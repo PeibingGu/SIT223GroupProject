@@ -33,8 +33,14 @@
                           'bootstrap.min',
                           'bootstrap-datepicker',
                          // 'home',
-                          'search',
+                          // 'search',
                           ]) ?>
+
+    <?php if ($this->request->getParam('action') == 'search'): ?>
+      <?=$this->Html->css(['search'])?>
+    <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
+      <?=$this->Html->css(['upgrade'])?>
+    <?php endif; ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -64,7 +70,12 @@
                              ]) ?>
 
     <!-- Link External JavaScript -->
+    <?php if ($this->request->getParam('action') == 'search'): ?>
     <script src="/js/search.js" defer></script>
+  <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
+  <script src="/js/upgrade.js" defer></script>
+
+  <?php endif;?>
 </body>
 </html>
 

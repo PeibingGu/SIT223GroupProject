@@ -267,5 +267,29 @@ class UsersController extends AppController
       $this->viewBuilder()->setLayout('user');
     }
 
+    public function upgrade()
+    {
+
+        $userId = $this->Authentication->getIdentity()['user_id'];
+        $user = $this->Users->getUserById($userId);
+
+        if (!empty($user['is_tutor']))
+        {
+          $this->Flash->success("You have upgraded to be tutor already");
+          return $this->redirect("/search");
+        }
+
+        $this->Uni = TableRegistry::getTableLocator()->get('Universities', ['table' => 'universities']);
+        $universityList = $this->Uni->getAllUniversities();
+
+        
+
+
+        $menuItem = 'upgrade';
+        $pageTitle = 'uTute | Be a Tutor';
+        $this->set(compact(['menuItem', 'pageTitle', 'user',]));
+        $this->viewBuilder()->setLayout('user');
+
+    }
 
 }
