@@ -26,7 +26,7 @@ class UsersController extends AppController
       parent::beforeFilter($event);
       // Configure the login action to not require authentication, preventing
       // the infinite redirect loop issue
-      $this->Authentication->addUnauthenticatedActions(['login', 'register', 'verifyOtp', 'registerForm', 'signOut']);
+      $this->Authentication->addUnauthenticatedActions(['login', 'register', 'verifyOtp', 'registerForm', 'logout']);
 
       // $this->Users = TableRegistry::getTableLocator()->get('Users', ['table' => 'users']);
     }
@@ -40,12 +40,12 @@ class UsersController extends AppController
         if ($result->isValid()) {
           if (!$this->Authentication->getIdentity()['is_tutor']) {
             //tutee
-
             $this->Flash->success("G'day");
+            return $this->redirect('/search');
           } else {
             //tutor
-
             $this->Flash->success("G'day");
+            return $this->redirect('/search');
           }
         } else {
           $this->Flash->error(__('Invalid Email or Password'));
@@ -243,8 +243,29 @@ class UsersController extends AppController
     }
 
 
-    public function signOut()
+    public function logout()
     {
-
+      $result = $this->Authentication->getResult();
+      // regardless of POST or GET, redirect if user is logged in
+      if ($result->isValid()) {
+          $this->Authentication->logout();
+          $this->Flash->error('You have logged out');
+      }
+      return $this->redirect('/login');
     }
+
+    public function search()
+    {
+      $userId = $this->Authentication->getIdentity()['user_id'];
+      $user = $this->Users->getUserById($userId);
+      $this->Uni = TableRegistry::getTableLocator()->get('Universities', ['table' => 'universities']);
+      $universityList = $this->Uni->getAllUniversities();
+
+      $menuItem = 'search';
+      $pageTitle = 'uTute | Tutor Search';
+      $this->set(compact(['menuItem', 'pageTitle', 'user', 'universityList']));
+      $this->viewBuilder()->setLayout('user');
+    }
+
+
 }

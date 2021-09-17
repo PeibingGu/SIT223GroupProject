@@ -58,6 +58,9 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/register', ['controller' => 'Users', 'action' => 'register']);
     $builder->connect('/register-form/*', ['controller' => 'Users', 'action' => 'registerForm']);
     $builder->connect('/verify-otp/*', ['controller' => 'Users', 'action' => 'verifyOtp']);
+    $builder->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
+    $builder->connect('/search', ['controller' => 'Users', 'action' => 'search']);
+    $builder->connect('/upgrade', ['controller' => 'Users', 'action' => 'upgrade']);
 
     //$builder->connect('/sign-out', ['controller' => 'Users', 'action' => 'signOut']);
 

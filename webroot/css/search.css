@@ -1,0 +1,820 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ================= VARIABLE ================ */
+:root {
+  --primary-color: hsl(9, 94%, 61%);
+  --primary-color-alt: hsl(14, 81%, 55%);
+}
+
+/* ================= BASE ==================== */
+
+
+ul {
+    width: 100%;
+    list-style: none;
+    display:  flex;
+    justify-content: left;
+}
+
+li {
+    margin-right: 1em;
+}
+
+li a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+  padding-top: 1em;
+
+}
+
+
+/* -- BODY -- */
+body {
+  font-family: Barlow;
+  font-size: 1rem;
+  background-color: var(--white-color);
+  min-width: 320px;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+
+.link {
+    text-decoration: underline;
+}
+
+.container {
+    width:  100%;
+    overflow-x: hidden;
+}
+
+.main {
+
+  margin-top:68px;
+}
+@media only screen and (min-width: 990px) {
+  .main {
+    margin-top: 128px;
+  }
+}
+/* ================= HEADER ================ */
+header {
+  width:  100%;
+  height:  auto;
+  background-color: white;
+  box-shadow: 10px 3px 5px grey;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+}
+
+#navbar {
+  width:  100%;
+}
+
+.primary_header, .secondary_header {
+    width: 100%;
+    padding-top:  1em;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.primary_header {
+    padding-left: 2.5rem;
+}
+
+.secondary_header {
+    padding-left:  2rem;
+    padding-bottom: 2rem;
+    height:  12vh;
+}
+
+
+.primary_header a {
+    background-color: #303179;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: .06rem;
+    font-weight: 900;
+    padding: .3em .5em .4em .5em;
+    border-radius: 10px;
+    margin-right: .4rem;
+}
+
+nav {
+    width:  100%;
+    display: flex;
+    justify-content: right;
+}
+
+nav .nav_items {
+    width: 100%;
+    padding-left:  2em;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+nav .nav_items #collapse_menu {
+    width:  100%;
+    display:  flex;
+    align-items: center;
+    margin-top: 1em;
+    padding-right: 2em;
+    padding-top: 1.2em;
+}
+
+.nav_items li {
+    min-width: 110px;
+}
+
+.secondary_header a {
+    color: #303179;
+    font-size: 1.4em;
+    letter-spacing: 0.01em;
+    font-weight: 700;
+    min-width: 170px;
+}
+
+#search_icon {
+  width: 100px;
+  padding-top: 0;
+  margin-left: 15%;
+  right: 5%;
+}
+
+#balance_icon {
+  width: 20px;
+  padding-top: 0;
+  margin-left: 45%;
+}
+
+#appointments_icon {
+  width: 35px;
+  padding-top: 0;
+  margin-left: 15%;
+}
+
+#message_icon {
+  width: 45px;
+  padding-top: 0;
+  margin-left: 15%;
+}
+
+a#balance_button {
+    position: absolute;
+    right:  5%;
+    bottom: 21%;
+}
+
+a#appointments_button {
+    position: absolute;
+    right:  5%;
+    bottom: 21%;
+}
+
+a#chat_button {
+    position: absolute;
+    right:  5%;
+    bottom: 21%;
+}
+
+a#user_profile_button {
+    position: absolute;
+    right:  5%;
+    bottom: 21%;
+}
+
+#user_initials_container {
+  width: 50px;
+  height: 50px;
+  background-color: #C4C4C4;
+  color: black;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding-top: 0;
+  margin-left: 10%;
+}
+
+a#be_a_tutor_button {
+    background-color: #ED7966;
+    color: white;
+    font-weight: 1000;
+    border-radius: 10px;
+    padding: .4em 0 .4em 0;
+    font-size: 1.21em;
+    font-weight: 800;
+    letter-spacing: 0em;
+    position: absolute;
+    right:  5%;
+    bottom: 21%;
+    text-align: center;
+}
+
+a#logout_button {
+  position: absolute;
+  right:  5%;
+  background-color: white;
+  color: #303179;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+.secondary_header a:hover {
+    color: #ED7966;
+}
+
+.bars_color{
+    color:  #303179;
+}
+
+
+nav .toggle_collapse .toggle_icon{
+    position:  absolute;
+    top:  3vh;
+    right: 2.5em;
+    width: auto;
+    cursor: pointer;
+    margin-left: 5em;
+    padding-bottom: 5em;
+}
+
+.toggle_icon {
+    visibility: hidden;
+}
+
+
+/* ================= MAIN ================ */
+
+.section-1 {
+  transform: translateY(13%);
+  background-position: right 200px;;
+  background-repeat: no-repeat;
+  background-size: 800px;
+  background-color: #FFFAFA;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  height: 100%;
+  width: 100%;
+}
+
+/* -------- HEADING CONTAINER ----------- */
+#heading_container {
+  /* display: flex; */
+  width: 90%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  color: #303179;
+  font-size: 2em;
+}
+
+
+/* -------- INFORMATION CONTAINER ----------- */
+#information_container {
+    width: 90%;
+    color: #303179;
+    font-size: 2em;
+    border: 1px solid #B0ACAA;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: center;
+    padding: 0.3em;
+}
+
+#information_icon {
+  width: 80px;
+  padding-top: 0;
+}
+
+#information_text {
+  font-size: 0.6em;
+  text-align: center;
+  padding-top: 1%;
+}
+
+
+/* -------- SELECTIONS CONTAINER ----------- */
+#selections_container {
+    width: 90%;
+    color: #303179;
+    font-size: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: center;
+    padding: 0.3em 0 0.3em 0;
+    margin-top: 10px;
+}
+
+#filter_button {
+  padding: 0 0.5em 1em 0.2em;
+  background-color: #FFFAFA;
+  border: 1px solid #303179;
+  outline: none;
+}
+
+#filter_button img {
+  width: 70px;
+}
+
+#filter_button:hover {
+  background-color: #FAE5DF;
+}
+
+
+
+/* -------- MOST POPOLUAR DROPDOWN BUTTON ----------- */
+
+.dropbtn {
+  margin-left: 8px;
+  background-color: #FFFAFA;
+  border: 1px solid #303179;
+  border-radius: 10px;
+  padding: 0 10px 10px 10px;
+}
+
+.dropbtn img {
+  width: 130px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-size: 0.4em;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+
+.dropdown:hover .dropbtn {
+  background-color: #FAE5DF;
+}
+
+
+/* -------- RESULTS COUNT CONTAINER ----------- */
+
+#results_count_container {
+  margin: 0.3em 0 0 auto;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+
+
+
+
+/* -------- MAIN BODY CONTAINER ----------- */
+#main_body_container {
+    width: 90%;
+    height: 100%;
+    transform: translateY(275px);
+    color: #303179;
+    font-size: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: center;
+    padding: 0;
+    display: table;
+    padding-top: 0.5em;
+    position: fixed;
+}
+
+/* -------- SIDE PANEL CONTAINER ----------- */
+#side_panel_container {
+  width: 245px;
+  display: table-cell;
+}
+
+.side_panel_heading {
+  padding-top: 0.8em;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+
+
+/* -------- SHOW MORE/SHOW LESS ----------- */
+.panel-wrapper {
+  position: relative;
+  margin-top: 0;
+}
+
+.btn {
+  color: #ED7966;
+  background: #FFFAFA;
+  text-decoration: none;
+  width: 100%;
+  font-size: 0.6em;
+}
+.show, .hide {
+  position: absolute;
+  bottom: -1em;
+  z-index: 100;
+  text-align: left;
+}
+
+.hide {display: none;}
+.show:target {display: none;}
+.show:target ~ .hide {display: block;}
+.show:target ~ .panel {
+   max-height: 3000px;
+}
+.show:target ~ .fade {
+  margin-top: 0;
+}
+
+.panel {
+  position: relative;
+  margin: 1em auto;
+  width: 100%;
+
+  /* How much space is shown when collapsed*/
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height .5s ease;
+  font-size: 0.5em;
+}
+
+.fade {
+  /* How much space is shown when expanded */
+  height: 10px;
+
+  /* How far up the button is */
+  margin-top: -40px;
+  position: relative;
+}
+
+
+
+
+/* -------- CHECKBOX LIST ----------- */
+
+/* The container */
+.checkbox_container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 0.85em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border: 1px solid #303179;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox_container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox_container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox_container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox_container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/* -------- SINGLE LINE INPUT ----------- */
+.single_line_input {
+  width: 200px;
+  margin-top: 10px;
+  color: #303179;
+  border: 1px solid #303179;
+  outline: none;
+  font-size: 0.7em;
+}
+
+
+/* -------- STUDY AREA CONTAINER ----------- */
+
+/* -------- UNIT CODE/UNIT NAME CONTAINER ----------- */
+#unit_code_unit_name_container {
+  padding-top: 0em;
+}
+
+
+/* -------- UNIVERSITY CONTAINER ----------- */
+/* -------- AVAILABILITY CONTAINER ----------- */
+#availability_input {
+  width: 160px;
+  background-image:url('../Assets/Icons/calendar_icon.png');
+  background-repeat:no-repeat;
+  background-size: 20px;
+  background-position:right top;  padding-right:10px;
+}
+
+
+/* -------- RATINGS CONTAINER ----------- */
+.stars_icon {
+  display: inline-block;
+  max-width:100px;
+  max-height:60px;
+  width: auto;
+  height: auto;
+  padding-top: 0;
+}
+
+.ratings_checkbox_container p{
+  display: inline-block;
+  text-align: right;
+}
+
+.ratings_checkbox {
+  border-radius: 20px;
+}
+
+/* -------- QUALIFICATIONS CONTAINER ----------- */
+
+/* -------- PRICE PER HOUR CONTAINER ----------- */
+#price_per_hour_container {
+  margin-bottom: 50px;
+}
+
+#price_per_hour_description {
+  font-size: 0.5em;
+  margin-top: 20px;
+}
+
+#price_per_hour_input {
+  font-size: 0.1em;
+}
+
+#price_per_hour_output {
+  font-size: 0.8em;
+}
+
+
+/* -------- SEARCH RESULTS CONTAINER ----------- */
+#search_results_container {
+  display: table-cell;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.tutor_container {
+  display: inline-block;
+  margin-left: 30px;
+  margin-bottom: 60px;
+  width: 300px;
+}
+
+.tutor_image{
+  padding-top: 0;
+}
+
+.tutor_title_container {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.tutor_degrees_container {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.tutor_ratings_container {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.tutor_rating_value {
+  color: #C99B09;
+  font-weight: 600;
+}
+
+.tutor_rating_icon {
+  display: inline-block;
+  max-width:100px;
+  max-height:100px;
+  width: auto;
+  height: auto;
+  padding-top: 0;
+  transform: translateY(3px);
+}
+
+.tutor_number_of_ratings {
+  padding-top: 0;
+}
+
+.tutor_price_per_hour_container{
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.tutor_price_per_hour {
+  font-weight: 600;
+}
+
+
+/* -------- FOOTER ----------- */
+
+/* =============== MEDIA QUERIES ======= */
+
+/* For screen size greater than 990px */
+@media only screen and (max-width: 990px) {
+
+  /* ================= HEADER ================ */
+
+  #information_heading{
+    padding-top: 3.5em;
+  }
+  .section-3 {
+    padding-top: 12vh;
+    background-image: none;
+    background-color: #FFF4F3;
+  }
+
+  header {
+   padding-bottom: 5em;
+   height: 11vh;
+  }
+
+  .primary_header {
+    display: none;
+  }
+
+  .secondary_header {
+    padding-top: 0;
+  }
+
+  .toggle_icon {
+    visibility: visible;
+  }
+
+  nav {
+    padding-top: 9.5em;
+    margin-top: 9em;
+  }
+
+  nav .nav_items{
+    justify-content: flex-end;
+    margin-right: 5%;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 2em;
+  }
+
+
+nav .nav_items #collapse_menu{
+    display: none;
+    flex-direction: column !important;
+    background-color: rgba(255,191,191,.9);
+    padding-bottom: .5em;
+    box-shadow: -3px 3px 5px grey;
+    width:  250px !important;
+    margin-top: 1em;
+    padding-left: 6%;
+  }
+
+  .toggle_collapse:hover #collapse_menu {
+    display: block;
+  }
+
+
+ #collapse_menu li  {
+    margin-bottom: 1.5em;
+    margin-left: 2.5em;
+    min-width: 170px;
+ }
+
+
+ #collapse_menu a#balance_button {
+        position: relative;
+  }
+
+   #collapse_menu a#appointments_button {
+        position: relative;
+  }
+
+   #collapse_menu a#chat_button {
+        position: relative;
+  }
+
+   #collapse_menu a#be_a_tutor_button {
+        position: relative;
+  }
+
+  .icon {
+    float: right;
+    display: block;
+  }
+
+
+}
+
+/* For screen size greater than 600px */
+@media only screen and (max-width: 600px) {
+    #slogan {
+      top:10vw;
+    }
+}
+
+/* For screen size greater than 450px */
+@media only screen and (max-width: 450px) {
+    nav .nav_items #collapse_menu {
+    width:  450px !important;
+    padding-left: 10%;
+    }
+
+    #slogan {
+      font-size: 2em;
+      top: 50vw;
+    }
+}
