@@ -457,6 +457,7 @@ nav .toggle_collapse .toggle_icon{
   border: 10px solid #ED7966;
   border-radius: 80px 0 80px 0;
   background-color: white;
+  cursor: pointer;
 }
 
 .registration_button_number_container {
