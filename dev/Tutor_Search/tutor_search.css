@@ -642,6 +642,7 @@ nav .toggle_collapse .toggle_icon{
   margin-left: 30px;
   margin-bottom: 60px;
   width: 300px;
+  cursor: pointer;
 }
 
 .tutor_image{

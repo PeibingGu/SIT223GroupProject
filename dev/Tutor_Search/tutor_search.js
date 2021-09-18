@@ -18,7 +18,7 @@ Vue.component("tutor-component", {
   // Define template
     template:
 
-    '<div class="tutor_container">' +
+    '<div class="tutor_container" v-on:click=\"load_tutor_profile_page()\">' +
         '<img class="tutor_image" v-bind:src="image_src">' +
 
         '<div class="tutor_title_container">' +
@@ -43,7 +43,13 @@ Vue.component("tutor-component", {
         '<div class="tutor_price_per_hour_container"> ' +
             'A$<span class="tutor_price_per_hour">{{total_price_per_hour}}</span>/hour ' +
         '</div> ' +
-    '</div>'
+    '</div>',
+
+    methods: {
+        load_tutor_profile_page: function () {
+            window.location.href = "../Tutor_Profile/tutor_profile.html";
+        }
+    }
 
 })
 
