@@ -373,6 +373,7 @@ nav .toggle_collapse .toggle_icon{
   border: none;
   margin-top: 25px;
   float: left;
+  cursor: pointer;
 }
 
 #chat_with_tutor_button {
