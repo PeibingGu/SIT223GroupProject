@@ -53,9 +53,9 @@ Vue.component("tutor-component", {
 
 })
 
-//Vue object: Countries Container
+//Vue object: Tutor Container
 var tutor_container = new Vue({
-	el: "#search_results_container",
+	el: "#tutor_component_container",
     data: {
       // Array containing the following properties of each Tutor:
       tutors: [

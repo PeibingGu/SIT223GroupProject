@@ -258,7 +258,7 @@ nav .toggle_collapse .toggle_icon{
 
 /* -------- SIGN UP AS A TUTOR SECTION ----------- */
 .section-1 {
-  height: 2100px;
+  height: 1000px;
   background-position: right 200px;;
   background-repeat: no-repeat;
   background-size: 800px;
@@ -271,7 +271,7 @@ nav .toggle_collapse .toggle_icon{
 }
 
 /* -------- BANNER CONTAINER ----------- */
-#register_form_container {
+#request_session_form_container {
   display: block;
   transform: translateY(130px);
   width: 650px;
@@ -291,7 +291,7 @@ nav .toggle_collapse .toggle_icon{
   box-shadow: 5px 2px 5px #888888;
 }
 
-#sign_up_as_tutor_heading_container {
+#request_session_heading_container {
   float: left;
   width: 70%;
   padding: 12px 0 0 32px;
@@ -299,13 +299,13 @@ nav .toggle_collapse .toggle_icon{
   flex-wrap: wrap;
 }
 
-#sign_up_as_tutor_heading {
+#request_session_heading {
   color: white;
   font-size: 40px;
   font-weight: 500;
 }
 
-#sign_up_as_tutor_description {
+#request_session_description {
   color: white;
   font-weight: 500;
   margin-top: 10px;
@@ -496,7 +496,7 @@ nav .toggle_collapse .toggle_icon{
   font-style: italic;
 }
 
-#register_button_container {
+#send_request_button_container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -505,86 +505,96 @@ nav .toggle_collapse .toggle_icon{
     margin-bottom: 20px;
 }
 
-#register_button {
+#send_request_button {
     font-size: 1.5em;
     color: white;
     background-color: #303179;
     margin-top: 3%;
-    width: 170px;
+    width: 200px;
     height: 60px;
     font-weight: 550;
     border-radius: 30px;
     border: none;
+    padding: 0 10px 0 10px;
 }
 
 
 
 /* -------- 1ST QUESTION ----------- */
 
-#degree_level_input_container {
+#hours_input_container {
   display: inline-block;
   width: 58%;
-}
-
-#year_of_graduation_container {
-  display: inline-block;
-}
-
-#university_container {
-  display: inline-block;
-  width: 58%;
-  margin-top: 20px;
-}
-
-#university_input {
-  width: 85%;
-}
-
-#gpa_container {
-  display: inline-block;
-  margin-top: 20px;
 }
 
 
 /* -------- 2ND QUESTION ----------- */
 
-#question_body_container {
-  width: 100%;
-  vertical-align: middle;
-  margin-top: 50px;
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}
+
+#hours_input_container {
+  max-width: 110px;
+  margin: auto;
+  position: relative;
   display: inline-block;
 }
 
-#unit_code_container {
-  display: inline-block;
-  width: 30%;
+#hours_text {
+  color: white;
+  font-weight: 500;
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 20px;
 }
 
-#unit_code_input {
-  display: inline-block;
-  width: 80%;
+#hours_input {
+  display: block;
+  background-color: #ED7966;
+  color: white;
+  outline: none;
+  border: none;
+  height: 35px;
+  width: 137px;
+  border-radius: 40px;
+  font-size: 20px;
+  text-align: center;
 }
 
-#unit_name_container {
+#date_input_container {
   display: inline-block;
+  width: 35%;
 }
 
-#unit_name_input {
+#date_input {
+  width: 155px;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+#starting_time_input_container {
   display: inline-block;
-  width: 120%;
+  width: 205px;
+}
+
+#starting_time_dropdown {
+  font-size: 18px;
 }
 
 
 /* -------- 3RD QUESTION ----------- */
-/* -------- 4TH QUESTION ----------- */
-/* -------- 5TH QUESTION ----------- */
-/* -------- 6TH QUESTION ----------- */
+
 
 
 
 /* -------- FOOTER ----------- */
 
 /* =============== MEDIA QUERIES ======= */
+
 /* For screen size smaller than 1100px */
 @media only screen and (max-width: 1100px) {
   #navbar {
@@ -606,7 +616,7 @@ nav .toggle_collapse .toggle_icon{
     text-align: center;
   }
 
-  #register_form_container {
+  #request_session_form_container {
     transform: translateY(180px);
   }
 }
