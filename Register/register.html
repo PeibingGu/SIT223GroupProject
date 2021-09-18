@@ -1,0 +1,98 @@
+<head>
+
+    <!-- Link to CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="register.css">
+
+    <!-- Link the Ajax framework -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Set responsiveness to screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Add image icon to the title -->
+    <link rel="shortcut icon" type="image/x-icon" href="../Assets/Icons/globe.png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- Set the title -->
+    <title id="page_title">uTute | Register</title>
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header id="navbar">
+
+            <div class="primary_header">
+                <ul>
+                    <li><a href="login.html" title="Home">Home</a></li>
+                    <li><a href="#" title="Book an appointment">Book Appointment</a></li>
+                </ul>
+            </div>
+            <div class="secondary_header" id="secondary_header">
+                <a href="../Home/home.html" title="Home">
+                    <img src="../Assets/Icons/logo.png" alt="Logo">
+                </a>
+
+                <nav>
+                    <div class="nav_items">
+                        <div class="toggle_collapse">
+                            <div class="toggle_icon">
+                                <span class="bars_color"><i class="fas fa-bars fa-3x"></i></span>
+                            </div>
+                            <ul id="collapse_menu">
+                                <li><a href="../Login/login.html" id="login_button" title="Login">Login</a></li>
+                                <li><a href="#register_menu_button" id="register-button" title="Register">Register</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+
+
+        <!-- Main -->
+        <main>
+
+            <!-- REGISTER SECTION -->
+            <section id="register_section" class="section-1">
+
+                <div id="register_container">
+                    <img id="uTute_logo" src="../Assets/Icons/logo.png" alt="Logo">
+
+                    <form action="../Verify_OTP/verify_OTP.html">
+
+                        <!-- Register (Input) -->
+                        <div class="input_container">
+                            <div class="input_heading">
+                                <label for="email_input">Email</label>
+                            </div>
+
+                            <input class="single_line_input" v-model="emailInput" placeholder="example@uni.edu.au">
+                        </div>
+
+                        <div id="register_button_container">
+                            <button id="register_button" type="submit" title="Next">Next</button>
+                        </div>
+                    </form>
+
+                </div>
+            </section>
+
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+<!-- Link External JavaScript -->
+<script src="register.js" defer></script>
+
+</html>
