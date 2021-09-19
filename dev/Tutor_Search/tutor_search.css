@@ -326,6 +326,7 @@ nav .toggle_collapse .toggle_icon{
   background-color: #FFFAFA;
   border: 1px solid #303179;
   outline: none;
+  cursor: pointer;
 }
 
 #filter_button img {

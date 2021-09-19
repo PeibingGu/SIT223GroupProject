@@ -354,6 +354,7 @@ nav .toggle_collapse .toggle_icon{
     margin-top: -1.5em;
     width: 220px;
     margin-top: 2em;
+    cursor: pointer;
 }
 
 .testimonial_container {

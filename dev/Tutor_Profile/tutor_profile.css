@@ -381,6 +381,7 @@ nav .toggle_collapse .toggle_icon{
   padding-top: 0;
   margin-top: 15px;
   margin-left: 50px;
+  cursor: pointer;
 }
 
 
@@ -592,6 +593,7 @@ nav .toggle_collapse .toggle_icon{
   font-weight: 500;
   text-align: center;
   float: left;
+  cursor: pointer;
 }
 
 /* ----- STUDENT RATING DESCRIPTION CONTAINER ----- */
@@ -605,6 +607,7 @@ nav .toggle_collapse .toggle_icon{
   font-size: 30px;
   color: #303179;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .student_rating_stars_icon {

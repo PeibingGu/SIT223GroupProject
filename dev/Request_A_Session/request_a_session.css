@@ -516,6 +516,7 @@ nav .toggle_collapse .toggle_icon{
     border-radius: 30px;
     border: none;
     padding: 0 10px 0 10px;
+    cursor: pointer;
 }
 
 

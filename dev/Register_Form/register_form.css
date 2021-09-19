@@ -282,6 +282,7 @@ nav .toggle_collapse .toggle_icon{
     font-weight: 550;
     border-radius: 30px;
     border: none;
+    cursor: pointer;
 }
 
 #bottom_links_container {

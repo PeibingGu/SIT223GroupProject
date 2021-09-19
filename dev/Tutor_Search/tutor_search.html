@@ -32,13 +32,14 @@
 
             <div class="primary_header">
                 <ul>
-                    <li><a href="../Home/home.html">Home</a></li>
-                    <li><a href="../Request_A_Session/request_a_session.html">Book Appointment</a></li>
-                    <li><a href="../Home/home.html" id="logout_button">Logout</a></li>
+                    <li><a href="../Home/home.html" title="Home">Home</a></li>
+                    <li><a href="../Request_A_Session/request_a_session.html" title="Book an appointment">Book
+                            Appointment</a></li>
+                    <li><a href="../Home/home.html" id="logout_button" title="Logout">Logout</a></li>
                 </ul>
             </div>
             <div class="secondary_header" id="secondary_header">
-                <a href="../Home/home.html">
+                <a href="../Home/home.html" title="Home">
                     <img src="../Assets/Icons/logo.png" alt="Logo">
                 </a>
 
@@ -49,28 +50,31 @@
                                 <span class="bars_color"><i class="fas fa-bars fa-3x"></i></span>
                             </div>
                             <ul id="collapse_menu">
-                                <li><a href="../Tutor_Search/tutor_search.html" id="browse_tutor_button">Browse
+                                <li><a href="../Tutor_Search/tutor_search.html" id="browse_tutor_button"
+                                        title="Browse Tutor">Browse
                                         Tutor</a></li>
-                                <li id="search_button"><a href="../Tutor_Search/tutor_search.html"> <img
+                                <li id="search_button"><a href="../Tutor_Search/tutor_search.html" title="Search"> <img
                                             id="search_icon" src="..//Assets/Icons/search_icon.png"
                                             alt="Search Icon"></a></li>
 
-                                <li id="balance_button"><a href=""> <img id="balance_icon"
+                                <li id="balance_button"><a href="" title="Balance"> <img id="balance_icon"
                                             src="..//Assets/Icons/dolar_sign_icon.png" alt="Dolar Sign Icon"></a>
                                 </li>
-                                <li id="appointments_button"><a href=""> <img id="appointments_icon"
-                                            src="..//Assets/Icons/schedule_list_icon.png" alt="Schedule List Icon"></a>
+                                <li id="appointments_button"><a href="" title="Appointments"> <img
+                                            id="appointments_icon" src="..//Assets/Icons/schedule_list_icon.png"
+                                            alt="Schedule List Icon"></a>
                                 </li>
-                                <li id="chat_button"><a href=""> <img id="message_icon"
+                                <li id="chat_button"><a href="" title="Chat"> <img id="message_icon"
                                             src="..//Assets/Icons/message_icon.png" alt="Message Icon"></a>
                                 </li>
-                                <li id="user_profile_button"><a href="">
+                                <li id="user_profile_button" title="Profile"><a href="">
                                         <div id="user_initials_container">
                                             {{user_initials}}
                                         </div>
                                     </a>
                                 </li>
-                                <li><a href="../Sign_Up_As_A_Tutor/sign_up_as_a_tutor.html" id="be_a_tutor_button">Be a
+                                <li><a href="../Sign_Up_As_A_Tutor/sign_up_as_a_tutor.html" id="be_a_tutor_button"
+                                        title="Sign up as a tutor">Be a
                                         Tutor</a></li>
                             </ul>
                         </div>
@@ -102,7 +106,7 @@
                 <div id="selections_container">
 
                     <!-- FILTER BUTTON -->
-                    <button id="filter_button">
+                    <button id="filter_button" title="Filter">
                         <img id="filter_button_img" src="../Assets/Tutor_Search/filter_button_img.png" />
                     </button>
 
@@ -110,7 +114,8 @@
                     <div class="dropdown">
                         <button class="dropbtn">
                             <img id="most_popular_dropdown_button_img"
-                                src="../Assets/Tutor_Search/most_popular_dropdown_button_img.png" alt=""></button>
+                                src="../Assets/Tutor_Search/most_popular_dropdown_button_img.png" alt=""
+                                title="Most popular fields of study"></button>
                         <div class="dropdown-content">
                             <a href="#">Design</a>
                             <a href="#">Engineering</a>
@@ -143,7 +148,7 @@
                         <!-- STUDY AREA CONTAINER-->
                         <div id="study_area_container">
 
-                            <p class="side_panel_heading">Study Area</p>
+                            <p class="side_panel_heading" title="Study area">Study Area</p>
 
                             <!-- EXPAND -->
                             <div>
@@ -236,7 +241,7 @@
                         <div id="unit_code_unit_name_container">
 
                             <label for="unit_code_unit_name_input">
-                                <p class="side_panel_heading">Unit Code/Unit Name</p>
+                                <p class="side_panel_heading" title="Unit Code/Unit Name">Unit code/Unit name</p>
                             </label>
                             <input id="unit_code_unit_name_input" class="single_line_input" name="unit_code_unit_name"
                                 type="text" placeholder="Enter keyword" tabindex="1">
@@ -249,7 +254,7 @@
                         <!-- UNIVERSITIES CONTAINER-->
                         <div id="university_container">
 
-                            <p class="side_panel_heading">University</p>
+                            <p class="side_panel_heading" title="University">University</p>
 
                             <!-- EXPAND -->
                             <div>
@@ -419,7 +424,7 @@
                         <!-- AVAILABILITY CONTAINER-->
                         <div id="availability_container">
                             <label for="availability_input">
-                                <p class="side_panel_heading">Availability</p>
+                                <p class="side_panel_heading" title="Availability">Availability</p>
                             </label>
                             <input id="availability_input" class="single_line_input" name="unit_code_unit_name"
                                 type="text" placeholder="Enter keyword" tabindex="1">
@@ -431,7 +436,7 @@
 
                         <!-- RATINGS CONTAINER-->
                         <div id="ratings_container">
-                            <p class="side_panel_heading">Ratings</p>
+                            <p class="side_panel_heading" title="Ratings">Ratings</p>
 
                             <!-- EXPAND -->
                             <div>
@@ -510,7 +515,7 @@
 
                         <!-- QUALIFICATIONS CONTAINER-->
                         <div id="qualifications_container">
-                            <p class="side_panel_heading">Qualifications</p>
+                            <p class="side_panel_heading" title="Qualification">Qualification</p>
 
                             <!-- EXPAND -->
                             <div>
@@ -582,8 +587,8 @@
                         <!-- PRICE PER HOUR CONTAINER-->
                         <div id="price_per_hour_container">
 
-                            <p class="side_panel_heading">Price Per Hour</p>
-                            <p id="price_per_hour_description">Select the Maximum Price Per Hour</p>
+                            <p class="side_panel_heading" title="Maximum price per hour">Price Per Hour</p>
+                            <p id="price_per_hour_description">Select the maximum price per hour</p>
 
                             <input type="range" value="50" min="15" max="150"
                                 oninput="this.nextElementSibling.value = this.value"> $

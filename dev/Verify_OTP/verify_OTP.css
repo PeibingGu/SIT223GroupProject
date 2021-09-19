@@ -355,6 +355,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 550;
     border-radius: 30px;
     border: none;
+    cursor: pointer;
 }
 
 #bottom_links_container {

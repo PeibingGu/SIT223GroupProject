@@ -32,13 +32,14 @@
 
             <div class="primary_header">
                 <ul>
-                    <li><a href="../Home/home.html">Home</a></li>
-                    <li><a href="../Request_A_Session/request_a_session.html">Book Appointment</a></li>
-                    <li><a href="../Home/home.html" id="logout_button">Logout</a></li>
+                    <li><a href="../Home/home.html" title="Home">Home</a></li>
+                    <li><a href="../Request_A_Session/request_a_session.html" title="Book an appointment">Book
+                            Appointment</a></li>
+                    <li><a href="../Home/home.html" id="logout_button" title="Logout">Logout</a></li>
                 </ul>
             </div>
             <div class="secondary_header" id="secondary_header">
-                <a href="../Home/home.html">
+                <a href="../Home/home.html" title="Home">
                     <img src="../Assets/Icons/logo.png" alt="Logo">
                 </a>
 
@@ -49,28 +50,31 @@
                                 <span class="bars_color"><i class="fas fa-bars fa-3x"></i></span>
                             </div>
                             <ul id="collapse_menu">
-                                <li><a href="../Tutor_Search/tutor_search.html" id="browse_tutor_button">Browse
+                                <li><a href="../Tutor_Search/tutor_search.html" id="browse_tutor_button"
+                                        title="Browse Tutor">Browse
                                         Tutor</a></li>
-                                <li id="search_button"><a href="../Tutor_Search/tutor_search.html"> <img
+                                <li id="search_button"><a href="../Tutor_Search/tutor_search.html" title="Search"> <img
                                             id="search_icon" src="..//Assets/Icons/search_icon.png"
                                             alt="Search Icon"></a></li>
 
-                                <li id="balance_button"><a href=""> <img id="balance_icon"
+                                <li id="balance_button"><a href="" title="Balance"> <img id="balance_icon"
                                             src="..//Assets/Icons/dolar_sign_icon.png" alt="Dolar Sign Icon"></a>
                                 </li>
-                                <li id="appointments_button"><a href=""> <img id="appointments_icon"
-                                            src="..//Assets/Icons/schedule_list_icon.png" alt="Schedule List Icon"></a>
+                                <li id="appointments_button"><a href="" title="Appointments"> <img
+                                            id="appointments_icon" src="..//Assets/Icons/schedule_list_icon.png"
+                                            alt="Schedule List Icon"></a>
                                 </li>
-                                <li id="chat_button"><a href=""> <img id="message_icon"
+                                <li id="chat_button"><a href="" title="Chat"> <img id="message_icon"
                                             src="..//Assets/Icons/message_icon.png" alt="Message Icon"></a>
                                 </li>
-                                <li id="user_profile_button"><a href="">
+                                <li id="user_profile_button" title="Profile"><a href="">
                                         <div id="user_initials_container">
                                             {{user_initials}}
                                         </div>
                                     </a>
                                 </li>
-                                <li><a href="../Sign_Up_As_A_Tutor/sign_up_as_a_tutor.html" id="be_a_tutor_button">Be a
+                                <li><a href="../Sign_Up_As_A_Tutor/sign_up_as_a_tutor.html" id="be_a_tutor_button"
+                                        title="Sign up as a tutor">Be a
                                         Tutor</a></li>
                             </ul>
                         </div>
@@ -117,10 +121,12 @@
 
                 <div id="tutor_buttons_container">
                     <button id="book_button"
-                        onclick="window.location.href='../Request_A_Session/request_a_session.html'">Book</button>
+                        onclick="window.location.href='../Request_A_Session/request_a_session.html'"
+                        title="Request a session with this tutor">Book</button>
 
                     <div>
-                        <img id="chat_with_tutor_button" src="../Assets/Tutor_Profile/message_tutor_icon.png" alt="">
+                        <img id="chat_with_tutor_button" src="../Assets/Tutor_Profile/message_tutor_icon.png" alt=""
+                            title="Message this tutor">
                     </div>
                 </div>
 
