@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.26)
 # Database: SIT223-utute-v1
-# Generation Time: 2021-09-28 10:14:49 +0000
+# Generation Time: 2021-09-29 06:41:27 +0000
 # ************************************************************
 
 
@@ -116,14 +116,14 @@ CREATE TABLE `messages` (
 
 CREATE TABLE `qualification_types` (
   `qualification_type_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `quanlification_type_name` varchar(32) DEFAULT NULL,
+  `qualification_type_name` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`qualification_type_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `qualification_types` WRITE;
 /*!40000 ALTER TABLE `qualification_types` DISABLE KEYS */;
 
-INSERT INTO `qualification_types` (`qualification_type_id`, `quanlification_type_name`)
+INSERT INTO `qualification_types` (`qualification_type_id`, `qualification_type_name`)
 VALUES
 	(1,'High School'),
 	(2,'Certificate'),
@@ -309,6 +309,8 @@ CREATE TABLE `tutors` (
   `user_id` int(11) unsigned DEFAULT NULL,
   `profile_image` varchar(128) DEFAULT NULL,
   `average_rating` decimal(6,2) DEFAULT '0.00',
+  `profile_introduction` longtext,
+  `tutoring_strategies` longtext,
   `created_time` datetime DEFAULT NULL,
   PRIMARY KEY (`tutor_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -316,9 +318,9 @@ CREATE TABLE `tutors` (
 LOCK TABLES `tutors` WRITE;
 /*!40000 ALTER TABLE `tutors` DISABLE KEYS */;
 
-INSERT INTO `tutors` (`tutor_id`, `user_id`, `profile_image`, `average_rating`, `created_time`)
+INSERT INTO `tutors` (`tutor_id`, `user_id`, `profile_image`, `average_rating`, `profile_introduction`, `tutoring_strategies`, `created_time`)
 VALUES
-	(1,15,'/img/Assets/Tutor_Search/tutor_1.png',0.00,NULL);
+	(1,15,'/img/Assets/Tutor_Search/tutor_1.png',0.00,NULL,NULL,NULL);
 
 /*!40000 ALTER TABLE `tutors` ENABLE KEYS */;
 UNLOCK TABLES;

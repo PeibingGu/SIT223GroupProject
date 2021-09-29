@@ -278,16 +278,26 @@ class UsersController extends AppController
           $this->Flash->success("You have upgraded to be tutor already");
           return $this->redirect("/search");
         }
+        if ($this->request->is("POST")):
+          try{
+            $post = $this->request->getData();
+            var_dump($post);
+
+          } catch (\Exception $e)
+          {
+            $this->Flash->error($e->getMessage());
+          }
+        endif;
 
         $this->Uni = TableRegistry::getTableLocator()->get('Universities', ['table' => 'universities']);
         $universityList = $this->Uni->getAllUniversities();
 
-        
-
+        $this->QualTypes = TableRegistry::getTableLocator()->get('QualificationTypes', ['table' => 'qualification_types']);
+        $qualificationTypeList = $this->QualTypes->getAllTypes();
 
         $menuItem = 'upgrade';
         $pageTitle = 'uTute | Be a Tutor';
-        $this->set(compact(['menuItem', 'pageTitle', 'user',]));
+        $this->set(compact(['menuItem', 'pageTitle', 'user', 'qualificationTypeList','universityList']));
         $this->viewBuilder()->setLayout('user');
 
     }

@@ -12,6 +12,7 @@
 
     <?= $this->Html->meta('icon') ?>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <link rel="shortcut icon" type="image/x-icon" href="/img/Assets/Icons/globe.png">
 
@@ -73,7 +74,7 @@
     <?php if ($this->request->getParam('action') == 'search'): ?>
     <script src="/js/search.js" defer></script>
   <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
-  <script src="/js/upgrade.js" defer></script>
+  <script src="/js/be_tutor.js" defer></script>
 
   <?php endif;?>
 </body>

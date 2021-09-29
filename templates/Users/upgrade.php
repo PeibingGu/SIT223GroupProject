@@ -17,9 +17,7 @@
                         <img id="banner_ribbon_image" src="/img/Assets/Sign_Up_As_A_Tutor/banner_ribbon_image.png" alt="">
                     </div>
 
-                    <!-- FORM -->
-                    <form action="">
-
+                    <?=$this->Form->create(null, ['class' => 'form-signin', 'method' => 'post','style' => 'margin-top:80px;'])?>
 
                         <!-- 1ST QUESTION -->
                         <div class="question_container">
@@ -40,10 +38,10 @@
                                 <div id="degree_level_input_container">
 
                                     <label class="input_label" for="degree_level_dropdown">Degree Level</label>
-
+                                    <br>
                                     <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
                                     <div class="custom-select" id="degree_level_dropdown" style="width:200px;">
-                                        <select>
+                                        <select  name="data[q][qualification_type_id][]">
                                           <?php foreach ($qualificationTypeList as $qL): ?>
                                             <option value="<?=$qL['qualification_type_id']?>"><?=$qL['qualification_type_name']?></option>
                                           <?php endforeach; ?>
@@ -56,7 +54,7 @@
                                 <div id="year_of_graduation_container">
                                     <label class="input_label" for="year_of_graduation">Year of Graduation</label>
                                     <br>
-                                    <input class="single_line_input" id="year_of_graduation" type="text"
+                                    <input class="single_line_input" id="year_of_graduation" name="data[q][complete_year][]" type="text"
                                         placeholder="MM/YYYY">
                                 </div>
 
@@ -64,15 +62,20 @@
                                 <div id="university_container">
                                     <label class="input_label" for="university_input">University</label>
                                     <br>
-                                    <input class="single_line_input" id="university_input" type="text"
-                                        placeholder="Enter university">
+                                    <div class="custom-select" id="degree_level_dropdown" style="width:200px;">
+                                        <select name="university_id" name="data[q][university_id][]">
+                                          <?php foreach ($universityList as $qL): ?>
+                                            <option value="<?=$qL['university_id']?>"><?=$qL['university_name']?></option>
+                                          <?php endforeach; ?>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <!-- GPA (Input) -->
                                 <div id="gpa_container">
                                     <label class="input_label" for="gpa_input">GPA</label>
                                     <br>
-                                    <input class="single_line_input" id="gpa_input" type="text" placeholder="Enter GPA">
+                                    <input class="single_line_input" id="gpa_input" name="data[q][gpa][]" type="text" placeholder="Enter GPA">
                                 </div>
 
                                 <br><br>
@@ -114,7 +117,7 @@
                                 <div id="unit_code_container">
                                     <label class="input_label" for="unit_code_input">Unit Code</label>
                                     <br>
-                                    <input class="single_line_input" id="unit_code_input" type="text"
+                                    <input class="single_line_input" id="unit_code_input" name="data[u][unit_code][]" type="text"
                                         placeholder="SIT123">
                                 </div>
 
@@ -122,7 +125,7 @@
                                 <div id="unit_name_container">
                                     <label class="input_label" for="unit_name_input">Unit Name</label>
                                     <br>
-                                    <input class="single_line_input" id="unit_name_input" type="text"
+                                    <input class="single_line_input" id="unit_name_input" name="data[u][unit_name][]" type="text"
                                         placeholder="Data Capture Technologies">
                                 </div>
                                 <br><br>
@@ -165,7 +168,7 @@
 
                                     <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
                                     <div class="custom-select" id="specialisation_dropdown" style="width:200px;">
-                                        <select>
+                                        <select >
                                             <option value="0">Accounting</option>
                                             <option value="3">Astrophysics</option>
                                             <option value="5">Biology</option>
@@ -233,7 +236,7 @@
                                     <label class="input_label" for="hobby_dropdown">Hobby</label>
 
                                     <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
-                                    <div class="custom-select" id="hobby_dropdown" style="width:200px;">
+                                    <div class="custom-select"  name="data[q][h][]" id="hobby_dropdown" style="width:200px;">
                                         <select>
                                             <option value="0">Hiking</option>
                                             <option value="1">Cooking</option>
@@ -285,7 +288,7 @@
 
                                 <!-- University (Input) -->
                                 <div id="profile_textarea_container">
-                                    <textarea class="textarea_input" name="sdfsdf" id="profile_textarea_input" cols="55"
+                                    <textarea class="textarea_input" name="data[p][profile_introduction]" id="profile_textarea_input" cols="55"
                                         rows="10" placeholder="Write something here..."></textarea>
                                 </div>
 
@@ -312,7 +315,7 @@
 
                                 <!-- University (Input) -->
                                 <div id="strategy_textarea_container">
-                                    <textarea class="textarea_input" name="sdfsdf" id="strategy_textarea_input"
+                                    <textarea class="textarea_input" name="data[p][tutoring_strategies]" id="strategy_textarea_input"
                                         cols="55" rows="10" placeholder="Write something here..."></textarea>
                                 </div>
 
@@ -324,6 +327,7 @@
                             <button id="register_button" type="submit">Register</button>
                         </div>
                     </form>
+                    <?=$this->Form->end()?>
 
                 </div>
             </section>

@@ -14,7 +14,7 @@
                                 <label for="email_input">Email</label>
                             </div>
 
-                            <input class="single_line_input" v-model="emailInput" name="email" placeholder="example@uni.edu.au">
+                            <input class="single_line_input" v-model="emailInput" name="email" placeholder="example@uni.edu.au" autocomplete="off">
                         </div>
 
 

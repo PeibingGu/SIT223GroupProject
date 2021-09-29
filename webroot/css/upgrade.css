@@ -384,9 +384,10 @@ nav .toggle_collapse .toggle_icon{
 }
 
 .select-selected {
-  background-color: #ED7966;
+  /*background-color: #ED7966;*/
   border-radius: 20px;
-  margin-top: 10px;
+  /*margin-top: 10px;*/
+  position:relative;
 }
 
 /*style the arrow inside the select element:*/
@@ -411,22 +412,36 @@ nav .toggle_collapse .toggle_icon{
 .select-items div,.select-selected {
   color: #ffffff;
   padding: 8px 16px;
-  border: 1px solid transparent;
+  /*border: 1px solid transparent;*/
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
   user-select: none;
 }
-
+.custom-select div.display-selected-item {
+  color: #ED7966 !important;
+  height: 24px;
+  padding: 0 8px !important;
+  border: none !important;
+}
 /*style items (options):*/
 .select-items {
   position: absolute;
   background-color: #ED7966;
   border-radius: 20px;
+  /*
   border: 2px solid #303179;
+  */
   top: 100%;
   left: 0;
   right: 0;
   z-index: 99;
+}
+
+.truncate {
+  width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*hide the items when the select box is closed:*/

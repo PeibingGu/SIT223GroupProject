@@ -61,4 +61,14 @@ class QualificationTypesTable extends AppTable
 
         return $validator;
     }
+
+    public function getAllTypes()
+    {
+      $sql = "
+          SELECT *
+          FROM qualification_types
+          order by qualification_type_id asc
+        ";
+      return $this->_db->execute($sql, [])->fetchAll('assoc');
+    }
 }
