@@ -61,6 +61,8 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/logout', ['controller' => 'Users', 'action' => 'logout']);
     $builder->connect('/search', ['controller' => 'Users', 'action' => 'search']);
     $builder->connect('/upgrade', ['controller' => 'Users', 'action' => 'upgrade']);
+    $builder->connect('/profile/*', ['controller' => 'Users', 'action' => 'profile']);
+    $builder->connect('/booking/*', ['controller' => 'Users', 'action' => 'booking']);
 
     //$builder->connect('/sign-out', ['controller' => 'Users', 'action' => 'signOut']);
 

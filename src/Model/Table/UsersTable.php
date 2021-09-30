@@ -208,6 +208,10 @@ class UsersTable extends AppTable
         $userId = $row['user_id'];
         unset($row['user_id']);
       }
+      if (empty($row['last_name']) && array_key_exists('last_name', $row)) {
+        unset($row['last_name']);
+      }
+
       if (!empty($row['password']))
         $row['password'] = $this->_hashPassword($row['password']);
 

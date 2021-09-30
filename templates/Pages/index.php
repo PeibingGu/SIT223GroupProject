@@ -14,7 +14,7 @@
                 <h1 id="information_heading">Over 1000 tutors are ready to provide <br> the most exceptional learning
                     experience!</h1>
 
-                <h1 id="click_here_heading">Click <a href="#" class="link">here</a> to book an appointment</h1>
+                <h1 id="click_here_heading">Click <a href="/search" class="link">here</a> to book an appointment</h1>
 
                 <div id="cards_container">
 

@@ -29,8 +29,10 @@
                                 <div class="question_text">Firstly, what is your educational qualification?</div>
                             </div>
 
+                            <?php foreach (array('0','1','2') as $qIndex): ?>
                             <!-- QUESTION BODY -->
-                            <div class="question_body_container" id="1st_question_body_container">
+                            <div class="question_body_container" id="1st_question_body_container-<?=$qIndex?>"
+                               style="<?=(empty($data['q'][$qIndex]['qualification_type_id']))&&$qIndex>0? 'display:none':'' ?>">
 
                                 <br>
 
@@ -41,9 +43,10 @@
                                     <br>
                                     <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
                                     <div class="custom-select" id="degree_level_dropdown" style="width:200px;">
-                                        <select  name="data[q][qualification_type_id][]">
+                                        <select  name="data[q][<?=$qIndex?>][qualification_type_id]">
+                                          <option value=""></option>
                                           <?php foreach ($qualificationTypeList as $qL): ?>
-                                            <option value="<?=$qL['qualification_type_id']?>"><?=$qL['qualification_type_name']?></option>
+                                            <option value="<?=$qL['qualification_type_id']?>" <?=$data['q'][$qIndex]['qualification_type_id'] == $qL['qualification_type_id']?" selected":""?>><?=$qL['qualification_type_name']?></option>
                                           <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -54,8 +57,8 @@
                                 <div id="year_of_graduation_container">
                                     <label class="input_label" for="year_of_graduation">Year of Graduation</label>
                                     <br>
-                                    <input class="single_line_input" id="year_of_graduation" name="data[q][complete_year][]" type="text"
-                                        placeholder="MM/YYYY">
+                                    <input class="single_line_input" id="year_of_graduation" min-length="4" max-length="4" name="data[q][<?=$qIndex?>][complete_year]" value="<?=$data['q'][$qIndex]['complete_year']?>" type="text"
+                                        placeholder="YYYY">
                                 </div>
 
                                 <!-- University (Input) -->
@@ -63,9 +66,10 @@
                                     <label class="input_label" for="university_input">University</label>
                                     <br>
                                     <div class="custom-select" id="degree_level_dropdown" style="width:200px;">
-                                        <select name="university_id" name="data[q][university_id][]">
+                                        <select name="data[q][<?=$qIndex?>][university_id]">
+                                          <option value=""></option>
                                           <?php foreach ($universityList as $qL): ?>
-                                            <option value="<?=$qL['university_id']?>"><?=$qL['university_name']?></option>
+                                            <option value="<?=$qL['university_id']?>" <?=$data['q'][$qIndex]['university_id'] == $qL['university_id']?" selected":""?>><?=$qL['university_name']?></option>
                                           <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -75,25 +79,27 @@
                                 <div id="gpa_container">
                                     <label class="input_label" for="gpa_input">GPA</label>
                                     <br>
-                                    <input class="single_line_input" id="gpa_input" name="data[q][gpa][]" type="text" placeholder="Enter GPA">
+                                    <input class="single_line_input" id="gpa_input" name="data[q][<?=$qIndex?>][gpa]" type="text" placeholder="Enter GPA">
                                 </div>
 
                                 <br><br>
                                 <hr>
 
                             </div>
+                          <?php endforeach;  ?>
                         </div>
 
                         <div class="add_more_question_body_container" id="add_more_1st_question_body_container">
                         </div>
 
                         <!-- "+ Add More" -->
-                        <a class="add_more_question_body_container_link" href="#"
-                            onClick="addMore('1st_question_body_container', 'add_more_1st_question_body_container');">+
+                        <?php if (empty($data['q'][2]['qualification_type_id'])): ?>
+                        <a class="add_more_question_body_container_link" href="#" id="qAddMore"
+                            onClick="addMore('1st_question_body_container', 'qAddMore');">+
                             Add
                             more</a>
 
-
+                          <?php endif; ?>
 
 
 
@@ -108,8 +114,10 @@
                                 </div>
                             </div>
 
+                            <?php foreach (array('0','1','2') as $uIndex): ?>
                             <!-- QUESTION BODY -->
-                            <div class="question_body_container" id="2nd_question_body_container">
+                            <div class="question_body_container" id="2nd_question_body_container-<?=$uIndex?>"
+                               style="<?=(empty($data['u'][$uIndex]['unit_code']))&&$uIndex>0? 'display:none':'' ?>">
 
                                 <br>
 
@@ -117,29 +125,41 @@
                                 <div id="unit_code_container">
                                     <label class="input_label" for="unit_code_input">Unit Code</label>
                                     <br>
-                                    <input class="single_line_input" id="unit_code_input" name="data[u][unit_code][]" type="text"
+                                    <input class="single_line_input" id="unit_code_input" name="data[u][<?=$uIndex?>][unit_code]" type="text"
                                         placeholder="SIT123">
                                 </div>
 
+
+                                <!-- Unit Code (Input) -->
+                                <div id="unit_code_container">
+                                    <label class="input_label" for="unit_code_input">Charge $</label>
+                                    <br>
+                                    <input class="single_line_input" id="unit_code_input" name="data[u][<?=$uIndex?>][fees]" type="text"
+                                        placeholder="$60.0">
+                                </div>
+
+                                <br><br>
                                 <!-- Unit Name (Input) -->
                                 <div id="unit_name_container">
                                     <label class="input_label" for="unit_name_input">Unit Name</label>
                                     <br>
-                                    <input class="single_line_input" id="unit_name_input" name="data[u][unit_name][]" type="text"
+                                    <input class="single_line_input" id="unit_name_input" name="data[u][<?=$uIndex?>][unit_name]" type="text"
                                         placeholder="Data Capture Technologies">
                                 </div>
+
                                 <br><br>
                                 <hr>
 
                             </div>
+                          <?php endforeach;?>
                         </div>
 
                         <div class="add_more_question_body_container" id="add_more_2nd_question_body_container">
                         </div>
 
                         <!-- "+ Add More" -->
-                        <a class="add_more_question_body_container_link" href="#"
-                            onClick="addMore('2nd_question_body_container', 'add_more_2nd_question_body_container');">+
+                        <a class="add_more_question_body_container_link" href="#" id="uAddMore"
+                            onClick="addMore('2nd_question_body_container', 'uAddMore');">+
                             Add
                             more</a>
 
@@ -155,9 +175,10 @@
                                 <div class="question_text">Thirdly, what are your specialisations?
                                 </div>
                             </div>
-
+                            <?php foreach (array('0','1','2') as $sIndex): ?>
                             <!-- QUESTION BODY -->
-                            <div class="question_body_container" id="3rd_question_body_container">
+                            <div class="question_body_container" id="3rd_question_body_container-<?=$sIndex?>"
+                            style="<?=(empty($data['s'][$sIndex]['qualification_type_id']))&&$sIndex>0? 'display:none':'' ?>">
 
                                 <br>
 
@@ -168,29 +189,11 @@
 
                                     <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
                                     <div class="custom-select" id="specialisation_dropdown" style="width:200px;">
-                                        <select >
-                                            <option value="0">Accounting</option>
-                                            <option value="3">Astrophysics</option>
-                                            <option value="5">Biology</option>
-                                            <option value="6">Business</option>
-                                            <option value="10">Chemistry</option>
-                                            <option value="13">Criminology</option>
-                                            <option value="16">Economics</option>
-                                            <option value="17">Finance</option>
-                                            <option value="21">History</option>
-                                            <option value="22">IT</option>
-                                            <option value="23">International Studies</option>
-                                            <option value="24">Journalism</option>
-                                            <option value="25">Linguistics</option>
-                                            <option value="26">Marketing</option>
-                                            <option value="27">Mathematics</option>
-                                            <option value="30">Music</option>
-                                            <option value="31">Philosophy</option>
-                                            <option value="32">Physics</option>
-                                            <option value="33">Physiology</option>
-                                            <option value="34">Politics</option>
-                                            <option value="35">Pyschology</option>
-                                            <option value="36">Sociology</option>
+                                        <select name="data[s][<?=$sIndex?>][specialisation_id]" >
+                                          <option value=""></option>
+                                          <?php foreach ($specialisationList as $sL): ?>
+                                            <option value="<?=$sL['specialisation_id']?>"  <?=$data['s'][$sIndex]['specialisation_id'] == $sL['specialisation_id']?" selected":""?>><?=$sL['specialisation_name']?></option>
+                                          <?php endforeach; ?>
                                         </select>
                                     </div>
 
@@ -199,14 +202,15 @@
                                 <hr>
 
                             </div>
+                          <?php endforeach; ?>
                         </div>
 
                         <div class="add_more_question_body_container" id="add_more_3rd_question_body_container">
                         </div>
 
                         <!-- "+ Add More" -->
-                        <a class="add_more_question_body_container_link" href="#"
-                            onClick="addMore('3rd_question_body_container', 'add_more_3rd_question_body_container');">+
+                        <a class="add_more_question_body_container_link" href="#" id="sAddMore"
+                            onClick="addMore('3rd_question_body_container', 'sAddMore');">+
                             Add
                             more</a>
 
@@ -224,33 +228,25 @@
                                     what are your hobbies?
                                 </div>
                             </div>
+                            <?php foreach (array('0','1','2') as $hIndex): ?>
 
                             <!-- QUESTION BODY -->
-                            <div class="question_body_container" id="4th_question_body_container">
+                            <div class="question_body_container" id="4th_question_body_container-<?=$hIndex?>"
 
+                              style="<?=(empty($data['h'][$hIndex]['hobby_id']))&&$hIndex>0? 'display:none':'' ?>">
                                 <br>
-
                                 <!-- Degree Level (Input) -->
                                 <div id="hobby_container">
 
                                     <label class="input_label" for="hobby_dropdown">Hobby</label>
 
                                     <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
-                                    <div class="custom-select"  name="data[q][h][]" id="hobby_dropdown" style="width:200px;">
-                                        <select>
-                                            <option value="0">Hiking</option>
-                                            <option value="1">Cooking</option>
-                                            <option value="2">Painting</option>
-                                            <option value="3">Writing</option>
-                                            <option value="4">Dancing</option>
-                                            <option value="5">Programming</option>
-                                            <option value="6">Reading</option>
-                                            <option value="7">Knitting</option>
-                                            <option value="8">Gardening</option>
-                                            <option value="9">Acting</option>
-                                            <option value="10">Swimming</option>
-                                            <option value="11">Meditating</option>
-                                            <option value="12">Knitting</option>
+                                    <div class="custom-select"  name="data[h][<?=$hIndex?>][hobby_id]" id="hobby_dropdown" style="width:200px;">
+                                        <select name="data[h][<?=$hIndex?>][hobby_id]">
+                                          <option value=""></option>
+                                          <?php foreach ($hobbyList as $hL): ?>
+                                            <option value="<?=$hL['hobby_id']?>" <?=$data['h'][$hIndex]['hobby_id'] == $hL['hobby_id']?" selected":""?>><?=$hL['hobby_name']?></option>
+                                          <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
@@ -258,6 +254,7 @@
                                 <hr>
 
                             </div>
+                          <?php endforeach; ?>
                         </div>
 
                         <div class="add_more_question_body_container" id="add_more_4th_question_body_container">
@@ -324,7 +321,7 @@
                         </div>
 
                         <div id="register_button_container">
-                            <button id="register_button" type="submit">Register</button>
+                            <button id="register_button" class="btn" type="submit">Register</button>
                         </div>
                     </form>
                     <?=$this->Form->end()?>

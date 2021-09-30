@@ -76,4 +76,29 @@ class TutorSpecialisationsTable extends AppTable
 
         return $rules;
     }
+
+
+    public function createNewRows($orginalRows, $tutorId)
+    {
+      if (empty($tutorId)) return false;
+
+      //filter empty row first
+      $rows = [];
+      foreach($orginalRows as $row)
+      {
+        if (empty($row['specialisation_id'])) continue;
+        $rows[] = array(
+          'specialisation_id' => $row['specialisation_id'],
+          'tutor_id' => $tutorId
+        );
+      }
+      if (empty($rows)) return false;
+
+      foreach($rows as $row):
+        $q = $this->_getInsertQuery('tutor_specialisations', $row);
+        $ret = $this->_db->execute($q['query'], $q['values']);
+      endforeach;
+
+      return true;
+    }
 }

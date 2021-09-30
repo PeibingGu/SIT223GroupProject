@@ -1,0 +1,858 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ================= VARIABLE ================ */
+:root {
+  --primary-color: hsl(9, 94%, 61%);
+  --primary-color-alt: hsl(14, 81%, 55%);
+}
+
+/* ================= BASE ==================== */
+
+
+ul {
+    width: 100%;
+    list-style: none;
+    display:  flex;
+    justify-content: left;
+}
+
+li {
+    margin-right: 1em;
+}
+
+li a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+
+}
+
+
+/* -- BODY -- */
+body {
+  font-family: Barlow;
+  font-size: 1rem;
+  background-color: var(--white-color);
+  min-width: 320px;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+
+.link {
+    text-decoration: underline;
+}
+
+.container {
+    width:  100%;
+}
+
+/* ================= HEADER ================ */
+header {
+  width:  100%;
+  height:  auto;
+  background-color: white;
+  box-shadow: 10px 3px 5px grey;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+}
+
+#navbar {
+  width:  100%;
+
+  display: block;
+}
+@media only screen and (max-width: 990px) {
+  header {
+      padding-bottom: 5em;
+      height: 11vh;
+  }
+}
+
+.primary_header, .secondary_header {
+  width: 100%;
+  padding-top: 1em;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.primary_header {
+    padding-left: 2.5rem;
+}
+
+.secondary_header {
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  height: 12vh;
+}
+
+
+.primary_header a {
+    background-color: #303179;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: .06rem;
+    font-weight: 900;
+    padding: .3em .5em .4em .5em;
+    border-radius: 10px;
+    margin-right: .4rem;
+}
+
+nav {
+    width:  100%;
+    display: flex;
+    justify-content: right;
+}
+
+nav .nav_items {
+    width: 100%;
+    padding-left:  2em;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+nav .nav_items #collapse_menu {
+    width:  100%;
+    display:  flex;
+    align-items: center;
+    margin-top: 20px;
+    padding-right: 2em;
+    padding-top: 5px;
+}
+
+.nav_items li {
+    min-width: 110px;
+}
+
+.secondary_header a {
+    color: #303179;
+    font-size: 1.4em;
+    letter-spacing: 0.01em;
+    font-weight: 700;
+    min-width: 170px;
+}
+
+#search_icon {
+  width: 100px;
+  padding-top: 0;
+  margin-left: 15%;
+  right: 5%;
+}
+
+#balance_icon {
+  width: 20px;
+  padding-top: 0;
+  margin-left: 45%;
+}
+
+#appointments_icon {
+  width: 35px;
+  padding-top: 0;
+  margin-left: 15%;
+}
+
+#message_icon {
+  width: 45px;
+  padding-top: 0;
+  margin-left: 15%;
+}
+
+a#balance_button {
+    position: absolute;
+    right:  5%;
+}
+
+a#appointments_button {
+    position: absolute;
+    right:  5%;
+}
+
+a#chat_button {
+    position: absolute;
+    right:  5%;
+}
+
+a#user_profile_button {
+    position: absolute;
+    right:  5%;
+}
+
+#user_initials_container {
+  width: 50px;
+  height: 50px;
+  background-color: #C4C4C4;
+  color: black;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding-top: 0;
+  margin-left: 10%;
+}
+
+a#be_a_tutor_button {
+    background-color: #ED7966;
+    color: white;
+    font-weight: 1000;
+    border-radius: 10px;
+    padding: .4em 0 .4em 0;
+    font-size: 1.21em;
+    font-weight: 800;
+    letter-spacing: 0em;
+    position: absolute;
+    right:  5%;
+    bottom: 20px;
+    text-align: center;
+}
+
+a#logout_button {
+  position: absolute;
+  right:  5%;
+  background-color: white;
+  color: #303179;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+.secondary_header a:hover {
+    color: #ED7966;
+}
+
+.bars_color{
+    color:  #303179;
+}
+
+
+nav .toggle_collapse .toggle_icon{
+    position:  absolute;
+    right: 2.5em;
+    width: auto;
+    cursor: pointer;
+    margin-left: 5em;
+    padding-bottom: 0;
+}
+
+.toggle_icon {
+    visibility: hidden;
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< MAIN <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+/* ====================== SECTION 1: BANNER ====================== */
+.section-1 {
+  background-image: url("/img/Assets/Tutor_Profile/tutor_profile_banner_background.png");
+  transform: translateY(134px);
+  background-attachment: fixed;
+  background-repeat: repeat-y;
+  background-size: 100% 484px;
+  height: 484px;
+  width:  100%;
+  background-color: #FAE5DF;
+  display: block;
+}
+
+#tutor_profile_picture_container {
+  position: absolute;
+  bottom: -30%;
+  left: 10%;
+}
+
+#tutor_profile_picture {
+  width: 300px;
+}
+
+
+/* ======================SECTION 2:  TUTOR SUMMARY ====================== */
+.section-2 {
+  transform: translateY(134px);
+  display: block;
+  height: 160px;
+  padding-left: 450px;
+  padding-top: 10px;
+}
+
+#tutor_excerpt_container {
+  width: 53%;
+  float: left;
+}
+
+#tutor_name_and_degree_type_container {
+  padding-top: 15px;
+}
+
+.tutor_name_and_degree_type {
+  font-size: 36px;
+  font-weight: 700;
+  color: #303179;
+  text-align: left;
+  display: inline-block;
+}
+
+#between_tutor_name_and_tutor_degree_type {
+  font-size: 36px;
+  font-weight: 700;
+  color: #303179;
+  text-align: left;
+  display: inline-block;
+}
+
+#tutor_degree_type {
+  font-size: 36px;
+  font-weight: 700;
+  color: #303179;
+  text-align: left;
+  display: inline-block;
+}
+
+#degree_name_and_university_container {
+  margin-top: 10px;
+  display: block;
+}
+
+#degree_name {
+  color: #303179;
+}
+
+#university {
+  color: #303179;
+}
+
+#ratings_container {
+  margin-top: 10px;
+}
+
+#ratings_value {
+  color: #C99B09;
+  font-weight: 700;
+  display: inline-block;
+  transform: translateY(-3.5px);
+  margin-right: 5px;
+}
+
+#ratings_image {
+  width: 100px;
+  display: inline-block;
+  padding-top: 0;
+}
+
+#number_of_ratings {
+  display: inline-block;
+  color: #303179;
+  transform: translateY(-3.5px);
+}
+
+
+
+#book_button {
+  background-color: #303179;
+  color: white;
+  border-radius: 16px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: center;
+  padding: 10px 30px 10px 30px;
+  border: none;
+  margin-top: 25px;
+  float: left;
+  cursor: pointer;
+}
+
+#chat_with_tutor_button {
+  width: 80px;
+  padding-top: 0;
+  margin-top: 15px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+
+
+/* ====================== SECTION 3: TUTOR PROFILE ROW #1 ====================== */
+.section-3 {
+  margin-top: 180px;
+  margin-left: 130px;
+  margin-right: 80px;
+  height: 40wh;
+}
+
+.bubble_content_container {
+  box-shadow: 2px 5px 15px 2px grey;
+  margin-right: 3%;
+  background-color: #FAE5DF;
+  padding-left: 20px;
+  border-radius: 30px;
+  overflow: auto;
+  max-height: 400px;
+}
+
+.bubble_heading {
+  font-size: 30px;
+  font-weight: 700;
+  color: #303179;
+  text-align: left;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+.bubble_text {
+  margin-top: 15px;
+  margin-right: 10px;
+  color: #303179;
+  font-size: 20px;
+  word-spacing: 4px;
+}
+
+#profile_container {
+  height: 100%;
+  width:  58%;
+  float: left;
+}
+
+#tutoring_methodologies_container {
+  height: 100%;
+  width:  37%;
+}
+
+
+
+/* ====================== SECTION 4: TUTOR PROFILE ROW #2 ====================== */
+.section-4 {
+  margin-top: 30px;
+  margin-left: 130px;
+  margin-right: 80px;
+  height: 350px;
+}
+
+/* ----------- COLUMN #1 -----------*/
+
+#unit_information_container {
+  float: left;
+  height: 300px;
+  width:  40%;
+}
+
+
+/* ----------- COLUMN #2 -----------*/
+#tutor_profile_row_2_section_column_2 {
+  float: left;
+  width: 30%;
+  margin-right: 40px;
+  height: 300px;
+}
+
+#specialisations_container {
+  height: 47%;
+  width:  100%;
+}
+
+#hobbies_container {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  height: 50%;
+  width:  100%;
+}
+
+#qualifications_container {
+  height: 300px;
+}
+
+
+
+/* ====================== SECTION #5: TUTOR RATINGS SUMMARY ====================== */
+.section-5 {
+  margin: 20px 80px 0 130px;
+  height: 300px;
+  width: 100%;
+}
+
+#student_feedback_heading {
+  color: #303179;
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+/* ----- COLUMN 1 ----- */
+#tutor_ratings_column_1_container {
+  width: 130px;
+  height: 200px;
+  float: left;
+}
+
+#average_rating_value {
+  color: #C99B09;
+  font-size: 96px;
+  font-weight: 600;
+}
+
+#average_rating_stars_icon {
+  padding-top: 0px;
+}
+
+#tutor_rating_text {
+  color: #C99B09;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ----- COLUMN 2 ----- */
+#tutor_ratings_column_2_container {
+ width: 491px;
+ height: 155px;
+ margin: 28px 0 0 20px;
+ float: left;
+}
+
+
+.bar_dark {
+  width: 491px;
+  height: 20px;
+  background-color: #929191;
+}
+
+.bar_light {
+  width: 491px;
+  height: 20px;
+  margin-top: 11px;
+  background-color: #C4C4C4;
+}
+
+
+/* ----- COLUMN 3 ----- */
+#tutor_ratings_column_3_container {
+ width: 200px;
+ height: 155px;
+ margin: 20px 0 0 20px;
+ display: inline-block;
+}
+
+.stars_icons_and_percentage_container {
+  display: block;
+
+}
+
+.tutor_rating_stars_icon {
+  width: 96px;
+  height: 22px;
+  padding-top: 0;
+  margin-right: 10px;
+  padding-top: 6px;
+  margin-bottom: 3px;
+  float: left;
+}
+
+.tutor_rating_percentage {
+  color: #303179;
+  font-size: 20px;
+  padding-top: 2px;
+  margin-bottom: 0 !important;
+}
+
+
+
+/* ====================== SECTION #6: STUDENT FEEDBACK ====================== */
+.section-6 {
+  margin: 0px 80px 0 130px;
+  height: 400px;
+  width: 100%;
+}
+
+.student_rating_entry {
+  width: 52%;
+  height: 130px;
+}
+
+/* ----- STUDENT INITIALS CONTAINER ----- */
+.student_initials_container {
+  width: 73px;
+  height: 73px;
+  margin-top: 20px;
+  border-radius: 37.5px;
+  background-color: #303179;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  float: left;
+  cursor: pointer;
+}
+
+/* ----- STUDENT RATING DESCRIPTION CONTAINER ----- */
+.student_rating_description_container {
+  height: 120px;
+  width: 100%;
+  margin: 10px 0 10px 100px;
+}
+
+.student_name {
+  font-size: 30px;
+  color: #303179;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.student_rating_stars_icon {
+  width: 110px;
+  height: 22px;
+  padding-top: 0;
+  margin-top: 5px;
+}
+
+.student_rating_time_elapsed {
+  color: #B0ACAA;
+  font-size: 24px;
+  padding-top: 2px;
+  display: inline-block;
+}
+
+.student_feedback_text {
+  color: #303179;
+  font-size: 24px;
+}
+
+
+/* =============== MEDIA QUERIES ======= */
+
+/* For screen size smaller than 1100px */
+@media only screen and (max-width: 1100px) {
+  #navbar {
+    height: 101px;
+  }
+
+  a#be_a_tutor_button {
+    background-color: #ED7966;
+    color: white;
+    font-weight: 1000;
+    border-radius: 10px;
+    padding: .4em 0 .4em 0;
+    font-size: 1.21em;
+    font-weight: 800;
+    letter-spacing: 0em;
+    position: absolute;
+    right: 5%;
+    bottom: 10px;
+    text-align: center;
+  }
+}
+
+/* For screen size smaller than 990px */
+@media only screen and (max-width: 990px) {
+
+  .section-3 {
+    margin-left: 20px;
+  }
+
+  .section-4 {
+    margin-left: 20px;
+    height: 100%;
+  }
+
+  #tutor_excerpt_container {
+    width: 100%;
+  }
+
+  .bubble_content_container {
+    margin: 50px;
+  }
+
+  #profile_container {
+    width: 100%;
+    height: 30%;
+  }
+
+  #tutoring_methodologies_container {
+    width: 100%;
+    height: 20%;
+  }
+
+  #unit_information_container {
+    width: 100%;
+    height: 25%;
+  }
+
+  #tutor_profile_row_2_section_column_2 {
+    width: 100%;
+  }
+
+  #specialisations_container {
+    width: 100%;
+    height: 20%;
+
+  }
+
+  #hobbies_container {
+    width: 100%;
+    height: 18%;
+
+  }
+
+  #qualifications_container {
+    width: 100%;
+    height: 18%;
+
+  }
+
+
+  #tutor_ratings_column_2_container {
+    width: 100px;
+    height: 155px;
+    margin: 28px 0 0 20px;
+    float: left;
+  }
+
+
+
+  /* ----- HEADER ----- */
+
+  header {
+   padding-bottom: 5em;
+   height: 11vh;
+  }
+
+  .primary_header {
+    display: none;
+  }
+
+  .secondary_header {
+    padding-top: 0;
+  }
+
+  .toggle_icon {
+    visibility: visible;
+  }
+
+  nav {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  nav .nav_items{
+    justify-content: flex-end;
+    margin-right: 5%;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+nav .nav_items #collapse_menu{
+    display: none;
+    flex-direction: column !important;
+    background-color: rgba(255,191,191,.9);
+    padding-bottom: .5em;
+    box-shadow: -3px 3px 5px grey;
+    width:  250px important;
+    margin-top: 1em;
+    padding-left: 6%;
+  }
+
+  .toggle_collapse:hover #collapse_menu {
+    display: block;
+  }
+
+ #collapse_menu li  {
+    margin-bottom: 1.5em;
+    margin-left: 2.5em;
+    min-width: 170px;
+ }
+
+ #collapse_menu a#login-signup-button {
+        position: relative;
+  }
+
+  .icon {
+    float: right;
+    display: block;
+  }
+
+}
+
+
+/* For screen size smaller than 768px */
+@media only screen and (max-width: 768px) {
+  #section-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+
+  #tutor_profile_picture_container {
+    width: 100%;
+    position: absolute;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-left: 0;
+    left: 0;
+  }
+
+  #tutor_profile_picture {
+    width: 300px;
+  }
+
+  .section-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 200px;
+    padding-left: 0;
+  }
+
+  #tutor_name_and_degree_type_container {
+    width: 100%;
+  }
+
+  #degree_name_and_university_container {
+    width: 100%;
+  }
+
+  #ratings_container {
+    width: 100%;
+  }
+
+  #tutor_buttons_container {
+    margin-top: 25px;
+  }
+
+  #chat_button {
+    margin-left: 0;
+  }
+}
+
+/* For screen size smaller than 450px */
+@media only screen and (max-width: 450px) {
+    nav .nav_items #collapse_menu {
+    width:  450px !important;
+    padding-left: 10%;
+    }
+}

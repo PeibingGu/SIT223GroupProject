@@ -21,7 +21,8 @@
     <title id="page_title">uTute | Home</title>
 
     <?= $this->Html->script([
-                             'vendor/jquery-slim.min'
+                             'vendor/jquery-3.2.1.min'
+                                                      // 'vendor/jquery-slim.min'
                              ])?>
     <?= $this->Html->css([
                           // 'normalize.min',

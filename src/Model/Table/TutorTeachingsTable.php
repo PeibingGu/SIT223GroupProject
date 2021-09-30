@@ -90,4 +90,31 @@ class TutorTeachingsTable extends AppTable
 
         return $rules;
     }
+
+
+    public function createNewRows($orginalRows, $tutorId)
+    {
+      if (empty($tutorId)) return false;
+
+      //filter empty row first
+      $rows = [];
+      foreach($orginalRows as $row)
+      {
+        if (empty($row['unit_code'])||empty($row['unit_name']) || empty($row['fees'])) continue;
+        $rows[] = array(
+          'unit_code' => $row['unit_code'],
+          'unit_name' => $row['unit_name'],
+          'fees' => $row['fees'],
+          'tutor_id' => $tutorId
+        );
+      }
+      if (empty($rows)) return false;
+
+      foreach($rows as $row):
+        $q = $this->_getInsertQuery('tutor_teachings', $row);
+        $ret = $this->_db->execute($q['query'], $q['values']);
+      endforeach;
+
+      return true;
+    }
 }

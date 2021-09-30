@@ -33,7 +33,7 @@
 
                         <div id="bottom_links_container">
                             <a class="bottom_text" href="">Forgot Password?</a>
-                            <p class="bottom_text">Don't have an account? <a class="bottom_link" href="">Create One</a>
+                            <p class="bottom_text">Don't have an account? <a class="bottom_link" href="/register">Create One</a>
                             </p>
                         </div>
 

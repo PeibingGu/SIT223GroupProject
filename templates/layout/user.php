@@ -12,7 +12,7 @@
 
     <?= $this->Html->meta('icon') ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 
     <link rel="shortcut icon" type="image/x-icon" href="/img/Assets/Icons/globe.png">
 
@@ -39,8 +39,12 @@
 
     <?php if ($this->request->getParam('action') == 'search'): ?>
       <?=$this->Html->css(['search'])?>
-    <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
+    <?php elseif ($this->request->getParam('action') == 'profile'): ?>
+        <?=$this->Html->css([ 'tutor_profile'])?>
+  <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
       <?=$this->Html->css(['upgrade'])?>
+<?php elseif ($this->request->getParam('action') == 'booking'): ?>
+    <?=$this->Html->css(['request_a_session'])?>
     <?php endif; ?>
 
     <?= $this->fetch('meta') ?>
@@ -58,7 +62,7 @@
         </div>
     </main>
     <footer>
-      <?=$this->element("footer")?>
+      <?php //$this->element("footer")?>
     </footer>
 
 
@@ -73,6 +77,8 @@
     <!-- Link External JavaScript -->
     <?php if ($this->request->getParam('action') == 'search'): ?>
     <script src="/js/search.js" defer></script>
+
+
   <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
   <script src="/js/be_tutor.js" defer></script>
 

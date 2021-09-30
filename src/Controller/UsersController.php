@@ -26,7 +26,7 @@ class UsersController extends AppController
       parent::beforeFilter($event);
       // Configure the login action to not require authentication, preventing
       // the infinite redirect loop issue
-      $this->Authentication->addUnauthenticatedActions(['login', 'register', 'verifyOtp', 'registerForm', 'logout']);
+      $this->Authentication->addUnauthenticatedActions(['login', 'search', 'register', 'verifyOtp', 'registerForm', 'logout']);
 
       // $this->Users = TableRegistry::getTableLocator()->get('Users', ['table' => 'users']);
     }
@@ -191,7 +191,6 @@ class UsersController extends AppController
           $post['mobile'] = str_replace(['+', '-'], '', filter_var($post['mobile'], FILTER_SANITIZE_NUMBER_INT));
           if (strlen($post['mobile']) != 10)
           {
-
             throw new \Exception("Mobile must meet its requirements");
           }
 
@@ -218,6 +217,7 @@ class UsersController extends AppController
           $post['email'] = $email;
           $post['password'] = $post['password'];
           $post['is_email_verified'] = '1';
+          $post['first_name'] = $post['last_name'] = '';
           list($post['first_name'], $post['last_name']) = explode(' ', $post['full_name'], 2);
 
           unset($post['full_name'], $post['confirm_password']);
@@ -261,10 +261,57 @@ class UsersController extends AppController
       $this->Uni = TableRegistry::getTableLocator()->get('Universities', ['table' => 'universities']);
       $universityList = $this->Uni->getAllUniversities();
 
+      $this->Tutors = TableRegistry::getTableLocator()->get('Tutors', ['table' => 'tutors']);
+      $tutors = $this->Tutors->findAllTutors();
+
+
       $menuItem = 'search';
       $pageTitle = 'uTute | Tutor Search';
-      $this->set(compact(['menuItem', 'pageTitle', 'user', 'universityList']));
+      $this->set(compact(['menuItem', 'pageTitle', 'user', 'universityList', 'tutors']));
       $this->viewBuilder()->setLayout('user');
+    }
+
+    public function profile($tutorIdCode=null)
+    {
+      if (empty($tutorIdCode)) return $this->redirect('/');
+
+      $userId = $this->Authentication->getIdentity()['user_id'];
+      $user = empty($userId) ? null : $this->Users->getUserById($userId);
+      $tutorId = base64_decode($tutorIdCode);
+      if (empty($tutorId) || !is_numeric($tutorId))
+      {
+        return $this->redirect('/');
+      }
+      $this->Tutors = TableRegistry::getTableLocator()->get('Tutors', ['table' => 'tutors']);
+      $tutor = $this->Tutors->getProfile($tutorId);
+
+      $menuItem = 'profile';
+      $pageTitle = 'uTute | Tutor Profile';
+      $this->set(compact(['menuItem', 'pageTitle','tutor', 'user']));
+      $this->viewBuilder()->setLayout('user');
+
+    }
+
+    public function booking($tutorIdCode=null)
+    {
+      //must be logged in first
+      if (empty($tutorIdCode)) return $this->redirect('/search');
+
+
+      $userId = $this->Authentication->getIdentity()['user_id'];
+      $user = empty($userId) ? null : $this->Users->getUserById($userId);
+      $tutorId = base64_decode($tutorIdCode);
+      if (empty($tutorId) || !is_numeric($tutorId))
+      {
+        return $this->redirect('/');
+      }
+
+
+      $menuItem = 'Book Appointment';
+      $pageTitle = 'uTute | Book Appointment';
+      $this->set(compact(['menuItem', 'pageTitle','tutor', 'user']));
+      $this->viewBuilder()->setLayout('user');
+
     }
 
     public function upgrade()
@@ -273,6 +320,12 @@ class UsersController extends AppController
         $userId = $this->Authentication->getIdentity()['user_id'];
         $user = $this->Users->getUserById($userId);
 
+        $this->Uni = TableRegistry::getTableLocator()->get('Universities', ['table' => 'universities']);
+        $this->Tutors = TableRegistry::getTableLocator()->get('Tutors', ['table' => 'tutors']);
+        $this->QualTypes = TableRegistry::getTableLocator()->get('QualificationTypes', ['table' => 'qualification_types']);
+        $this->Specialisations= TableRegistry::getTableLocator()->get('Specialisations', ['table' => 'specialisations']);
+        $this->Hobbies= TableRegistry::getTableLocator()->get('Hobbies', ['table' => 'hobbies']);
+
         if (!empty($user['is_tutor']))
         {
           $this->Flash->success("You have upgraded to be tutor already");
@@ -280,8 +333,92 @@ class UsersController extends AppController
         }
         if ($this->request->is("POST")):
           try{
-            $post = $this->request->getData();
-            var_dump($post);
+            $post = $this->request->getData('data');
+            $errors = [];
+            if (empty($post['q'][0]['qualification_type_id'])
+              || empty($post['q'][0]['university_id'])
+              || empty($post['q'][0]['complete_year'])
+              || empty($post['q'][0]['gpa']))
+            {
+              $errors[] = "Qualification must not be empty (at least one)";
+            }
+
+            if (empty($post['u'][0]['unit_code'])
+              || empty($post['u'][0]['unit_name']))
+            {
+              $errors[] = "Unit must not be empty (at least one)";
+            }
+
+            if (empty($post['s'][0]['specialisation_id']))
+            {
+              $errors[] = "Specialisation must not be empty (at least one)";
+            }
+
+            if (empty($post['h'][0]['hobby_id']))
+            {
+              $errors[] = "Hobby must not be empty (at least one)";
+            }
+
+            if (empty($post['p']['profile_introduction']))
+            {
+              $errors[] = "Profile introduction must not be empty";
+            } else if(strlen($post['p']['profile_introduction']) > 500){
+                $errors[] = "Profile introduction must not be too long (500 characters)";
+            }
+
+            if (empty($post['p']['tutoring_strategies']))
+            {
+              $errors[] = "Tutoring Strategies must not be empty";
+            } else if(strlen($post['p']['profile_introduction']) > 500){
+                $errors[] = "Tutoring Strategies must not be too long (500 characters)";
+            }
+
+            if (!empty($errors))
+            {
+              throw new \Exception(implode("<br>", $errors));
+            }
+
+            if ($this->Tutors->isExistingTutorWithUserId($user['user_id']))
+            {
+              throw new \Exception("You have been a tutor before");
+            }
+
+            //create tutor record now
+            $tutor = [];
+            $tutor['user_id'] = $user['user_id'];
+            $tutor['profile_image'] = "";
+            $tutor['average_rating'] = 0.0;
+            $tutor['profile_introduction'] = $post['p']['profile_introduction'];
+            $tutor['tutoring_strategies'] = $post['p']['tutoring_strategies'];
+
+            if (false == ($tutorId = $this->Tutors->createNew($tutor)))
+            {
+              throw new \Exception("Unable to create tutor profile temporarily");
+            }
+
+            $this->TutorHobbies =TableRegistry::getTableLocator()->get('TutorHobbies', ['table' => 'tutor_hobbies']);
+            $this->TutorQualifications = TableRegistry::getTableLocator()->get('TutorQualifications', ['table' => 'tutor_qualifications']);
+            $this->TutorSpecialisations = TableRegistry::getTableLocator()->get('TutorSpecialisations', ['table' => 'tutor_specialisations']);
+            $this->TutorTeachings = TableRegistry::getTableLocator()->get('TutorTeachings', ['table' => 'tutor_teachings']);
+
+            $ret1 = $this->TutorHobbies->createNewRows($post['h'], $tutorId);
+            $ret2 = $this->TutorQualifications->createNewRows($post['q'], $tutorId);
+            $ret3 = $this->TutorSpecialisations->createNewRows($post['s'], $tutorId);
+            $ret4 = $this->TutorTeachings->createNewRows($post['u'], $tutorId);
+
+            if (!$ret1 || !$ret2 || !$ret3 || !$ret4)
+            {
+              $this->Flash->error("Tutor profile created but something is missing");
+            } else {
+              $this->Flash->success("Welcome aboard");
+            }
+
+            //overwrite is_tutor in auth right now
+            $this->Users->updateUser(['is_tutor' => '1'], $user['user_id']);
+            $user['is_tutor'] = '1';
+            $this->Session->write('Auth', $user);
+
+            return $this->redirect("/profile");
 
           } catch (\Exception $e)
           {
@@ -289,15 +426,17 @@ class UsersController extends AppController
           }
         endif;
 
-        $this->Uni = TableRegistry::getTableLocator()->get('Universities', ['table' => 'universities']);
         $universityList = $this->Uni->getAllUniversities();
-
-        $this->QualTypes = TableRegistry::getTableLocator()->get('QualificationTypes', ['table' => 'qualification_types']);
         $qualificationTypeList = $this->QualTypes->getAllTypes();
+        $specialisationList = $this->Specialisations->getAllTypes();
+        $hobbyList = $this->Hobbies->getAllTypes();
 
         $menuItem = 'upgrade';
         $pageTitle = 'uTute | Be a Tutor';
-        $this->set(compact(['menuItem', 'pageTitle', 'user', 'qualificationTypeList','universityList']));
+        $this->set(compact(['menuItem', 'pageTitle', 'user',
+                'qualificationTypeList','universityList', 'specialisationList',
+                'hobbyList',
+              ]));
         $this->viewBuilder()->setLayout('user');
 
     }

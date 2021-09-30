@@ -80,10 +80,21 @@ function closeAllSelect(elmnt) {
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
 
-function addMore(divTemplate, createdDiv) {
-    var newdiv = document.createElement('div');
-    newdiv.innerHTML = document.getElementById(divTemplate).innerHTML;
-    document.getElementById(createdDiv).appendChild(newdiv);
-
-    document.addEventListener("click", closeAllSelect);
+function addMore(divTemplate, btnId) {
+  var newDivId = divTemplate + "-1";
+  console.log('checking id='+newDivId + " length="+$("#"+newDivId).length+" visible="+$("#" + newDivId ).is(":visible"));
+  if ($("#" + newDivId ).length > 0 && !$("#" + newDivId ).is(":visible"))
+  {
+    console.log("found 1");
+    $("#" + newDivId).show();
+  } else {
+    newDivId = divTemplate + "-2";
+    console.log('checking id='+newDivId + " length="+$("#"+newDivId).length+" visible="+$("#" + newDivId ).is(":visible"));
+    if ($("#" + newDivId ).length > 0 && !$("#" + newDivId ).is(":visible"))
+    {
+      console.log('found 2');
+      $("#" + newDivId).show();
+      $("#" + btnId).hide();
+    }
+  }
 }

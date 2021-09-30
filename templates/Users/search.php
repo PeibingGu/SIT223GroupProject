@@ -39,7 +39,7 @@
 
                     <!-- RESULTS COUNT CONTAINER -->
                     <div id="results_count_container">
-                        <p id="results_count">10,000 <span>results</span></p>
+                        <p id="results_count"><?=number_format(count($tutors),0)?> <span>results</span></p>
                     </div>
 
                 </div>
@@ -363,42 +363,54 @@
                             <output id="price_per_hour_output">50</output>
 
                         </div>
-
                     </div>
-
-
 
                     <!-- SEARCH RESULTS CONTAINER -->
                     <div id="search_results_container">
-
                         <br>
-
-                        <!-- <div class="tutor_container">
-                            <img class="tutor_image" src="/img/Assets/Tutor_Search/tutor_1.png" alt="">
+                        <?php foreach ($tutors as $tutor): ?>
+                        <div class="tutor_container">
+                            <a href="/profile/<?=base64_encode($tutor['Tutor']['tutor_id'])?>"><img class="tutor_image" src="<?=$tutor['Tutor']['profile_image']?>" alt=""></a>
 
                             <div class="tutor_title_container">
-                                <span class="tutor_name">Lalala Lalala Lala</span>
-                                <span class="tutor_degree_type"> Bsc, Msc</span>
+                                <span class="tutor_name"><?=$tutor['Tutor']['first_name'].' '.$tutor['Tutor']['last_name']?></span>
+                                <span class="tutor_degree_type"> </span>
                             </div>
 
                             <div class="tutor_degrees_container">
                                 <p class="tutor_degrees">
-                                    <span>Bachelor of Computer Science, Master of AI</span>
-                                    <span>Deakin University, </span>
-                                    <span>2022</span>
+                                    <span><?=$tutor['TutorQualifications'][0]['qualification_type_name']?></span><br>
+                                    <span><?=$tutor['TutorQualifications'][0]['university_name']?>,</span>
+                                    <span><?=$tutor['TutorQualifications'][0]['complete_year']?></span>
                                 </p>
                             </div>
 
                             <div class="tutor_ratings_container">
-                                <span class="tutor_rating_value">4.7</span>
+                                <span class="tutor_rating_value"><?=number_format($tutor['Tutor']['average_rating'], 1)?></span>
+                                <?php if ($tutor['Tutor']['average_rating'] <= 1.5): ?>
+                                  <img class="tutor_rating_icon" src="/img/Assets/Icons/1_point_5_stars.png" alt="">
+                              <?php elseif ($tutor['Tutor']['average_rating'] < 2.5): ?>
+                                <img class="tutor_rating_icon" src="/img/Assets/Icons/2_stars.png" alt="">
+                              <?php elseif ($tutor['Tutor']['average_rating'] < 3): ?>
+                                <img class="tutor_rating_icon" src="/img/Assets/Icons/2_point_5_stars.png" alt="">
+                              <?php elseif ($tutor['Tutor']['average_rating'] < 3.5): ?>
+                                <img class="tutor_rating_icon" src="/img/Assets/Icons/3_stars.png" alt="">
+                              <?php elseif ($tutor['Tutor']['average_rating'] < 4): ?>
+                                <img class="tutor_rating_icon" src="/img/Assets/Icons/3_point_5_stars.png" alt="">
+                              <?php elseif ($tutor['Tutor']['average_rating'] < 4.5): ?>
+                                <img class="tutor_rating_icon" src="/img/Assets/Icons/4_stars.png" alt="">
+                              <?php else: ?>
                                 <img class="tutor_rating_icon" src="/img/Assets/Icons/4_point_5_stars.png" alt="">
-                                <span id="tutor_number_of_ratings">(2,789)</span>
+                              <?php endif; ?>
+
+                                <span id="tutor_number_of_ratings">(<?=number_format($tutor['Tutor']['ratings'])?>)</span>
                             </div>
 
                             <div class="tutor_price_per_hour_container">
-                                A$<span class="tutor_price_per_hour">16.99</span>/hour
+                                A$<span class="tutor_price_per_hour"><?=$tutor['TutorTeachings'][0]['fees']?></span>/hour
                             </div>
-                        </div> -->
+                        </div>
+                      <?php endforeach; ?>
 
 
 

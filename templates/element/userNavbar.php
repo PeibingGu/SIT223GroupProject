@@ -5,7 +5,7 @@
             <div class="primary_header">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/booking">Book Appointment</a></li>
+                    <li><a href="/search">Book Appointment</a></li>
                     <li><a href="/" id="logout_button">Logout</a></li>
                 </ul>
             </div>
