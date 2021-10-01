@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.26)
 # Database: SIT223-utute-v1
-# Generation Time: 2021-09-30 12:55:09 +0000
+# Generation Time: 2021-10-01 04:45:17 +0000
 # ************************************************************
 
 
@@ -47,7 +47,7 @@ CREATE TABLE `appointments` (
   `appointment_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned DEFAULT NULL,
   `tutor_id` int(11) unsigned DEFAULT NULL,
-  `tutor_qualification_id` int(11) unsigned DEFAULT NULL,
+  `tutor_teaching_id` int(11) unsigned DEFAULT NULL,
   `appt_start_time` datetime DEFAULT NULL,
   `appt_end_time` datetime DEFAULT NULL,
   `status` enum('Requested','Declined','Approved','Completed') DEFAULT 'Requested',
@@ -60,10 +60,20 @@ CREATE TABLE `appointments` (
 LOCK TABLES `appointments` WRITE;
 /*!40000 ALTER TABLE `appointments` DISABLE KEYS */;
 
-INSERT INTO `appointments` (`appointment_id`, `user_id`, `tutor_id`, `tutor_qualification_id`, `appt_start_time`, `appt_end_time`, `status`, `meeting_url`, `created_time`, `fees`)
+INSERT INTO `appointments` (`appointment_id`, `user_id`, `tutor_id`, `tutor_teaching_id`, `appt_start_time`, `appt_end_time`, `status`, `meeting_url`, `created_time`, `fees`)
 VALUES
 	(1,14,12,5,'2021-09-01 10:00:00','2021-09-01 11:00:00','Completed','http://https://www.google.com.au/meeting',NULL,86.00),
-	(2,14,13,6,'2021-09-01 10:00:00','2021-09-01 11:00:00','Completed','http://https://www.google.com.au/meeting',NULL,97.00);
+	(2,14,13,6,'2021-09-01 10:00:00','2021-09-01 11:00:00','Completed','http://https://www.google.com.au/meeting',NULL,97.00),
+	(3,14,13,3,'2021-10-02 08:00:00','2021-10-02 10:00:00','Requested',NULL,'2021-10-01 02:51:46',29.00),
+	(4,14,13,3,'2021-10-23 08:00:00','2021-10-23 10:00:00','Requested',NULL,'2021-10-01 03:08:42',29.00),
+	(5,14,13,3,'2021-10-02 07:00:00','2021-10-02 08:00:00','Requested',NULL,'2021-10-01 03:10:33',29.00),
+	(6,14,13,3,'2021-10-09 07:00:00','2021-10-09 08:00:00','Requested',NULL,'2021-10-01 03:19:16',29.00),
+	(7,14,13,3,'2021-10-23 07:00:00','2021-10-23 08:00:00','Requested',NULL,'2021-10-01 03:20:49',29.00),
+	(8,14,13,3,'2021-10-15 07:00:00','2021-10-15 09:00:00','Requested',NULL,'2021-10-01 03:22:57',29.00),
+	(9,14,13,3,'2021-10-15 07:00:00','2021-10-15 08:00:00','Requested',NULL,'2021-10-01 03:30:13',29.00),
+	(10,14,13,3,'2021-10-02 07:00:00','2021-10-02 09:00:00','Requested',NULL,'2021-10-01 03:35:32',29.00),
+	(11,14,13,3,'2021-10-09 08:00:00','2021-10-09 09:00:00','Requested',NULL,'2021-10-01 03:38:19',29.00),
+	(12,14,13,3,'2021-10-02 08:00:00','2021-10-02 09:00:00','Declined',NULL,'2021-10-01 03:47:38',29.00);
 
 /*!40000 ALTER TABLE `appointments` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -162,6 +172,51 @@ CREATE TABLE `messages` (
   PRIMARY KEY (`message_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `messages` WRITE;
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+
+INSERT INTO `messages` (`message_id`, `from_user_id`, `to_user_id`, `message_content`, `is_new`, `created_time`)
+VALUES
+	(1,14,16,'Session Request:blah blah',1,'2021-10-01 02:01:29'),
+	(2,14,16,'Session Request:aomwrhinf aa fd f',1,'2021-10-01 02:02:18'),
+	(3,14,16,'Session Request:something goes here.',1,'2021-10-01 02:02:57'),
+	(4,14,13,'Session Request:something goes here blah blah',1,'2021-10-01 02:37:59'),
+	(5,14,13,'Session Request:something goes here blah blah',1,'2021-10-01 02:39:45'),
+	(6,14,13,'Session Request:something goes here blah blah',1,'2021-10-01 02:39:45'),
+	(7,14,13,'Session Request:something goes here hahahaha',1,'2021-10-01 02:44:43'),
+	(8,14,13,'Session Request:something goes here hahahaha',1,'2021-10-01 02:44:43'),
+	(9,14,13,'Session Request:fdsafdsafdsa',1,'2021-10-01 02:45:34'),
+	(10,14,13,'Session Request:fdsafsdafdsa',1,'2021-10-01 02:46:53'),
+	(11,14,13,'Session Request:fdsafsdafdsa',1,'2021-10-01 02:48:37'),
+	(12,14,13,'Session Request:fdsafsdafdsa',1,'2021-10-01 02:48:44'),
+	(13,14,13,'Session Request:fdsafdsa',1,'2021-10-01 02:48:59'),
+	(14,14,13,'Session Request:fdsafdsa',1,'2021-10-01 02:49:16'),
+	(15,14,13,'Session Request:fdsafdsa',1,'2021-10-01 02:49:16'),
+	(16,14,13,'Session Request:5555555',1,'2021-10-01 02:51:46'),
+	(17,14,13,'Session Request:5555555',1,'2021-10-01 02:51:46'),
+	(18,14,13,'Session Request:fdsafsafds',1,'2021-10-01 03:08:42'),
+	(19,14,13,'Session Request:fdsafsafds',1,'2021-10-01 03:08:42'),
+	(20,14,13,'Session Request:fdsafdsa',1,'2021-10-01 03:10:33'),
+	(21,14,13,'Session Request:fdsafdsa',1,'2021-10-01 03:10:33'),
+	(22,14,13,'Session Request:fdsafdsaf',1,'2021-10-01 03:19:16'),
+	(23,14,13,'Session Request:fdsafdsaf',1,'2021-10-01 03:19:16'),
+	(24,14,13,'Session Request:fdsafsa',1,'2021-10-01 03:20:49'),
+	(25,14,13,'Session Request:fdsafsa',1,'2021-10-01 03:20:49'),
+	(26,14,13,'Session Request:fdsafdsa',1,'2021-10-01 03:22:57'),
+	(27,14,13,'Session Request:fdsafdsa',1,'2021-10-01 03:22:57'),
+	(28,14,13,'Session Request:fdsafdsa',1,'2021-10-01 03:30:13'),
+	(29,14,13,'Session Request:fdsafdsa',1,'2021-10-01 03:30:13'),
+	(30,14,13,'Session Request:fdsafdsafdsaf',1,'2021-10-01 03:35:32'),
+	(31,14,13,'Session Request:fdsafdsafdsaf',1,'2021-10-01 03:35:32'),
+	(32,14,13,'Session Request:fdafsdafdsafs',1,'2021-10-01 03:38:19'),
+	(33,14,13,'Session Request:fdafsdafdsafs',1,'2021-10-01 03:38:19'),
+	(34,14,13,'Session Request:fdsafdsa',1,'2021-10-01 03:47:38'),
+	(35,14,13,'Session Request:fdsafdsa',1,'2021-10-01 03:47:38'),
+	(36,13,14,'Appointment Request Accepted:John Doe  has accepted your appointment request.',1,'2021-10-01 04:40:24'),
+	(37,13,14,'Appointment Request Declined:John Doe  has accepted your appointment request.',1,'2021-10-01 04:42:54');
+
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table qualification_types
@@ -853,17 +908,17 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`user_id`, `email`, `password`, `first_name`, `last_name`, `balance`, `mobile`, `is_tutor`, `is_email_verified`, `email_verified_time`, `token`, `token_expire_time`, `created_time`)
 VALUES
-	(12,'Tester@hotmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Tester','Sur',0,'',0,1,'2021-09-16 06:31:51',NULL,NULL,'2021-09-16 06:31:51'),
-	(14,'peibing.gu@hotmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Peibing','Gu',0,'',0,1,'2021-09-16 06:31:51',NULL,NULL,'2021-09-16 06:31:51'),
-	(15,'jane@citizen.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Jane','Citizen',0,NULL,1,1,NULL,NULL,NULL,NULL),
-	(16,'john@doe.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','John','Doe',0,NULL,1,1,NULL,NULL,NULL,NULL),
-	(17,'jill@smith.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Jill','Smith',0,NULL,1,1,NULL,NULL,NULL,NULL),
-	(18,'robert@power.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Robert','Power',0,NULL,1,1,NULL,NULL,NULL,NULL),
-	(19,'james@toretto','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','James','Toretto',0,NULL,1,1,NULL,NULL,NULL,NULL),
-	(20,'margaret@curie.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Margaret','Curie',0,NULL,1,1,NULL,NULL,NULL,NULL),
-	(21,'jona@tim.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Jona','Tim',0,NULL,1,1,NULL,NULL,NULL,NULL),
-	(22,'rokie@dean.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Rokie','Dean',0,NULL,1,1,NULL,NULL,NULL,NULL),
-	(23,'warren@gut.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Warren','Gut',0,NULL,1,1,NULL,NULL,NULL,NULL);
+	(12,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Tester','Sur',0,'',0,1,'2021-09-16 06:31:51',NULL,NULL,'2021-09-16 06:31:51'),
+	(14,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Peibing','Gu',0,'',0,1,'2021-09-16 06:31:51',NULL,NULL,'2021-09-16 06:31:51'),
+	(15,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Jane','Citizen',0,NULL,1,1,NULL,NULL,NULL,NULL),
+	(16,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','John','Doe',0,NULL,1,1,NULL,NULL,NULL,NULL),
+	(17,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Jill','Smith',0,NULL,1,1,NULL,NULL,NULL,NULL),
+	(18,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Robert','Power',0,NULL,1,1,NULL,NULL,NULL,NULL),
+	(19,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','James','Toretto',0,NULL,1,1,NULL,NULL,NULL,NULL),
+	(20,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Margaret','Curie',0,NULL,1,1,NULL,NULL,NULL,NULL),
+	(21,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Jona','Tim',0,NULL,1,1,NULL,NULL,NULL,NULL),
+	(22,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Rokie','Dean',0,NULL,1,1,NULL,NULL,NULL,NULL),
+	(23,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Warren','Gut',0,NULL,1,1,NULL,NULL,NULL,NULL);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
