@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.7.26)
 # Database: SIT223-utute-v1
-# Generation Time: 2021-10-01 04:45:17 +0000
+# Generation Time: 2021-10-01 08:13:59 +0000
 # ************************************************************
 
 
@@ -62,18 +62,20 @@ LOCK TABLES `appointments` WRITE;
 
 INSERT INTO `appointments` (`appointment_id`, `user_id`, `tutor_id`, `tutor_teaching_id`, `appt_start_time`, `appt_end_time`, `status`, `meeting_url`, `created_time`, `fees`)
 VALUES
-	(1,14,12,5,'2021-09-01 10:00:00','2021-09-01 11:00:00','Completed','http://https://www.google.com.au/meeting',NULL,86.00),
-	(2,14,13,6,'2021-09-01 10:00:00','2021-09-01 11:00:00','Completed','http://https://www.google.com.au/meeting',NULL,97.00),
-	(3,14,13,3,'2021-10-02 08:00:00','2021-10-02 10:00:00','Requested',NULL,'2021-10-01 02:51:46',29.00),
-	(4,14,13,3,'2021-10-23 08:00:00','2021-10-23 10:00:00','Requested',NULL,'2021-10-01 03:08:42',29.00),
-	(5,14,13,3,'2021-10-02 07:00:00','2021-10-02 08:00:00','Requested',NULL,'2021-10-01 03:10:33',29.00),
-	(6,14,13,3,'2021-10-09 07:00:00','2021-10-09 08:00:00','Requested',NULL,'2021-10-01 03:19:16',29.00),
-	(7,14,13,3,'2021-10-23 07:00:00','2021-10-23 08:00:00','Requested',NULL,'2021-10-01 03:20:49',29.00),
-	(8,14,13,3,'2021-10-15 07:00:00','2021-10-15 09:00:00','Requested',NULL,'2021-10-01 03:22:57',29.00),
-	(9,14,13,3,'2021-10-15 07:00:00','2021-10-15 08:00:00','Requested',NULL,'2021-10-01 03:30:13',29.00),
-	(10,14,13,3,'2021-10-02 07:00:00','2021-10-02 09:00:00','Requested',NULL,'2021-10-01 03:35:32',29.00),
+	(1,13,12,5,'2021-09-01 10:00:00','2021-09-01 11:00:00','Completed','http://https://www.google.com.au/meeting',NULL,86.00),
+	(2,13,14,6,'2021-09-01 10:00:00','2021-09-01 11:00:00','Completed','http://https://www.google.com.au/meeting',NULL,97.00),
+	(3,13,14,3,'2021-10-02 08:00:00','2021-10-02 10:00:00','Requested',NULL,'2021-10-01 02:51:46',29.00),
+	(4,13,14,3,'2021-10-23 08:00:00','2021-10-23 10:00:00','Requested',NULL,'2021-10-01 03:08:42',29.00),
+	(5,13,14,3,'2021-10-02 07:00:00','2021-10-02 08:00:00','Requested',NULL,'2021-10-01 03:10:33',29.00),
+	(6,13,14,3,'2021-10-09 07:00:00','2021-10-09 08:00:00','Requested',NULL,'2021-10-01 03:19:16',29.00),
+	(7,13,14,3,'2021-10-23 07:00:00','2021-10-23 08:00:00','Requested',NULL,'2021-10-01 03:20:49',29.00),
+	(8,13,11,3,'2021-10-15 07:00:00','2021-10-15 09:00:00','Completed',NULL,'2021-10-01 03:22:57',29.00),
+	(9,13,11,3,'2021-10-15 07:00:00','2021-10-15 08:00:00','Declined',NULL,'2021-10-01 03:30:13',29.00),
+	(10,13,11,3,'2021-10-02 07:00:00','2021-10-02 09:00:00','Requested',NULL,'2021-10-01 03:35:32',29.00),
 	(11,14,13,3,'2021-10-09 08:00:00','2021-10-09 09:00:00','Requested',NULL,'2021-10-01 03:38:19',29.00),
-	(12,14,13,3,'2021-10-02 08:00:00','2021-10-02 09:00:00','Declined',NULL,'2021-10-01 03:47:38',29.00);
+	(12,14,13,3,'2021-10-02 08:00:00','2021-10-02 09:00:00','Declined',NULL,'2021-10-01 03:47:38',29.00),
+	(13,14,13,3,'2021-10-02 08:00:00','2021-10-02 09:00:00','Completed',NULL,'2021-10-01 03:47:38',29.00),
+	(14,13,11,3,'2021-10-02 07:00:00','2021-10-02 09:00:00','Approved',NULL,'2021-10-01 03:35:32',29.00);
 
 /*!40000 ALTER TABLE `appointments` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -213,7 +215,8 @@ VALUES
 	(34,14,13,'Session Request:fdsafdsa',1,'2021-10-01 03:47:38'),
 	(35,14,13,'Session Request:fdsafdsa',1,'2021-10-01 03:47:38'),
 	(36,13,14,'Appointment Request Accepted:John Doe  has accepted your appointment request.',1,'2021-10-01 04:40:24'),
-	(37,13,14,'Appointment Request Declined:John Doe  has accepted your appointment request.',1,'2021-10-01 04:42:54');
+	(37,13,14,'Appointment Request Declined:John Doe  has accepted your appointment request.',1,'2021-10-01 04:42:54'),
+	(38,NULL,13,'Appointment Request Accepted:   has accepted your appointment request.',1,'2021-10-01 07:47:47');
 
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -525,7 +528,8 @@ VALUES
 	(254,1,12,16,5,'Tutor is so great! this is no.254 review ','2021-09-30 11:00:00'),
 	(255,1,12,12,5,'Tutor is so great! this is no.255 review ','2021-09-30 11:00:00'),
 	(256,1,12,14,5,'Tutor is so great! this is no.256 review ','2021-09-30 11:00:00'),
-	(257,1,12,15,5,'Tutor is so great! this is no.257 review ','2021-09-30 11:00:00');
+	(257,1,12,15,5,'Tutor is so great! this is no.257 review ','2021-09-30 11:00:00'),
+	(260,13,14,13,2,'The tutor is so good!','2021-10-01 07:46:01');
 
 /*!40000 ALTER TABLE `ratings` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -909,6 +913,7 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` (`user_id`, `email`, `password`, `first_name`, `last_name`, `balance`, `mobile`, `is_tutor`, `is_email_verified`, `email_verified_time`, `token`, `token_expire_time`, `created_time`)
 VALUES
 	(12,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Tester','Sur',0,'',0,1,'2021-09-16 06:31:51',NULL,NULL,'2021-09-16 06:31:51'),
+	(13,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Tester1','Lass',0,'',0,1,'2021-09-16 06:31:51',NULL,NULL,'2021-09-16 06:31:51'),
 	(14,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Peibing','Gu',0,'',0,1,'2021-09-16 06:31:51',NULL,NULL,'2021-09-16 06:31:51'),
 	(15,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','Jane','Citizen',0,NULL,1,1,NULL,NULL,NULL,NULL),
 	(16,'utute2021@gmail.com','$2y$10$Zy9QlrvxxZgl4enYsqu.ousqhtWmtshVQhsCFEUiNlSkhQ8eYci0S','John','Doe',0,NULL,1,1,NULL,NULL,NULL,NULL),
