@@ -90,7 +90,15 @@ class TutorsTable extends AppTable
         return $rules;
     }
 
-
+    public function getTutorIdByUserId($userId)
+    {
+      $sql = "SELECT tutor_id
+            FROM tutors
+            WHERE user_id = ?
+            limit 1";
+      $ret = $this->_db->execute($sql, [$userId])->fetch('assoc');
+      return !empty($ret['tutor_id']) ? $ret['tutor_id']: false;
+    }
     public function isExistingTutorWithUserId($userId)
     {
       $sql = "

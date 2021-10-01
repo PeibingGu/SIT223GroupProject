@@ -38,15 +38,18 @@ class MessagesController extends AppController
         $user = $this->Users->getUserById($userId);
 
         $this->request->allowMethod(['get', 'post']);
+
+        $messages = $this->Messages->findUserMessages($userId);
+
         if ($this->request->is('POST')):
 
-
+          
         endif;
 
         $pageTitle = "uTute | Messages";
 
         $menuItem = 'messages';
-        $this->set(compact(['menuItem', 'pageTitle', 'user']));
+        $this->set(compact(['menuItem', 'pageTitle', 'user', 'messages']));
         $this->viewBuilder()->setLayout('user');
     }
 

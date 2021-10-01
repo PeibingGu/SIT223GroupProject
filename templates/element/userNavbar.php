@@ -29,7 +29,7 @@
                                 <li id="balance_button" ><a href="/account"> <img id="balance_icon"
                                             src="/img/Assets/Icons/dolar_sign_icon.png" alt="Dolar Sign Icon"></a>
                                 </li>
-                                <li id="appointments_button"><a href="/booking"> <img id="appointments_icon"
+                                <li id="appointments_button"><a href="/appointments/list"> <img id="appointments_icon"
                                             src="/img/Assets/Icons/schedule_list_icon.png" alt="Schedule List Icon"></a>
                                 </li>
                                 <li id="chat_button"><a href="/messages/list"> <img id="message_icon"
@@ -41,8 +41,10 @@
                                         </div>
                                     </a>
                                 </li>
+                                <?php if (empty($user['is_tutor'])): ?>
                                 <li><a href="/upgrade" id="be_a_tutor_button">Be a
                                         Tutor</a></li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>

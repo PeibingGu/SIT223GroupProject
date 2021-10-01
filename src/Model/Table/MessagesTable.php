@@ -110,4 +110,21 @@ class MessagesTable extends AppTable
       return $ret->lastInsertId();
 
     }
+
+    public function findUserMessages($userId)
+    {
+      $sql = "
+            SELECT a.*,b.first_name as from_first_name,b.last_name as from_last_name,
+            c.first_name as to_first_name, c.last_name as to_last_name
+            FROM messages a
+            left join users as b
+            on a.from_user_id = b.user_id
+            left join users as c
+            on a.to_user_id = c.user_id
+            WHERE a.from_user_id = ?
+            OR a.to_user_id = ?
+            Order by a.from_user_id ASC, a.created_time DESC
+            ";
+      return $this->_db->execute($sql, [$userId, $userId])->fetchAll('assoc');
+    }
 }

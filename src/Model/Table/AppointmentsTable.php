@@ -172,4 +172,30 @@ class AppointmentsTable extends AppTable
 
       return $this->_db->execute("update appointments set status='Declined' WHERE appointment_id = ?", [$apptId]);
     }
+
+    public function getUserAppointments($userId)
+    {
+      //as a student
+      $sql = "
+              SELECT t.*,
+              u.first_name as student_first_name, u.last_name as student_last_name,u.email as student_email, u.user_id as student_user_id,
+              tu.email as tutor_email, tu.first_name as tutor_first_name, tu.last_name as tutor_last_name, tu.user_id as tutor_user_id,
+              v.stars, v.review_content
+              FROM appointments as t
+              left join users as u
+              on u.user_id = t.user_id
+              left join tutors as tut
+              on tut.tutor_id = t.tutor_id
+              left join users as tu
+              on tu.user_id = tut.user_id
+              left join ratings as v
+              on v.appointment_id = t.appointment_id
+              WHERE  t.user_id = ?
+              OR tu.user_id = ?
+              ORDER BY t.appt_start_time DESC;
+            ";
+      return $this->_db->execute($sql, [$userId, $userId])->fetchAll('assoc');
+
+    }
+
 }

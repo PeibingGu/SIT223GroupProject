@@ -47,7 +47,16 @@ class UserMailer extends Mailer
               ->setTemplate('booking_response');
     }
 
-
+    public function rated($appt)
+    {
+        $this
+            ->setEmailFormat('html')
+            ->setTo($appt['Tutor']['email'])
+            ->setSubject('You have a new rating&review on '. Configure::read('Domain.name'))
+            ->setViewVars([ 'appt' => $appt])
+            ->viewBuilder()
+              ->setTemplate('rated');
+    }
 
 
     // public function resetPassword($user)

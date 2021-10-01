@@ -85,7 +85,8 @@
       <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
       <script src="/js/be_tutor.js" defer></script>
 
-    <?php elseif ($this->request->getParam('action') == 'booking'): ?>
+    <?php elseif ($this->request->getParam('action') == 'booking'
+    || $this->request->getParam('action') == 'rating'): ?>
         <script src="/js/booking.js" defer></script>
 
   <?php endif;?>
