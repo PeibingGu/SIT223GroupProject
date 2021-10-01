@@ -257,7 +257,7 @@ class UsersController extends AppController
     public function search()
     {
       $userId = $this->Authentication->getIdentity()['user_id'];
-      $user = $this->Users->getUserById($userId);
+      $user = empty($userId) ? null : $this->Users->getUserById($userId);
       $this->Uni = TableRegistry::getTableLocator()->get('Universities', ['table' => 'universities']);
       $universityList = $this->Uni->getAllUniversities();
 
@@ -268,8 +268,7 @@ class UsersController extends AppController
       $menuItem = 'search';
       $pageTitle = 'uTute | Tutor Search';
       $this->set(compact(['menuItem', 'pageTitle', 'user', 'universityList', 'tutors']));
-
-      $this->viewBuilder()->setLayout(!empty($user) ? 'user':'default');
+      $this->viewBuilder()->setLayout('user');
     }
 
     public function profile($tutorIdCode=null)
@@ -289,9 +288,7 @@ class UsersController extends AppController
       $menuItem = 'profile';
       $pageTitle = 'uTute | Tutor Profile';
       $this->set(compact(['menuItem', 'pageTitle','tutor', 'user']));
-
-
-      $this->viewBuilder()->setLayout(!empty($user) ? 'user':'default');
+      $this->viewBuilder()->setLayout('user');
 
     }
 

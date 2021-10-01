@@ -6,7 +6,9 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/search">Book Appointment</a></li>
+                    <?php if (!empty($user['user_id'])):?>
                     <li><a href="/" id="logout_button">Logout</a></li>
+                  <?php endif; ?>
                 </ul>
             </div>
             <div class="secondary_header" id="secondary_header">

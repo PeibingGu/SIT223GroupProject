@@ -56,7 +56,7 @@
 </head>
 <body>
 
-      <?=$this->element('userNavbar', ['menuItem' => $menuItem])?>
+      <?=$this->element('userNavbar', ['menuItem' => $menuItem, 'user'=>@$user])?>
 
 
     <main class="main no-x-margin no-x-padding">
