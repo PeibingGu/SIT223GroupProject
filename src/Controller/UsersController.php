@@ -268,7 +268,8 @@ class UsersController extends AppController
       $menuItem = 'search';
       $pageTitle = 'uTute | Tutor Search';
       $this->set(compact(['menuItem', 'pageTitle', 'user', 'universityList', 'tutors']));
-      $this->viewBuilder()->setLayout('user');
+
+      $this->viewBuilder()->setLayout(!empty($user) ? 'user':'default');
     }
 
     public function profile($tutorIdCode=null)
@@ -288,7 +289,9 @@ class UsersController extends AppController
       $menuItem = 'profile';
       $pageTitle = 'uTute | Tutor Profile';
       $this->set(compact(['menuItem', 'pageTitle','tutor', 'user']));
-      $this->viewBuilder()->setLayout('user');
+
+
+      $this->viewBuilder()->setLayout(!empty($user) ? 'user':'default');
 
     }
 
