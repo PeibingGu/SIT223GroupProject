@@ -19,6 +19,7 @@
 
                     <?=$this->Form->create(null, ['class' => 'form-signin', 'method' => 'post','style' => 'margin-top:80px;'])?>
 
+                        <?= $this->Flash->render() ?>
                         <!-- 1ST QUESTION -->
                         <div class="question_container">
 

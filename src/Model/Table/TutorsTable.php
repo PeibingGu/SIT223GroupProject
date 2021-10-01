@@ -272,4 +272,32 @@ class TutorsTable extends AppTable
 
       return $ret;
     }
+
+    public function getUserIdByTutorId($tutorId)
+    {
+
+        $sql = "
+          SELECT user_id
+          FROM tutors
+          WHERE tutor_id = ?
+          ";
+        $ret = $this->_db->execute($sql, [$tutorId])->fetch('assoc');
+        return !empty($ret['user_id']) ? $ret['user_id']: false;
+    }
+
+    public function getTutorUserBasicProfile($tutorId)
+    {
+      $sql = "SELECT t.tutor_id, t.profile_image, t.average_rating, t.profile_introduction, t.tutoring_strategies,
+              u.email, u.user_id, u.first_name, u.last_name, u.mobile, u.email
+              FROM tutors as t,
+              users as u
+              WHERE t.user_id = u.user_id
+              AND t.tutor_id = ?
+              AND u.is_tutor = '1'
+              ORDER BY u.user_id ASC
+              ";
+        return $this->_db->execute($sql, [$tutorId])->fetch('assoc');
+    }
+
+
 }

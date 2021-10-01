@@ -26,6 +26,30 @@ class UserMailer extends Mailer
             ->viewBuilder()
               ->setTemplate('otp');
     }
+    public function booking($appt, $user, $tutorUser, $unit, $content)
+    {
+        $this
+            ->setEmailFormat('html')
+            ->setTo($tutorUser['email'])
+            ->setSubject('Appointment Request Received on '. Configure::read('Domain.name'))
+            ->setViewVars(['user' => $user, 'appt' => $appt, 'tutorUser'=> $tutorUser, 'unit' => $unit, 'content' => $content])
+            ->viewBuilder()
+              ->setTemplate('booking');
+    }
+    public function booking_response($appt, $acceptedOrDeclined = '1')
+    {
+        $this
+            ->setEmailFormat('html')
+            ->setTo($appt['student_email'])
+            ->setSubject('Appointment Request '. (!empty($acceptedOrDeclined) ? 'Accepted':'Declined').' on '. Configure::read('Domain.name'))
+            ->setViewVars(['appt' => $appt, 'flag' => $acceptedOrDeclined])
+            ->viewBuilder()
+              ->setTemplate('booking_response');
+    }
+
+
+
+
     // public function resetPassword($user)
     // {
     //     $this

@@ -376,18 +376,26 @@ nav .toggle_collapse .toggle_icon{
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative;
+  background: none !important;
+  background-color: #ED7966 !important;
+  border-radius: 20px;
 }
-
+.unit-select {
+  width: 360px;
+}
+.unit-select .select-selected {
+  width: 340px;
+}
 .custom-select select {
   display: none; /*hide original SELECT element:*/
 }
-
 .select-selected {
-  background-color: #ED7966;
+  /*background-color: #ED7966;*/
   border-radius: 20px;
-  margin-top: 10px;
+  /*margin-top: 10px;*/
+  position:relative;
+  width: 140px;
 }
-
 /*style the arrow inside the select element:*/
 .select-selected:after {
   position: absolute;
@@ -409,8 +417,8 @@ nav .toggle_collapse .toggle_icon{
 /*style the items (options), including the selected item:*/
 .select-items div,.select-selected {
   color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
+  padding: 0px 16px;
+  /*border: 1px solid transparent;*/
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
   user-select: none;
@@ -421,7 +429,7 @@ nav .toggle_collapse .toggle_icon{
   position: absolute;
   background-color: #ED7966;
   border-radius: 20px;
-  border: 2px solid #303179;
+  /*border: 2px solid #303179;*/
   top: 100%;
   left: 0;
   right: 0;
@@ -590,6 +598,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 #starting_time_dropdown {
   font-size: 18px;
+  background-color: #ED7966;
 }
 
 

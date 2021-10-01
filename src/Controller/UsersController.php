@@ -298,18 +298,97 @@ class UsersController extends AppController
       if (empty($tutorIdCode)) return $this->redirect('/search');
 
 
+      $this->Times = TableRegistry::getTableLocator()->get('Times', ['table' => 'times']);
+      $slots = $this->Times->getAll();
+
       $userId = $this->Authentication->getIdentity()['user_id'];
       $user = empty($userId) ? null : $this->Users->getUserById($userId);
       $tutorId = base64_decode($tutorIdCode);
+
       if (empty($tutorId) || !is_numeric($tutorId))
       {
         return $this->redirect('/');
       }
 
+      $this->TutorTeachings = TableRegistry::getTableLocator()->get('TutorTeachings', ['table' => 'tutor_teachings']);
+      $tutorTeachings = $this->TutorTeachings->findTeachingsByTutorId($tutorId);
+      if (empty($tutorTeachings))
+      {
+        $this->Flash->error("This tutor is fully booked at the moment");
+        return $this->redirect('/profile/'.$tutorIdCode);
+      }
+
+      if ($this->request->is("POST")):
+        try{
+          $post = $this->request->getData();
+          $errors = [];
+
+          //validate the post data
+          if (empty($post['hours']) || !is_numeric($post['hours']) || intval($post['hours']) > 5)
+            throw new \Exception("Session must be between 1 - 5 hours");
+          if (empty($post['date']))
+            throw new \Exception("Please select a date");
+          elseif (strtotime($post['date'].' 23:59:59') < time())
+            throw new \Exception("Date must not be in the past");
+          if (empty($post['start_time']))
+            throw new \Exception("Please select a time");
+          if (empty($post['content']))
+            throw new \Exception("Please enter a note");
+          if (empty($post['tutor_teaching_id']))
+            throw new \Exception("Please enter an unit");
+
+
+          //create new into messages table
+
+          $this->Tutors = TableRegistry::getTableLocator()->get('Tutors', ['table' => 'tutors']);
+          $this->Messages = TableRegistry::getTableLocator()->get('Messages', ['table' => 'messages']);
+          $tutorUser = $this->Tutors->getTutorUserBasicProfile($tutorId);
+          $message = [];
+          $message['from_user_id'] = $userId;
+          $message['to_user_id'] = $tutorUser['tutor_id'];
+          $message['message_content'] = "Session Request:". $post['content'];
+          $message['is_new'] = true;
+          $this->Messages->createNew($message);
+
+          //add new appointment
+          $this->Appointments = TableRegistry::getTableLocator()->get('Appointments', ['table' => 'appointments']);
+          $appt = [];
+          $appt['user_id'] = $userId;
+          $appt['tutor_id'] = $tutorId;
+          $appt['appt_start_time'] = $post['date'].' '. str_pad(strval(intval($post['start_time'])), 2, '0', STR_PAD_LEFT).':00:00';
+          $appt['appt_end_time'] = $post['date'].' '. str_pad(strval(intval($post['start_time']) + intval($post['hours'])), 2, '0', STR_PAD_LEFT).':00:00';
+          $appt['tutor_teaching_id'] = $post['tutor_teaching_id'];
+          $appt['status'] = 'Requested';
+          $unit = [];
+          foreach ($tutorTeachings as $r):
+            if ($r['tutor_teaching_id'] == $post['tutor_teaching_id'])
+            {
+              $appt['fees'] = $r['fees'];
+              $unit = $r;
+              break;
+            }
+          endforeach;
+          $appt['created_time'] = date('Y-m-d H:i:s');
+          $appt['appointment_id']  = $this->Appointments->createNew($appt);
+
+          $message['is_new'] = true;
+          $this->Messages->createNew($message);
+
+          //send request email to the tutor
+          $this->getMailer('User')->send('booking', [$appt, $user, $tutorUser, $unit, $post['content']]);
+
+
+          $this->Flash->success("Appointment request sent successfully");
+          return $this->redirect("/profile/".$tutorIdCode);
+        } catch(\Exception $e)
+        {
+          $this->Flash->error($e->getMessage());
+        }
+      endif;
 
       $menuItem = 'Book Appointment';
       $pageTitle = 'uTute | Book Appointment';
-      $this->set(compact(['menuItem', 'pageTitle','tutor', 'user']));
+      $this->set(compact(['menuItem', 'pageTitle','tutor', 'user', 'slots', 'tutorIdCode', 'tutorTeachings']));
       $this->viewBuilder()->setLayout('user');
 
     }

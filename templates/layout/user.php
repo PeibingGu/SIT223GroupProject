@@ -41,10 +41,13 @@
       <?=$this->Html->css(['search'])?>
     <?php elseif ($this->request->getParam('action') == 'profile'): ?>
         <?=$this->Html->css([ 'tutor_profile'])?>
-  <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
+    <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
       <?=$this->Html->css(['upgrade'])?>
-<?php elseif ($this->request->getParam('action') == 'booking'): ?>
-    <?=$this->Html->css(['request_a_session'])?>
+    <?php elseif ($this->request->getParam('controller') == 'Messages'
+        || $this->request->getParam('controller') == 'Appointments'): ?>
+      <?=$this->Html->css(['request_a_session'])?>
+    <?php elseif ($this->request->getParam('action') == 'booking'): ?>
+      <?=$this->Html->css(['request_a_session', ])?>
     <?php endif; ?>
 
     <?= $this->fetch('meta') ?>
@@ -79,8 +82,11 @@
     <script src="/js/search.js" defer></script>
 
 
-  <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
-  <script src="/js/be_tutor.js" defer></script>
+      <?php elseif ($this->request->getParam('action') == 'upgrade'): ?>
+      <script src="/js/be_tutor.js" defer></script>
+
+    <?php elseif ($this->request->getParam('action') == 'booking'): ?>
+        <script src="/js/booking.js" defer></script>
 
   <?php endif;?>
 </body>

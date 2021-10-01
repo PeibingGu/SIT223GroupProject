@@ -6,6 +6,7 @@
         <img id="tutor_profile_picture" src="<?=$tutor['Tutor']['profile_image']?>"
             alt="Tutor Profile Picture">
     </div>
+
 </section>
 
 
@@ -72,6 +73,7 @@
 <!-- TUTOR PROFILE SECTION #1 SECTION -->
 <section class="section-3">
 
+    <?= $this->Flash->render() ?>
     <div class="bubble_content_container" id="profile_container">
         <h1 class="bubble_heading">Profile</h1>
         <p class="bubble_text" id="profile_text"><?=$tutor['Tutor']['profile_introduction']?>

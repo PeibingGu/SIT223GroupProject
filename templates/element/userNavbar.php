@@ -32,7 +32,7 @@
                                 <li id="appointments_button"><a href="/booking"> <img id="appointments_icon"
                                             src="/img/Assets/Icons/schedule_list_icon.png" alt="Schedule List Icon"></a>
                                 </li>
-                                <li id="chat_button"><a href="/messages"> <img id="message_icon"
+                                <li id="chat_button"><a href="/messages/list"> <img id="message_icon"
                                             src="/img/Assets/Icons/message_icon.png" alt="Message Icon"></a>
                                 </li>
                                 <li id="user_profile_button"><a href="/profile">

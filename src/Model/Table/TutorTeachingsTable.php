@@ -117,4 +117,15 @@ class TutorTeachingsTable extends AppTable
 
       return true;
     }
+
+    public function findTeachingsByTutorId($tutorId)
+    {
+      if (empty($tutorId) || !is_numeric($tutorId)) return false;
+      $sql = "
+        SELECT *
+        FROM tutor_teachings
+        WHERE tutor_id = ?
+      ";
+      return $this->_db->execute($sql, [$tutorId])->fetchAll('assoc');
+    }
 }

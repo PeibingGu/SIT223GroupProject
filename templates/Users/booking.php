@@ -21,8 +21,10 @@
                     </div>
 
                     <!-- FORM -->
-                    <form action="">
+                <?=$this->Form->create(null, ['class' => 'form-signin', 'url'=> '/booking/'.$tutorIdCode,
+                          'method' => 'post','style' => 'margin-top:80px;'])?>
 
+                              <?= $this->Flash->render() ?>
 
                         <!-- 1ST QUESTION -->
                         <div class="question_container">
@@ -39,14 +41,20 @@
 
                                 <br>
 
-                                <!-- Hours (Input) -->
-                                <div id="hours_input_container">
+                                <div id="starting_time_input_container">
 
-                                    <input type="number" id="hours_input" name="num_hours" min="1" max="5"
-                                        placeholder="1" v-model="hour_selected"
-                                        v-on:change="handleSelectedTimeRequired">
 
-                                    <span id="hours_text">hr</span>
+                                    <div class="custom-select" id="starting_time_dropdown" style="width:160px;">
+                                        <select id="time_dropdown" name="hours">
+                                          <option value=""></option>
+                                            <option value="1">1 Hour</option>
+                                              <option value="2">2 Hours</option>
+                                                <option value="3">3 Hours</option>
+                                                  <option value="4">4 Hours</option>
+                                                    <option value="5">5 Hours</option>
+
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -72,32 +80,47 @@
                                 <div id="date_input_container">
                                     <label class="input_label" for="date_input">Date</label>
                                     <br>
-                                    <input class="single_line_input" id="date_input" type="date" placeholder="SIT123">
+                                    <input class="single_line_input" id="date_input" name="date" type="date" placeholder="SIT123">
                                 </div>
+
+
+
 
                                 <!-- Time Slot (Input) -->
                                 <div id="starting_time_input_container">
 
                                     <label class="input_label" for="starting_time_dropdown">Starting Time</label>
 
-                                    <div class="custom-select" id="starting_time_dropdown" style="width:120px;">
-                                        <select id="time_dropdown">
-                                            <option value="1">6am</option>
-                                            <option value="2">7am</option>
-                                            <option value="3">9am</option>
-                                            <option value="4">10am</option>
-                                            <option value="5">11am</option>
-                                            <option value="6">12pm</option>
-                                            <option value="7">1pm</option>
-                                            <option value="8">2pm</option>
-                                            <option value="9">3pm</option>
-                                            <option value="10">4pm</option>
-                                            <option value="11">5pm</option>
-                                            <option value="12">6pm</option>
+                                    <div class="custom-select" id="starting_time_dropdown" style="width:160px;">
+                                        <select id="time_dropdown" name="start_time">
+                                          <option value=""></option>
+                                          <?php foreach ($slots as $slot): ?>
+                                            <option value="<?=intval(substr($slot['time_start'], 0, 2))?>"><?=substr($slot['time_start'],0,4). (intval($slot['time_start']) < 1200 ? ' AM' : ' PM')?></option>
+                                          <?php endforeach; ?>
 
                                         </select>
                                     </div>
                                 </div>
+
+
+                                <br>
+                                <br>
+                                <!-- Time Slot (Input) -->
+                                <div id="starting_time_input_container">
+
+                                    <label class="input_label" for="starting_time_dropdown">Unit</label><br>
+
+                                    <div class="custom-select unit-select" id="starting_time_dropdown" style="width:360px;">
+                                        <select id="time_dropdown" name="tutor_teaching_id">
+                                          <option value=""></option>
+                                          <?php foreach ($tutorTeachings as $unit): ?>
+                                            <option value="<?=$unit['tutor_teaching_id']?>"><?=$unit['unit_code'].' '. $unit['unit_name']. ' AU$'.number_format($unit['fees'])?></option>
+                                          <?php endforeach; ?>
+
+                                        </select>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
@@ -119,7 +142,7 @@
 
                                 <!-- Notes for Tutor (Input) -->
                                 <div id="notes_for_tutor_textarea_container">
-                                    <textarea class="textarea_input" name="" id="notes_for_tutor_textarea_input"
+                                    <textarea class="textarea_input" name="content" id="notes_for_tutor_textarea_input"
                                         cols="55" rows="10"
                                         placeholder="E.g., I need help with task 2.1P for SIT102, which is Introduction to Programming with Splashkit library. I couldn’t get my code to work and I have no idea how to debug."></textarea>
                                 </div>
@@ -130,7 +153,7 @@
                             <button id="send_request_button" type="submit" title="Request the session">Send
                                 Request</button>
                         </div>
-                    </form>
+              <?php echo $this->Form->end();?>
 
                 </div>
             </section>
